@@ -1,10 +1,15 @@
 import { Routes } from '@angular/router';
+import { LoginRegister } from './main/login/login-register/login-register';
 
 export const routes: Routes = [
     {
         path: '',
         redirectTo: 'mess-owner-form',
         pathMatch: 'full'
+    },
+    {
+        path: 'login-register',
+        component: LoginRegister,
     },
     {
         path: 'mess-owner-form',
