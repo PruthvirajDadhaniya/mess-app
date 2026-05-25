@@ -1,0 +1,253 @@
+<div class="page-wrapper">
+
+  <!-- Food Background Icons -->
+  <div class="food-bg">
+    <div class="food-icon fi-1"><span>🍔</span></div>
+    <div class="food-icon fi-2"><span>🍕</span></div>
+    <div class="food-icon fi-3"><span>🍕</span></div>
+    <div class="food-icon fi-4"><span>🥗</span></div>
+    <div class="food-icon fi-5"><span>🍅</span></div>
+    <div class="food-icon fi-6"><span>🍗</span></div>
+    <div class="food-icon fi-7"><span>🍗</span></div>
+    <div class="food-icon fi-8"><span>🥙</span></div>
+    <div class="food-icon fi-9"><span>🌮</span></div>
+    <div class="food-icon fi-10"><span>🍱</span></div>
+    <div class="food-icon fi-11"><span>🫙</span></div>
+    <div class="food-icon fi-12"><span>🥘</span></div>
+    <div class="dot dot-1"></div>
+    <div class="dot dot-2"></div>
+    <div class="dot dot-3"></div>
+  </div>
+
+  <!-- Form Card -->
+  <div class="form-card">
+
+    <!-- Logo -->
+    <div class="logo-wrap">
+      <!-- <span class="logo-find">FIND</span>
+      <span class="logo-food">
+        F
+        <span class="o-letter"><span class="o-bg">O</span></span>
+        <span class="o-letter"><span class="o-bg">O</span></span>
+        D
+      </span> -->
+      <img src="../../../../../assets/images/brand-logo.png" alt="FindFood Logo" class="logo-img">
+    </div>
+
+    <!-- Stepper -->
+    <div class="stepper">
+      <div class="step active">
+        <div class="step-num">1</div>
+        <span>Mess Details</span>
+      </div>
+      <div class="step-line"></div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <span>Menu</span>
+      </div>
+      <div class="step-line"></div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <span>Price</span>
+      </div>
+      <div class="step-line"></div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <span>Time</span>
+      </div>
+    </div>
+
+    <!-- Reactive Form -->
+    <form [formGroup]="messForm" (ngSubmit)="onNext()">
+
+      <!-- Name -->
+      <div class="section-gap">
+        <label class="form-label">Name</label>
+        <mat-form-field appearance="outline" class="full-field">
+          <input matInput placeholder="Name*" formControlName="name">
+          <mat-error *ngIf="f['name'].errors?.['required']">
+            Name is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <!-- Address -->
+      <div class="section-gap">
+        <label class="form-label">Address</label>
+
+        <div formGroupName="address">
+          <div class="row-2">
+            <mat-form-field appearance="outline" class="full-field">
+              <input matInput placeholder="Shop number/Building number*"
+                     formControlName="shopNumber">
+              <mat-error *ngIf="address['shopNumber'].errors?.['required']">
+                Required
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="full-field">
+              <input matInput placeholder="Area/Locality*"
+                     formControlName="area">
+              <mat-error *ngIf="address['area'].errors?.['required']">
+                Required
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="row-2">
+            <mat-form-field appearance="outline" class="full-field">
+              <input matInput placeholder="City*" formControlName="city">
+              <mat-error *ngIf="address['city'].errors?.['required']">
+                Required
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="full-field">
+              <input matInput placeholder="Pincode*"
+                     formControlName="pincode" maxlength="6">
+              <mat-error *ngIf="address['pincode'].errors?.['required']">
+                Required
+              </mat-error>
+              <mat-error *ngIf="address['pincode'].errors?.['pattern']">
+                Must be 6 digits
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <mat-form-field appearance="outline" class="full-field">
+            <input matInput placeholder="Add nearby landmark*"
+                   formControlName="landmark">
+            <mat-error *ngIf="address['landmark'].errors?.['required']">
+              Required
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <!-- Contact + Email -->
+      <div class="section-gap">
+        <div class="row-2">
+          <div>
+            <label class="form-label">Contact</label>
+            <mat-form-field appearance="outline" class="full-field">
+              <input matInput placeholder="Mobile number*"
+                     formControlName="mobile" maxlength="10">
+              <mat-error *ngIf="f['mobile'].errors?.['required']">
+                Required
+              </mat-error>
+              <mat-error *ngIf="f['mobile'].errors?.['pattern']">
+                Must be 10 digits
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div>
+            <label class="form-label">Email</label>
+            <mat-form-field appearance="outline" class="full-field">
+              <input matInput type="email" placeholder="Email ID*"
+                     formControlName="email">
+              <mat-error *ngIf="f['email'].errors?.['required']">
+                Required
+              </mat-error>
+              <mat-error *ngIf="f['email'].errors?.['email']">
+                Invalid email
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+      <!-- License -->
+      <div class="section-gap">
+        <label class="form-label">License</label>
+        <div class="row-2">
+          <mat-form-field appearance="outline" class="full-field">
+            <input matInput placeholder="Food license number*"
+                   formControlName="licenseNumber">
+            <mat-error *ngIf="f['licenseNumber'].errors?.['required']">
+              Required
+            </mat-error>
+          </mat-form-field>
+
+          <div class="upload-col">
+            <button type="button" class="btn-upload"
+                    (click)="licenseInput.click()">
+              <mat-icon>upload</mat-icon>
+              Upload license image
+            </button>
+            <input #licenseInput type="file" accept="image/*"
+                   class="hidden-file"
+                   (change)="onLicenseSelected($event)">
+            <div *ngIf="licenseFileName" class="file-success">
+              <mat-icon class="small-icon">check_circle</mat-icon>
+              {{ licenseFileName }}
+            </div>
+            <div *ngIf="f['licenseImage'].invalid && submitted"
+                 class="custom-err">
+              License image required
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Food Type -->
+      <div class="section-gap">
+        <label class="form-label">Food you serve</label>
+        <div class="food-type-group">
+          <button
+            *ngFor="let option of foodOptions"
+            type="button"
+            class="food-pill"
+            [class.active]="messForm.get('foodType')?.value === option"
+            (click)="selectFoodType(option)">
+            {{ option }}
+          </button>
+        </div>
+      </div>
+
+      <!-- Mess Images -->
+      <div class="section-gap">
+        <label class="form-label">Add your mess images</label>
+        <div class="drop-zone"
+             (click)="messImagesInput.click()"
+             (dragover)="$event.preventDefault()"
+             (dragleave)="onDragLeave()"
+             (drop)="onImageDrop($event)"
+             [class.drag-active]="isDragOver">
+          <div class="upload-icon">
+            <mat-icon>cloud_upload</mat-icon>
+          </div>
+          <span *ngIf="!messImageCount">
+            Drag &amp; Drop or
+            <a (click)="$event.stopPropagation(); messImagesInput.click()">
+              Choose file
+            </a>
+            to upload
+          </span>
+          <span *ngIf="messImageCount" class="success-text">
+            <mat-icon class="small-icon">check_circle</mat-icon>
+            {{ messImageCount }} file(s) selected
+          </span>
+        </div>
+        <input #messImagesInput type="file" multiple accept="image/*"
+               class="hidden-file"
+               (change)="onMessImagesSelected($event)">
+        <div *ngIf="f['messImages'].invalid && submitted"
+             class="custom-err">
+          Please upload at least one image
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <div class="btn-row">
+        <button mat-stroked-button type="button"
+                class="btn-back" (click)="onBack()">
+          Back
+        </button>
+        <button mat-flat-button type="submit" class="btn-next">
+          Next
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>
