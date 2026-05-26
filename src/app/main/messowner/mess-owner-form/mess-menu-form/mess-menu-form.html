@@ -1,1 +1,140 @@
-<p>mess-menu-form works!</p>
+<div class="main-container">
+
+  <!-- Background Images -->
+    
+    <div class="food-bg">
+    <img src="../../../../../assets/images/background.png" 
+         alt="food-background" class="bg-img">
+  </div>
+
+  <!-- Card -->
+  <div class="menu-card">
+
+    <!-- Logo -->
+    <div class="logo-wrap">
+      <img src="../../../../../assets/images/brand-logo.png" 
+           alt="FindFood Logo" class="logo-img">
+    </div>
+
+     <!-- Stepper -->
+    <div class="stepper">
+      <div class="step active" (click)="goToStep(1)">
+        <div class="step-num">1</div>
+        <span>Mess Details</span>
+      </div>
+      <div class="step-line"></div>
+      <div class="step" (click)="goToStep(2)">
+        <div class="step-num">2</div>
+        <span>Menu</span>
+      </div>
+      <div class="step-line"></div>
+      <div class="step" (click)="goToStep(3)">
+        <div class="step-num">3</div>
+        <span>Price</span>
+      </div>
+      <div class="step-line"></div>
+      <div class="step" (click)="goToStep(4)">
+        <div class="step-num">4</div>
+        <span>Time</span>
+      </div>
+    </div>
+
+    <!-- Menu Tabs -->
+    <div class="tabs">
+
+      <button
+        class="tab-btn"
+        [class.active-tab]="selectedTab === 'morning'"
+        (click)="selectedTab='morning'"
+      >
+        Morning Meals
+      </button>
+
+      <button
+        class="tab-btn"
+        [class.active-tab]="selectedTab === 'evening'"
+        (click)="selectedTab='evening'"
+      >
+        Evening Meal
+      </button>
+
+    </div>
+
+    <!-- Week Accordion -->
+    <div class="week-list">
+
+      <div class="week-card" *ngFor="let week of weeks; let i = index">
+
+        <!-- Header -->
+        <div class="week-header" (click)="togglePanel(i)">
+
+          <span>{{ week.day }}</span>
+
+          <mat-icon>
+            {{
+              week.expanded
+                ? 'keyboard_arrow_up'
+                : 'keyboard_arrow_down'
+            }}
+          </mat-icon>
+
+        </div>
+
+        <!-- Body -->
+        <div class="week-body" *ngIf="week.expanded">
+
+          <!-- Checkboxes -->
+          <div class="checkbox-grid">
+
+            <mat-checkbox
+              *ngFor="let item of week.items"
+              [(ngModel)]="item.checked"
+            >
+              {{ item.name }}
+            </mat-checkbox>
+
+          </div>
+
+          <!-- Add Menu -->
+          <div class="add-menu">
+
+            <mat-form-field appearance="outline">
+              <input
+                matInput
+                placeholder="Add your menu"
+                [(ngModel)]="week.newItem"
+              >
+            </mat-form-field>
+
+            <button
+              mat-raised-button
+              class="add-btn"
+              (click)="addMenu(i)"
+            >
+              Add
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-btns">
+
+      <button class="back-btn">
+        Back
+      </button>
+
+      <button class="next-btn">
+        Next
+      </button>
+
+    </div>
+
+  </div>
+
+</div>

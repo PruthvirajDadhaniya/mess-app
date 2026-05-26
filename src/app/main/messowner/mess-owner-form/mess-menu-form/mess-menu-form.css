@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+/* ======================================================
+   GLOBAL
+====================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background: #f5f5f5;
+}
+
+/* ======================================================
+   MAIN CONTAINER
+====================================================== */
+
+.main-container {
+  width: 100%;
+  min-height: 100vh;
+  background: #f7f7f7;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 15px;
+}
+
+/* ── Background Image ───────────────────────── */
+.food-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* ======================================================
+   CARD
+====================================================== */
+
+.menu-card {
+  width: 680px;
+  background: #fff;
+  border: 1px solid #d6d6d6;
+  border-radius: 18px;
+  padding: 0px 30px 30px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.10);
+  backdrop-filter: blur(5px);
+  position: relative;
+  z-index: 5;
+}
+
+/* ── Logo ───────────────────────────────────── */
+.logo-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo-img {
+  width: 168px;
+  height: 111px;
+  padding: 22px 34px;
+  object-fit: contain;
+}
+
+/* ── Stepper ────────────────────────────────── */
+.stepper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  gap: 20px;
+  font-size: 13px;
+}
+.step {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  color: #aaa;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.step:hover        { color: #e05a2b; }
+.step.active       { color: #e05a2b; }
+.step-num {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: #ddd;
+  color: #888;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.2s, color 0.2s;
+}
+.step.active .step-num { background: #e05a2b; color: #fff; }
+.step:hover .step-num  { background: #e05a2b; color: #fff; }
+.step-line {
+  flex: 1;
+  height: 2px;
+  background: #ddd;
+  min-width: 28px;
+  max-width: 48px;
+  margin: 0 4px;
+}
+
+/* ======================================================
+   TABS
+====================================================== */
+
+.tabs {
+  width: fit-content;
+  display: flex;
+  background: #ededed;
+  padding: 3px;
+  border-radius: 30px;
+  margin-bottom: 18px;
+}
+
+.tab-btn {
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 7px 18px;
+  border-radius: 30px;
+  font-size: 11px;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.active-tab {
+  background: #db6b43;
+  color: white;
+}
+
+/* ======================================================
+   WEEK LIST
+====================================================== */
+
+.week-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ======================================================
+   WEEK CARD
+====================================================== */
+
+.week-card {
+  border: 1px solid #bebebe;
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+}
+
+/* ======================================================
+   HEADER
+====================================================== */
+
+.week-header {
+  height: 36px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.week-header span {
+  font-size: 13px;
+  font-weight: 600;
+  color: #111;
+}
+
+.week-header mat-icon {
+  width: 18px;
+  height: 18px;
+  font-size: 18px;
+  color: #555;
+}
+
+/* ======================================================
+   BODY
+====================================================== */
+
+.week-body {
+  padding: 14px;
+  border-top: 1px solid #d7d7d7;
+}
+
+/* ======================================================
+   CHECKBOX GRID
+====================================================== */
+
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 8px;
+  row-gap: 10px;
+  margin-bottom: 14px;
+}
+
+/* ======================================================
+   MATERIAL CHECKBOX
+====================================================== */
+
+::ng-deep .mdc-form-field {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+::ng-deep .mdc-label {
+  font-size: 11px !important;
+  font-weight: 400 !important;
+  color: #222 !important;
+}
+
+::ng-deep .mdc-checkbox {
+  padding: 0 !important;
+}
+
+/* Checked */
+
+::ng-deep .mdc-checkbox__native-control:enabled:checked
+  ~ .mdc-checkbox__background {
+  background-color: #000 !important;
+  border-color: #000 !important;
+}
+
+/* ======================================================
+   ADD MENU
+====================================================== */
+
+.add-menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ======================================================
+   INPUT
+====================================================== */
+
+mat-form-field {
+  width: 100%;
+}
+
+::ng-deep .mat-mdc-form-field-subscript-wrapper {
+  display: none;
+}
+
+::ng-deep .mat-mdc-text-field-wrapper {
+  height: 34px !important;
+}
+
+::ng-deep .mat-mdc-form-field-flex {
+  height: 34px !important;
+  align-items: center !important;
+}
+
+::ng-deep .mat-mdc-input-element {
+  font-size: 12px !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+/* Border */
+
+::ng-deep .mdc-notched-outline__leading,
+::ng-deep .mdc-notched-outline__notch,
+::ng-deep .mdc-notched-outline__trailing {
+  border-color: #bcbcbc !important;
+}
+
+/* ======================================================
+   ADD BUTTON
+====================================================== */
+
+.add-btn {
+  height: 34px !important;
+  padding: 0 20px !important;
+  background: #db6b43 !important;
+  color: white !important;
+  border-radius: 8px !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  font-family: 'Poppins', sans-serif !important;
+  box-shadow: none !important;
+}
+
+/* ======================================================
+   FOOTER BUTTONS
+====================================================== */
+
+.footer-btns {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+/* BACK */
+
+.back-btn {
+  min-width: 70px;
+  height: 34px;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  background: #efefef;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+}
+
+/* NEXT */
+
+.next-btn {
+  min-width: 72px;
+  height: 34px;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  background: #1f75ff;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(31, 117, 255, 0.25);
+}
+
