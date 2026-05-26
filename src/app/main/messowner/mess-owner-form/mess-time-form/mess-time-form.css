@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Fixed Background ── */
+.food-bg {
+  position: fixed;
+  background: url('../../../../../assets/images/background.png') no-repeat center;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* ── Scrollable Page Wrapper ── */
+.page-wrapper {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 15px;
+  position: relative;
+  z-index: 10;
+  overflow-y: auto;
+}
+
+/* ── Card ── */
+.auth-card {
+  position: relative;
+  z-index: 10;
+  background: #ffffff !important;
+  border-radius: 18px !important;
+  width: 100% !important;
+  max-width: 680px !important;
+  padding: 0 30px 30px !important;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.10) !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* ── Logo ── */
+.logo-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo-img {
+  width: 168px;
+  height: 111px;
+  padding: 22px 34px;
+  object-fit: contain;
+}
+
+/* ── Stepper ── */
+.stepper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  gap: 20px;
+  font-size: 13px;
+}
+.step {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  color: #aaa;
+  white-space: nowrap;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: color 0.2s;
+}
+.step:hover     { color: #e05a2b; }
+.step.active    { color: #e05a2b; }
+.step.completed { color: #e05a2b; }
+
+.step-num {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #ddd;
+  color: #888;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: 'Poppins', sans-serif;
+  transition: background 0.2s, color 0.2s;
+}
+.step.active .step-num,
+.step.completed .step-num,
+.step:hover .step-num {
+  background: #e05a2b;
+  color: #fff;
+}
+
+.step-line {
+  flex: 1;
+  height: 2px;
+  background: #ddd;
+  min-width: 28px;
+  max-width: 48px;
+  margin: 0 4px;
+}
+.step-line.completed,
+.step-line.active { background: #e05a2b; }
+
+/* ── Labels ── */
+.form-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 8px;
+  display: block;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ── Section spacing ── */
+.section-gap { margin-bottom: 18px; }
+
+/* ── Time Row ── */
+.time-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.time-prefix {
+  font-size: 13px;
+  font-weight: 500;
+  color: #444;
+  font-family: 'Poppins', sans-serif;
+  white-space: nowrap;
+}
+
+/* ── Time Field ── */
+.time-field {
+  flex: 1;
+}
+
+/* ── Full Width Field (Holiday dropdown) ── */
+.full-width {
+  width: 360px;
+}
+
+/* ── Shared field styles ── */
+::ng-deep .time-field .mdc-notched-outline,
+::ng-deep .full-width .mdc-notched-outline {
+  display: none !important;
+}
+
+::ng-deep .time-field .mat-mdc-text-field-wrapper,
+::ng-deep .full-width .mat-mdc-text-field-wrapper {
+  height: 45px !important;
+  padding: 0 14px !important;
+  border: 1.5px solid #dcdcdc !important;
+  border-radius: 10px !important;
+  background-color: #fff !important;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+::ng-deep .time-field .mat-mdc-input-element,
+::ng-deep .full-width .mat-mdc-input-element {
+  font-size: 13px !important;
+  font-family: 'Poppins', sans-serif !important;
+  color: #333 !important;
+  padding: 0 !important;
+  height: 100% !important;
+}
+
+::ng-deep .time-field .mat-mdc-input-element::placeholder,
+::ng-deep .full-width .mat-mdc-input-element::placeholder {
+  color: #bdbdbd !important;
+  font-size: 13px !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+::ng-deep .time-field .mat-mdc-floating-label,
+::ng-deep .full-width .mat-mdc-floating-label {
+  display: none !important;
+}
+
+/* Select dropdown text */
+::ng-deep .full-width .mat-mdc-select-value-text {
+  font-size: 13px !important;
+  font-family: 'Poppins', sans-serif !important;
+  color: #333 !important;
+}
+::ng-deep .full-width .mat-mdc-select-placeholder {
+  font-size: 13px !important;
+  font-family: 'Poppins', sans-serif !important;
+  color: #bdbdbd !important;
+}
+
+/* Focus border */
+::ng-deep .time-field.mat-focused .mat-mdc-text-field-wrapper,
+::ng-deep .full-width.mat-focused .mat-mdc-text-field-wrapper {
+  border-color: #e05a2b !important;
+  box-shadow: 0 0 0 2px rgba(224, 90, 43, 0.12);
+}
+
+/* Remove subscript space */
+::ng-deep .time-field .mat-mdc-form-field-subscript-wrapper,
+::ng-deep .full-width .mat-mdc-form-field-subscript-wrapper {
+  display: none !important;
+}
+
+/* ── Actions ── */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.btn-back {
+  border: 1.5px solid #ccc !important;
+  border-radius: 8px !important;
+  padding: 9px 28px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: #444 !important;
+  font-family: 'Poppins', sans-serif !important;
+  background: transparent !important;
+}
+.btn-back:hover { border-color: #888 !important; }
+
+.btn-done {
+  background: #22c55e !important;
+  border-radius: 20px !important;
+  padding: 9px 32px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: #fff !important;
+  font-family: 'Poppins', sans-serif !important;
+  box-shadow: none !important;
+}
+.btn-done:hover { background: #16a34a !important; }

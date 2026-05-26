@@ -15,6 +15,7 @@
 /* ── Background Image ───────────────────────── */
 .food-bg {
   position: fixed;
+  background: url('../../../../../assets/images/background.png') no-repeat center center fixed;
   inset: 0;
   z-index: 0;
   pointer-events: none;

@@ -6,7 +6,7 @@ export const routes: Routes = [
         loadComponent: () => import('./mess-owner-form').then(m => m.MessOwnerForm)
     },
     {
-        path: 'mess-detail-form',
+        path: 'mess-details-form',
         loadComponent: () => import('./mess-details-form/mess-details-form').then(m => m.MessDetailsForm)
     },
     {
