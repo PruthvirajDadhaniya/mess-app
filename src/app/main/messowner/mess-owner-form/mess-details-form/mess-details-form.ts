@@ -109,6 +109,6 @@ export class MessDetailsForm  implements OnInit {
   }
 
   onNext(): void {
-    this.router.navigate(['/register/menu']);
+    this.router.navigate(['/mess-owner-form/mess-menu-form']);
   }
 }
