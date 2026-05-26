@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 import {
   ReactiveFormsModule,
   FormBuilder,
@@ -26,47 +27,41 @@ import { MatIconModule }      from '@angular/material/icon';
   styleUrl: './mess-details-form.css',
 })
 export class MessDetailsForm  implements OnInit {
-    messForm!: FormGroup;
-  foodOptions = ['Veg', 'Non-Veg', 'Both'];
+   messForm!: FormGroup;
+  foodOptions     = ['Veg', 'Non-Veg', 'Both'];
   licenseFileName = '';
-  messImageCount = 0;
-  isDragOver = false;
-  submitted = false;
+  messImageCount  = 0;
+  isDragOver      = false;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.messForm = this.fb.group({
-      name: ['', Validators.required],
-
+      name: [''],
       address: this.fb.group({
-        shopNumber: ['', Validators.required],
-        area:       ['', Validators.required],
-        city:       ['', Validators.required],
-        pincode:    ['', [
-          Validators.required,
-          Validators.pattern(/^\d{6}$/)
-        ]],
-        landmark:   ['', Validators.required]
+        shopNumber: [''],
+        area:       [''],
+        city:       [''],
+        pincode:    [''],
+        landmark:   ['']
       }),
-
-      mobile:        ['', [
-        Validators.required,
-        Validators.pattern(/^\d{10}$/)
-      ]],
-      email:         ['', [Validators.required, Validators.email]],
-      licenseNumber: ['', Validators.required],
-      licenseImage:  [null, Validators.required],
-      foodType:      ['Veg', Validators.required],
-      messImages:    [null, Validators.required]
+      mobile:        [''],
+      email:         [''],
+      licenseNumber: [''],
+      licenseImage:  [null],
+      foodType:      ['Veg'],
+      messImages:    [null]
     });
   }
 
-  get f(): { [key: string]: AbstractControl } {
+  get f() {
     return this.messForm.controls;
   }
 
-  get address(): { [key: string]: AbstractControl } {
+  get address() {
     return (this.messForm.get('address') as FormGroup).controls;
   }
 
@@ -77,9 +72,8 @@ export class MessDetailsForm  implements OnInit {
   onLicenseSelected(event: Event): void {
     const input = event.target as HTMLInputElement;
     if (input.files?.length) {
-      const file = input.files[0];
-      this.licenseFileName = file.name;
-      this.messForm.get('licenseImage')?.setValue(file);
+      this.licenseFileName = input.files[0].name;
+      this.messForm.get('licenseImage')?.setValue(input.files[0]);
     }
   }
 
@@ -91,32 +85,30 @@ export class MessDetailsForm  implements OnInit {
     }
   }
 
-  onDragLeave(): void {
-    this.isDragOver = false;
-  }
-
   onImageDrop(event: DragEvent): void {
     event.preventDefault();
     this.isDragOver = false;
     if (event.dataTransfer?.files.length) {
       this.messImageCount = event.dataTransfer.files.length;
       this.messForm.get('messImages')
-        ?.setValue(Array.from(event.dataTransfer.files));
+          ?.setValue(Array.from(event.dataTransfer.files));
+    }
+  }
+
+  goToStep(step: number): void {
+    switch (step) {
+      case 1: this.router.navigate(['/register/mess-details']); break;
+      case 2: this.router.navigate(['/register/menu']);         break;
+      case 3: this.router.navigate(['/register/price']);        break;
+      case 4: this.router.navigate(['/register/time']);         break;
     }
   }
 
   onBack(): void {
-    console.log('Back clicked');
-    // this.router.navigate(['/previous']);
+    this.router.navigate(['/']);
   }
 
   onNext(): void {
-    this.submitted = true;
-    if (this.messForm.invalid) {
-      this.messForm.markAllAsTouched();
-      return;
-    }
-    console.log('Form submitted:', this.messForm.value);
-    // this.router.navigate(['/menu']);
+    this.router.navigate(['/register/menu']);
   }
 }
