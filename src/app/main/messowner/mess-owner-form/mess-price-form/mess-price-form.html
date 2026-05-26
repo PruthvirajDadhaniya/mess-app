@@ -1,1 +1,70 @@
-<p>mess-price-form works!</p>
+<!-- Fixed background -->
+<div class="food-bg">
+  <img src="../../../../../assets/images/82cb412151f7682e2e865f0a22d49f3afccf6b75.png" class="bg-img" alt="">
+</div>
+
+<!-- Scrollable wrapper -->
+<div class="page-wrapper">
+  <mat-card class="auth-card">
+
+    <!-- Logo -->
+    <div class="logo-wrap">
+      <img src="../../../../../assets/images/brand-logo.png" class="logo-img" alt="Logo">
+    </div>
+
+    <!-- Stepper -->
+    <div class="stepper">
+      <div class="step completed">
+        <div class="step-num">✓</div>
+        <span>Mess Details</span>
+      </div>
+      <div class="step-line completed"></div>
+      <div class="step completed">
+        <div class="step-num">✓</div>
+        <span>Menu</span>
+      </div>
+      <div class="step-line active"></div>
+      <div class="step active">
+        <div class="step-num">3</div>
+        <span>Price</span>
+      </div>
+      <div class="step-line"></div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <span>Time</span>
+      </div>
+    </div>
+
+    <!-- Price Fields -->
+    <label class="form-label">Monthly membership charges</label>
+    <mat-form-field appearance="outline" class="full-width section-gap">
+      <span matTextPrefix>₹&nbsp;</span>
+      <input matInput type="number"  min="0" placeholder="Enter amount">
+    </mat-form-field>
+
+    <label class="form-label">Single time meal charges</label>
+    <mat-form-field appearance="outline" class="full-width section-gap">
+      <span matTextPrefix>₹&nbsp;</span>
+      <input matInput type="number"  min="0" placeholder="Enter amount">
+    </mat-form-field>
+
+    <label class="form-label">Special day veg charges</label>
+    <mat-form-field appearance="outline" class="full-width section-gap">
+      <span matTextPrefix>₹&nbsp;</span>
+      <input matInput type="number"  min="0" placeholder="Enter amount">
+    </mat-form-field>
+
+    <label class="form-label">Special day non-veg charges</label>
+    <mat-form-field appearance="outline" class="full-width section-gap">
+      <span matTextPrefix>₹&nbsp;</span>
+      <input matInput type="number"  min="0" placeholder="Enter amount">
+    </mat-form-field>
+
+    <!-- Actions -->
+    <div class="actions">
+      <button mat-stroked-button class="btn-back" (click)="back()">Back</button>
+      <button mat-raised-button class="btn-next" (click)="next()">Next</button>
+    </div>
+
+  </mat-card>
+</div>
