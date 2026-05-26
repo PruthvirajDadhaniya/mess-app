@@ -1,114 +1,88 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule }      from '@angular/common';
+import { FormsModule }       from '@angular/forms';
+import { Router }            from '@angular/router';
+import { MatButtonModule }   from '@angular/material/button';
+import { MatIconModule }     from '@angular/material/icon';
 
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { Router } from '@angular/router';
+export interface MenuItem {
+  name: string;
+  checked: boolean;
+}
+
+export interface DayMenu {
+  name: string;
+  isOpen: boolean;
+  items: MenuItem[];
+  newItem: string;
+}
 
 @Component({
   selector: 'app-mess-menu-form',
   imports: [
-    CommonModule,
+     CommonModule,
     FormsModule,
-    MatCheckboxModule,
     MatButtonModule,
-    MatIconModule,
-    MatInputModule,
-    MatFormFieldModule
+    MatIconModule
   ],
   templateUrl: './mess-menu-form.html',
   styleUrl: './mess-menu-form.css',
 })
 
-export class MessMenuForm {
-   constructor(private router: Router) {}
-   selectedTab = 'morning';
+export class MessMenuForm implements OnInit{
+   activeMealTab: 'morning' | 'evening' = 'morning';
 
-  weeks = [
-    {
-      day: 'Monday',
-      expanded: true,
-      newItem: '',
-      items: [
-        { name: 'Chapati', checked: true },
-        { name: 'Rice', checked: true },
-        { name: 'Dal', checked: true },
-        { name: 'Paneer', checked: false },
-        { name: 'Salad', checked: false },
-        { name: 'Milk', checked: true }
-      ]
-    },
+  days: DayMenu[] = [];
 
-    {
-      day: 'Tuesday',
-      expanded: false,
-      newItem: '',
-      items: [
-        { name: 'Poha', checked: false },
-        { name: 'Tea', checked: true }
-      ]
-    },
-
-    {
-      day: 'Wednesday',
-      expanded: false,
-      newItem: '',
-      items: []
-    },
-
-    {
-      day: 'Thursday',
-      expanded: false,
-      newItem: '',
-      items: []
-    },
-
-    {
-      day: 'Friday',
-      expanded: false,
-      newItem: '',
-      items: []
-    },
-
-    {
-      day: 'Saturday',
-      expanded: false,
-      newItem: '',
-      items: []
-    },
-
-    {
-      day: 'Sunday',
-      expanded: false,
-      newItem: '',
-      items: []
-    }
+  private dayNames = [
+    'Monday', 'Tuesday', 'Wednesday',
+    'Thursday', 'Friday', 'Saturday', 'Sunday'
   ];
-  
 
-  togglePanel(index: number): void {
-    this.weeks[index].expanded = !this.weeks[index].expanded;
+  private defaultItems: string[] = [
+    'Chapati', 'Chapati', 'Chapati',
+    'Chapati', 'Chapati', 'Chapati'
+  ];
+
+  constructor(private router: Router) {}
+
+  ngOnInit(): void {
+    this.buildDays();
   }
 
-  addMenu(index: number): void {
-
-    const value = this.weeks[index].newItem.trim();
-
-    if (!value) return;
-
-    this.weeks[index].items.push({
-      name: value,
-      checked: false
-    });
-
-    this.weeks[index].newItem = '';
+  buildDays(): void {
+    this.days = this.dayNames.map((name, index) => ({
+      name,
+      isOpen: index === 0,
+      newItem: '',
+      items: this.defaultItems.map((item, i) => ({
+        name: item,
+        checked: [0, 1, 2, 4].includes(i)
+      }))
+    }));
   }
 
-   goToStep(step: number): void {
+  switchTab(tab: 'morning' | 'evening'): void {
+    this.activeMealTab = tab;
+    this.buildDays();
+  }
+
+  toggleDay(index: number): void {
+    this.days[index].isOpen = !this.days[index].isOpen;
+  }
+
+  toggleItem(day: DayMenu, item: MenuItem): void {
+    item.checked = !item.checked;
+  }
+
+  addItem(day: DayMenu): void {
+    const val = day.newItem.trim();
+    if (!val) return;
+    day.items.push({ name: val, checked: true });
+    day.newItem = '';
+  }
+
+  goToStep(step: number): void {
     switch (step) {
       case 1: this.router.navigate(['/register/mess-details']); break;
       case 2: this.router.navigate(['/register/menu']);         break;
@@ -116,11 +90,12 @@ export class MessMenuForm {
       case 4: this.router.navigate(['/register/time']);         break;
     }
   }
+
   onBack(): void {
     this.router.navigate(['/mess-owner-form/mess-details-form']);
   }
 
-  onNext(): void {
+   onNext(): void {
     this.router.navigate(['/mess-owner-form/mess-price-form']);
   }
 }

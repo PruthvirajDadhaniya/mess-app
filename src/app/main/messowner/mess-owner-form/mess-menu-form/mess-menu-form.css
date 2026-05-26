@@ -1,40 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
 
-/* ======================================================
-   GLOBAL
-====================================================== */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html,
-body {
-  width: 100%;
-  height: 100%;
+/* ── Page ── */
+.page-wrapper {
   font-family: 'Poppins', sans-serif;
-  background: #f5f5f5;
-}
-
-/* ======================================================
-   MAIN CONTAINER
-====================================================== */
-
-.main-container {
-  width: 100%;
   min-height: 100vh;
-  background: #f7f7f7;
-  position: relative;
-  overflow: hidden;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   padding: 30px 15px;
+  position: relative;
+  overflow-x: hidden;
 }
 
-/* ── Background Image ───────────────────────── */
+/* ── Background ── */
 .food-bg {
   position: fixed;
   inset: 0;
@@ -49,23 +27,19 @@ body {
   display: block;
 }
 
-/* ======================================================
-   CARD
-====================================================== */
-
-.menu-card {
-  width: 680px;
-  background: #fff;
-  border: 1px solid #d6d6d6;
-  border-radius: 18px;
-  padding: 0px 30px 30px;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.10);
-  backdrop-filter: blur(5px);
+/* ── Card ── */
+.form-card {
   position: relative;
-  z-index: 5;
+  z-index: 10;
+  background: #ffffff;
+  border-radius: 18px;
+  width: 100%;
+  max-width: 680px;
+  padding: 0 28px 26px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.10);
 }
 
-/* ── Logo ───────────────────────────────────── */
+/* ── Logo ── */
 .logo-wrap {
   width: 100%;
   display: flex;
@@ -79,33 +53,35 @@ body {
   object-fit: contain;
 }
 
-/* ── Stepper ────────────────────────────────── */
+/* ── Stepper ── */
 .stepper {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
+  font-size: 12px;
   gap: 20px;
-  font-size: 13px;
 }
+
 .step {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   font-weight: 500;
-  color: #aaa;
+  color: #aaaaaa;
   white-space: nowrap;
   cursor: pointer;
   transition: color 0.2s;
 }
-.step:hover        { color: #e05a2b; }
-.step.active       { color: #e05a2b; }
+.step.active { color: #e05a2b; }
+.step.done   { color: #aaaaaa; }
+
 .step-num {
   width: 22px; height: 22px;
   border-radius: 50%;
-  background: #ddd;
-  color: #888;
-  font-size: 12px;
+  background: #e0e0e0;
+  color: #999999;
+  font-size: 11px;
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -113,214 +89,204 @@ body {
   flex-shrink: 0;
   transition: background 0.2s, color 0.2s;
 }
-.step.active .step-num { background: #e05a2b; color: #fff; }
-.step:hover .step-num  { background: #e05a2b; color: #fff; }
+.active-num { background: #e05a2b !important; color: #ffffff !important; }
+.done-num   { background: #e0e0e0; color: #999; }
+
 .step-line {
-  flex: 1;
+  width: 40px;
   height: 2px;
-  background: #ddd;
-  min-width: 28px;
-  max-width: 48px;
-  margin: 0 4px;
+  background: #e0e0e0;
+  margin: 0 6px;
+  flex-shrink: 0;
 }
 
-/* ======================================================
-   TABS
-====================================================== */
-
-.tabs {
-  width: fit-content;
-  display: flex;
-  background: #ededed;
-  padding: 3px;
-  border-radius: 30px;
-  margin-bottom: 18px;
-}
-
-.tab-btn {
-  border: none;
-  outline: none;
-  background: transparent;
-  padding: 7px 18px;
-  border-radius: 30px;
-  font-size: 11px;
-  font-weight: 500;
+/* ── Menu label ── */
+.menu-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #222222;
+  margin-bottom: 12px;
   font-family: 'Poppins', sans-serif;
-  color: #222;
+}
+
+/* ── Meal tabs ── */
+.meal-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.meal-tab {
+  padding: 8px 22px;
+  border-radius: 20px;
+  border: 1.5px solid #e0e0e0;
+  font-size: 13px;
+  font-weight: 500;
+  color: #666666;
+  background: #ffffff;
   cursor: pointer;
-  transition: 0.2s ease;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.2s ease;
+  line-height: 1.4;
+}
+.meal-tab.active {
+  background: #e05a2b;
+  border-color: #e05a2b;
+  color: #ffffff;
+}
+.meal-tab:hover:not(.active) {
+  border-color: #e05a2b;
+  color: #e05a2b;
+  background: #fff5f2;
 }
 
-.active-tab {
-  background: #db6b43;
-  color: white;
-}
-
-/* ======================================================
-   WEEK LIST
-====================================================== */
-
-.week-list {
+/* ── Days list ── */
+.days-list {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  margin-bottom: 6px;
 }
 
-/* ======================================================
-   WEEK CARD
-====================================================== */
-
-.week-card {
-  border: 1px solid #bebebe;
-  border-radius: 8px;
+/* ── Day block ── */
+.day-block {
+  border: 1.5px solid #e8e8e8;
+  border-radius: 10px;
   overflow: hidden;
-  background: white;
+  background: #ffffff;
 }
 
-/* ======================================================
-   HEADER
-====================================================== */
-
-.week-header {
-  height: 36px;
-  padding: 0 12px;
+/* ── Day header ── */
+.day-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 14px 16px;
   cursor: pointer;
+  background: #ffffff;
+  transition: background 0.15s ease;
+  user-select: none;
 }
+.day-header:hover { background: #fafafa; }
+.day-header.is-open { background: #ffffff; }
 
-.week-header span {
+.day-name {
   font-size: 13px;
-  font-weight: 600;
-  color: #111;
+  font-weight: 500;
+  color: #222222;
+  font-family: 'Poppins', sans-serif;
 }
 
-.week-header mat-icon {
-  width: 18px;
-  height: 18px;
-  font-size: 18px;
-  color: #555;
+.arrow-icon {
+  font-size: 20px !important;
+  width: 20px !important;
+  height: 20px !important;
+  color: #888888;
+  transition: none;
+  flex-shrink: 0;
 }
 
-/* ======================================================
-   BODY
-====================================================== */
-
-.week-body {
-  padding: 14px;
-  border-top: 1px solid #d7d7d7;
+/* ── Day body ── */
+.day-body {
+  border-top: 1px solid #f0f0f0;
+  padding: 14px 16px 16px;
+  background: #ffffff;
 }
 
-/* ======================================================
-   CHECKBOX GRID
-====================================================== */
-
-.checkbox-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  column-gap: 8px;
-  row-gap: 10px;
+/* ── Checkbox grid ── */
+.cb-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
   margin-bottom: 14px;
 }
 
-/* ======================================================
-   MATERIAL CHECKBOX
-====================================================== */
-
-::ng-deep .mdc-form-field {
-  font-family: 'Poppins', sans-serif !important;
-}
-
-::ng-deep .mdc-label {
-  font-size: 11px !important;
-  font-weight: 400 !important;
-  color: #222 !important;
-}
-
-::ng-deep .mdc-checkbox {
-  padding: 0 !important;
-}
-
-/* Checked */
-
-::ng-deep .mdc-checkbox__native-control:enabled:checked
-  ~ .mdc-checkbox__background {
-  background-color: #000 !important;
-  border-color: #000 !important;
-}
-
-/* ======================================================
-   ADD MENU
-====================================================== */
-
-.add-menu {
+.cb-item {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 7px;
+  cursor: pointer;
+  user-select: none;
 }
 
-/* ======================================================
-   INPUT
-====================================================== */
-
-mat-form-field {
-  width: 100%;
-}
-
-::ng-deep .mat-mdc-form-field-subscript-wrapper {
-  display: none;
-}
-
-::ng-deep .mat-mdc-text-field-wrapper {
-  height: 34px !important;
-}
-
-::ng-deep .mat-mdc-form-field-flex {
-  height: 34px !important;
-  align-items: center !important;
-}
-
-::ng-deep .mat-mdc-input-element {
-  font-size: 12px !important;
-  font-family: 'Poppins', sans-serif !important;
-}
-
-/* Border */
-
-::ng-deep .mdc-notched-outline__leading,
-::ng-deep .mdc-notched-outline__notch,
-::ng-deep .mdc-notched-outline__trailing {
-  border-color: #bcbcbc !important;
-}
-
-/* ======================================================
-   ADD BUTTON
-====================================================== */
-
-.add-btn {
-  height: 34px !important;
-  padding: 0 20px !important;
-  background: #db6b43 !important;
-  color: white !important;
-  border-radius: 8px !important;
-  font-size: 12px !important;
-  font-weight: 600 !important;
-  font-family: 'Poppins', sans-serif !important;
-  box-shadow: none !important;
-}
-
-/* ======================================================
-   FOOTER BUTTONS
-====================================================== */
-
-.footer-btns {
+.cb-box {
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid #d0d0d0;
+  border-radius: 4px;
   display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-  margin-top: 18px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: #ffffff;
+  transition: all 0.15s ease;
+}
+.cb-box.checked {
+  background: #222222;
+  border-color: #222222;
+}
+.cb-tick {
+  font-size: 12px !important;
+  width: 12px !important;
+  height: 12px !important;
+  line-height: 1 !important;
+  color: #ffffff;
+}
+.cb-text {
+  font-size: 13px;
+  color: #333333;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
 }
 
+/* ── Add menu row ── */
+.add-menu-label {
+  font-size: 12px;
+  color: #555555;
+  margin-bottom: 8px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.add-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.add-input {
+  flex: 1;
+  height: 38px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 7px;
+  padding: 0 12px;
+  font-size: 13px;
+  font-family: 'Poppins', sans-serif;
+  outline: none;
+  color: #333;
+  background: #ffffff;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+}
+.add-input:focus { border-color: #e05a2b; }
+.add-input::placeholder { color: #cccccc; }
+
+.btn-add {
+  height: 38px;
+  padding: 0 20px;
+  background: #e05a2b;
+  color: #ffffff;
+  border: none;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  flex-shrink: 0;
+}
+.btn-add:hover  { background: #c0392b; }
+.btn-add:active { background: #a93226; }
+
+/* ── Action buttons ── */
 .btn-row {
   display: flex;
   justify-content: space-between;
@@ -328,27 +294,28 @@ mat-form-field {
   margin-top: 20px;
 }
 .btn-back {
-  border: 1.5px solid #ccc !important;
+  border: 1.5px solid #cccccc !important;
   border-radius: 8px !important;
   padding: 9px 28px !important;
   font-size: 14px !important;
   font-weight: 500 !important;
-  color: #444 !important;
+  color: #444444 !important;
   font-family: 'Poppins', sans-serif !important;
   background: transparent !important;
+  transition: border-color 0.2s !important;
 }
-.btn-back:hover { border-color: #888 !important; }
+.btn-back:hover { border-color: #888888 !important; }
+
 .btn-next {
   background: #2563eb !important;
+  border: none !important;
   border-radius: 8px !important;
   padding: 9px 32px !important;
   font-size: 14px !important;
   font-weight: 600 !important;
-  color: #fff !important;
+  color: #ffffff !important;
   font-family: 'Poppins', sans-serif !important;
+  transition: background 0.2s !important;
 }
-.btn-next:hover { background: #1d4ed8 !important; }
-
-
-
-
+.btn-next:hover  { background: #1d4ed8 !important; }
+.btn-next:active { background: #1e40af !important; }
