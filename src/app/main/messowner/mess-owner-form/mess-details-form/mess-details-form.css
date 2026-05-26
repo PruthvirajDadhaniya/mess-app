@@ -15,7 +15,6 @@
 /* ── Background Image ───────────────────────── */
 .food-bg {
   position: fixed;
-  background: url('../../../../../assets/images/background.png') no-repeat center center fixed;
   inset: 0;
   z-index: 0;
   pointer-events: none;
@@ -333,3 +332,10 @@
   font-family: 'Poppins', sans-serif !important;
 }
 .btn-next:hover { background: #1d4ed8 !important; }
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}

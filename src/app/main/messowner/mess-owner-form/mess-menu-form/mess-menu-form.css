@@ -321,35 +321,34 @@ mat-form-field {
   margin-top: 18px;
 }
 
-/* BACK */
-
-.back-btn {
-  min-width: 70px;
-  height: 34px;
-  border: none;
-  outline: none;
-  border-radius: 20px;
-  background: #efefef;
-  font-size: 12px;
-  font-weight: 600;
-  font-family: 'Poppins', sans-serif;
-  cursor: pointer;
+.btn-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
 }
-
-/* NEXT */
-
-.next-btn {
-  min-width: 72px;
-  height: 34px;
-  border: none;
-  outline: none;
-  border-radius: 20px;
-  background: #1f75ff;
-  color: white;
-  font-size: 12px;
-  font-weight: 600;
-  font-family: 'Poppins', sans-serif;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(31, 117, 255, 0.25);
+.btn-back {
+  border: 1.5px solid #ccc !important;
+  border-radius: 8px !important;
+  padding: 9px 28px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: #444 !important;
+  font-family: 'Poppins', sans-serif !important;
+  background: transparent !important;
 }
+.btn-back:hover { border-color: #888 !important; }
+.btn-next {
+  background: #2563eb !important;
+  border-radius: 8px !important;
+  padding: 9px 32px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: #fff !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+.btn-next:hover { background: #1d4ed8 !important; }
+
+
+
 
