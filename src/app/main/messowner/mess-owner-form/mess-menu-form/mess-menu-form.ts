@@ -7,6 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mess-menu-form',
@@ -22,7 +23,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
   templateUrl: './mess-menu-form.html',
   styleUrl: './mess-menu-form.css',
 })
+
 export class MessMenuForm {
+   constructor(private router: Router) {}
    selectedTab = 'morning';
 
   weeks = [
@@ -85,7 +88,7 @@ export class MessMenuForm {
       items: []
     }
   ];
-  router: any;
+  
 
   togglePanel(index: number): void {
     this.weeks[index].expanded = !this.weeks[index].expanded;
@@ -112,5 +115,12 @@ export class MessMenuForm {
       case 3: this.router.navigate(['/register/price']);        break;
       case 4: this.router.navigate(['/register/time']);         break;
     }
+  }
+  onBack(): void {
+    this.router.navigate(['/mess-owner-form/mess-details-form']);
+  }
+
+  onNext(): void {
+    this.router.navigate(['/mess-owner-form/mess-price-form']);
   }
 }
