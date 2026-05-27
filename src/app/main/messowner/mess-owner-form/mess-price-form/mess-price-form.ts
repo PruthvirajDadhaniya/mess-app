@@ -25,6 +25,8 @@ export class MessPriceForm {
 
   constructor(private router: Router) {}
 
+  
+
   back() {
     this.router.navigate(['/mess-owner-form/mess-menu-form']);
   }
