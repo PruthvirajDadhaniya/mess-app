@@ -30,8 +30,7 @@ export interface DayMenu {
 })
 
 export class MessMenuForm implements OnInit{
-   activeMealTab: 'morning' | 'evening' = 'morning';
-
+ activeMealTab: 'morning' | 'evening' = 'morning';
   days: DayMenu[] = [];
 
   private dayNames = [
@@ -39,49 +38,67 @@ export class MessMenuForm implements OnInit{
     'Thursday', 'Friday', 'Saturday', 'Sunday'
   ];
 
-  private defaultItems: string[] = [
-    'Chapati', 'Chapati', 'Chapati',
-    'Chapati', 'Chapati', 'Chapati'
-  ];
-
   constructor(private router: Router) {}
 
   ngOnInit(): void {
-    this.buildDays();
+    this.buildDays(this.activeMealTab);
   }
 
-  buildDays(): void {
+  // ── Build days for selected tab ──────────────
+  private buildDays(tab: 'morning' | 'evening'): void {
     this.days = this.dayNames.map((name, index) => ({
       name,
-      isOpen: index === 0,
+      isOpen: index === 0,   // only Monday open by default
       newItem: '',
-      items: this.defaultItems.map((item, i) => ({
-        name: item,
-        checked: [0, 1, 2, 4].includes(i)
-      }))
+      items: this.getDefaultItems(tab)
     }));
   }
 
-  switchTab(tab: 'morning' | 'evening'): void {
-    this.activeMealTab = tab;
-    this.buildDays();
+  // ── Default items per tab ────────────────────
+  private getDefaultItems(tab: 'morning' | 'evening'): MenuItem[] {
+    const morningItems = ['Idli', 'Poha', 'Upma', 'Chapati', 'Dal', 'Tea'];
+    const eveningItems = ['Chapati', 'Dal', 'Rice', 'Sabji', 'Roti', 'Curry'];
+    const list = tab === 'morning' ? morningItems : eveningItems;
+    return list.map((name, i) => ({
+      name,
+      checked: i < 3   // first 3 checked by default
+    }));
   }
 
+  // ── Switch meal tab ──────────────────────────
+  switchTab(tab: 'morning' | 'evening'): void {
+    if (this.activeMealTab === tab) return; // already active
+    this.activeMealTab = tab;
+    this.buildDays(tab);  // rebuild days with new tab items
+  }
+
+  // ── Toggle day open/close ────────────────────
   toggleDay(index: number): void {
     this.days[index].isOpen = !this.days[index].isOpen;
   }
 
+  // ── Toggle checkbox ──────────────────────────
   toggleItem(day: DayMenu, item: MenuItem): void {
     item.checked = !item.checked;
   }
 
+  // ── Add new item to day ──────────────────────
   addItem(day: DayMenu): void {
     const val = day.newItem.trim();
     if (!val) return;
+    // Avoid duplicates
+    const exists = day.items.some(
+      i => i.name.toLowerCase() === val.toLowerCase()
+    );
+    if (exists) {
+      day.newItem = '';
+      return;
+    }
     day.items.push({ name: val, checked: true });
     day.newItem = '';
   }
 
+  // ── Navigation ───────────────────────────────
   goToStep(step: number): void {
     switch (step) {
       case 1: this.router.navigate(['/register/mess-details']); break;
@@ -95,7 +112,7 @@ export class MessMenuForm implements OnInit{
     this.router.navigate(['/mess-owner-form/mess-details-form']);
   }
 
-   onNext(): void {
+  onNext(): void {
     this.router.navigate(['/mess-owner-form/mess-price-form']);
   }
 }
