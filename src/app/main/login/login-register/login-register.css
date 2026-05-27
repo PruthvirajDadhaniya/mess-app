@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+/* ===================================================
+   GLOBAL
+=================================================== */
+
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+} */
+
+/* ===================================================
+   MAIN CONTAINER
+=================================================== */
+
+/* ── Page ───────────────────────────────────── */
+.page-wrapper {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 15px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ── Background Image ───────────────────────── */
+.food-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* ── Card ───────────────────────────────────── */
+.login-card{
+  position: relative;
+  z-index: 10;
+  background: #fff;
+  border-radius: 18px;
+  width: 100%;
+  max-width: 510px;
+  padding: 0 30px 30px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.10);
+}
+
+/* ── Logo ───────────────────────────────────── */
+.logo-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo-img {
+  width: 168px;
+  height: 111px;
+  padding: 22px 34px;
+  object-fit: contain;
+}
+
+/* ===================================================
+   TITLES
+=================================================== */
+
+.welcome-title {
+  font-size: 30px;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 8px;
+}
+
+.sub-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #656565;
+  margin-bottom: 22px;
+}
+
+/* ===================================================
+   ROLE TABS
+=================================================== */
+
+.role-tabs {
+  width: fit-content;
+  background: #ededed;
+  border-radius: 40px;
+  padding: 4px;
+  display: flex;
+  margin-bottom: 24px;
+}
+
+.role-btn {
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.active-role {
+  background: #d8663e;
+  color: white;
+}
+
+/* ===================================================
+   INPUTS
+=================================================== */
+
+.input-group {
+  margin-bottom: 18px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #111;
+  margin-bottom: 8px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+/* Remove Bottom Space */
+
+::ng-deep .mat-mdc-form-field-subscript-wrapper {
+  display: none;
+}
+
+/* Input Height */
+
+::ng-deep .mat-mdc-text-field-wrapper {
+  height: 48px !important;
+}
+
+::ng-deep .mat-mdc-form-field-flex {
+  height: 48px !important;
+  align-items: center !important;
+}
+
+/* Border */
+
+::ng-deep .mdc-notched-outline__leading,
+::ng-deep .mdc-notched-outline__notch,
+::ng-deep .mdc-notched-outline__trailing {
+  border-color: #8e8e8e !important;
+}
+
+/* Input Text */
+
+::ng-deep .mat-mdc-input-element {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 13px !important;
+  color: #111 !important;
+}
+
+/* Placeholder */
+
+::ng-deep .mat-mdc-input-element::placeholder {
+  color: #777 !important;
+}
+
+/* ===================================================
+   ICON
+=================================================== */
+
+mat-icon {
+  color: #777;
+  font-size: 22px;
+}
+/* ICON */
+
+.refresh-btn i {
+  font-size: 20px;
+  font-weight: 200;
+  color: #777;
+  transition: 0.2s ease;
+}
+
+/* ===================================================
+   FORGOT
+=================================================== */
+
+.forgot-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -6px;
+  margin-bottom: 18px;
+}
+
+.forgot-wrapper span {
+  font-size: 12px;
+  color: #666;
+  cursor: pointer;
+}
+
+/* ===================================================
+   CAPTCHA
+=================================================== */
+
+.captcha-box {
+  height: 54px;
+  border: 1px solid #bfbfbf;
+  border-radius: 10px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.captcha-box input {
+  flex: 1;
+  height: 36px;
+  border: 1px solid #d2d2d2;
+  border-radius: 6px;
+  padding: 0 12px;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+}
+
+.refresh-btn {
+  border: none;
+  background: transparent;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.captcha-code {
+  width: 125px;
+  height: 36px;
+  background: #ececec;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 700;
+  color: #111;
+}
+
+/* ===================================================
+   LOGIN BUTTON
+=================================================== */
+
+.login-btn {
+  width: 100%;
+  height: 48px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background: #d8663e;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  margin-bottom: 22px;
+}
+
+/* ===================================================
+   DIVIDER
+=================================================== */
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: #646464;
+}
+
+.divider span {
+  font-size: 12px;
+  color: #666;
+}
+
+/* ── Google button ── */
+.btn-google {
+  width: 100%;
+  height: 48px;
+  background: #ffffff;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #333333;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: border-color 0.2s, background 0.2s;
+  margin-bottom: 22px;
+}
+
+.btn-google:hover {
+  border-color: #c0c0c0;
+  background: #fafafa;
+}
+
+/* ===================================================
+   REGISTER
+=================================================== */
+
+.register-text {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+}
+
+.register-text a {
+  color: #1f75ff;
+  font-weight: 500;
+  cursor: pointer;
+}
