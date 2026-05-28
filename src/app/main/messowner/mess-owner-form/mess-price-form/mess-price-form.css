@@ -7,7 +7,7 @@
   padding: 0;
 }
 
-/* ── Fixed Background (never scrolls) ── */
+/* ── Fixed Background ── */
 .food-bg {
   position: fixed;
   inset: 0;
@@ -52,7 +52,6 @@
 /* ── Logo ── */
 .logo-wrap {
   width: 100%;
-  /* background: url('../../../../../assets/images/brand-logo.png') no-repeat center; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -84,9 +83,8 @@
   font-family: 'Poppins', sans-serif;
   transition: color 0.2s;
 }
-.step:hover     { color: #e05a2b; }
-.step.active    { color: #e05a2b; }
-.step.completed { color: #e05a2b; }
+.step:hover { color: #e05a2b; }
+.step.active { color: #e05a2b; }
 
 .step-num {
   width: 22px;
@@ -104,7 +102,6 @@
   transition: background 0.2s, color 0.2s;
 }
 .step.active .step-num,
-.step.completed .step-num,
 .step:hover .step-num {
   background: #e05a2b;
   color: #fff;
@@ -118,10 +115,9 @@
   max-width: 48px;
   margin: 0 4px;
 }
-.step-line.completed,
 .step-line.active { background: #e05a2b; }
 
-/* ── Labels (shown above each input) ── */
+/* ── Labels ── */
 .form-label {
   font-size: 13px;
   font-weight: 600;
@@ -141,12 +137,10 @@
   width: 100%;
 }
 
-/* Hide Angular Material default outline & use custom border */
 ::ng-deep .full-width .mdc-notched-outline {
   display: none !important;
 }
 
-/* Custom border on wrapper */
 ::ng-deep .full-width .mat-mdc-text-field-wrapper {
   height: 45px !important;
   padding: 0 14px !important;
@@ -158,7 +152,6 @@
   transition: all 0.3s ease;
 }
 
-/* Input text */
 ::ng-deep .full-width .mat-mdc-input-element {
   font-size: 13px !important;
   font-family: 'Poppins', sans-serif !important;
@@ -167,19 +160,16 @@
   height: 100% !important;
 }
 
-/* Placeholder */
 ::ng-deep .full-width .mat-mdc-input-element::placeholder {
   color: #bdbdbd !important;
   font-size: 13px !important;
   font-family: 'Poppins', sans-serif !important;
 }
 
-/* Hide floating mat-label (we use our own <label> above) */
 ::ng-deep .full-width .mat-mdc-floating-label {
   display: none !important;
 }
 
-/* Prefix ₹ */
 ::ng-deep .full-width .mat-mdc-form-field-text-prefix {
   font-size: 13px !important;
   font-family: 'Poppins', sans-serif !important;
@@ -187,28 +177,32 @@
   padding-right: 4px !important;
 }
 
-/* Focus border */
 ::ng-deep .full-width.mat-focused .mat-mdc-text-field-wrapper {
   border-color: #e05a2b !important;
   box-shadow: 0 0 0 2px rgba(224, 90, 43, 0.12);
 }
 
-/* Error border */
 ::ng-deep .full-width.mat-form-field-invalid .mat-mdc-text-field-wrapper {
   border-color: #d32f2f !important;
 }
 
-/* Error text */
 ::ng-deep .full-width .mat-mdc-form-field-error {
   font-size: 11px !important;
   font-family: 'Poppins', sans-serif !important;
   margin-top: 4px;
 }
 
-/* Remove extra bottom padding */
 ::ng-deep .full-width .mat-mdc-form-field-subscript-wrapper {
   margin-top: 2px !important;
 }
+
+/* ── Actions ── */
+/* .actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+} */
 
 /* ── Actions ── */
 .actions {

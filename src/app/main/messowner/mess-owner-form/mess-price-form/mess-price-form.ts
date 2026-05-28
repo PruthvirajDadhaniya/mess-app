@@ -22,16 +22,23 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrls: ['./mess-price-form.css']
 })
 export class MessPriceForm {
+  // Set to 3 so that ONLY the Price step gets the active highlight style
+  currentStep: number = 3; 
 
   constructor(private router: Router) {}
 
-  
+  goToStep(stepNum: number) {
+    if (stepNum === 1) this.router.navigate(['/mess-owner-form']); 
+    if (stepNum === 2) this.router.navigate(['/mess-owner-form/mess-menu-form']);
+    if (stepNum === 3) this.router.navigate(['/mess-owner-form/mess-price-form']);
+    if (stepNum === 4) this.router.navigate(['/mess-owner-form/mess-time-form']);
+  }
 
-  back() {
+  onBack(): void {
     this.router.navigate(['/mess-owner-form/mess-menu-form']);
   }
 
-  next() {
+  onNext(): void {
     this.router.navigate(['/mess-owner-form/mess-time-form']);
   }
 }
