@@ -83,9 +83,8 @@
   font-family: 'Poppins', sans-serif;
   transition: color 0.2s;
 }
-.step:hover     { color: #e05a2b; }
-.step.active    { color: #e05a2b; }
-.step.completed { color: #e05a2b; }
+.step:hover { color: #e05a2b; }
+.step.active { color: #e05a2b; }
 
 .step-num {
   width: 22px;
@@ -103,7 +102,6 @@
   transition: background 0.2s, color 0.2s;
 }
 .step.active .step-num,
-.step.completed .step-num,
 .step:hover .step-num {
   background: #e05a2b;
   color: #fff;
@@ -117,7 +115,6 @@
   max-width: 48px;
   margin: 0 4px;
 }
-.step-line.completed,
 .step-line.active { background: #e05a2b; }
 
 /* ── Labels ── */
@@ -152,12 +149,11 @@
   flex: 1;
 }
 
-/* ── Full Width Field (Holiday dropdown) ── */
+/* ── Full Width Field ── */
 .full-width {
   width: 360px;
 }
 
-/* ── Shared field styles ── */
 ::ng-deep .time-field .mdc-notched-outline,
 ::ng-deep .full-width .mdc-notched-outline {
   display: none !important;
@@ -196,7 +192,6 @@
   display: none !important;
 }
 
-/* Select dropdown text */
 ::ng-deep .full-width .mat-mdc-select-value-text {
   font-size: 13px !important;
   font-family: 'Poppins', sans-serif !important;
@@ -208,14 +203,12 @@
   color: #bdbdbd !important;
 }
 
-/* Focus border */
 ::ng-deep .time-field.mat-focused .mat-mdc-text-field-wrapper,
 ::ng-deep .full-width.mat-focused .mat-mdc-text-field-wrapper {
   border-color: #e05a2b !important;
   box-shadow: 0 0 0 2px rgba(224, 90, 43, 0.12);
 }
 
-/* Remove subscript space */
 ::ng-deep .time-field .mat-mdc-form-field-subscript-wrapper,
 ::ng-deep .full-width .mat-mdc-form-field-subscript-wrapper {
   display: none !important;

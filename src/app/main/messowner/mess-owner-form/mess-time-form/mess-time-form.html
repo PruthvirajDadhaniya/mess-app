@@ -1,41 +1,39 @@
-<!-- Fixed background -->
 <div class="food-bg">
   <img src="../../../../../assets/images/background.png" class="bg-img" alt="">
 </div>
 
-<!-- Scrollable wrapper -->
 <div class="page-wrapper">
   <mat-card class="auth-card">
 
-    <!-- Logo -->
     <div class="logo-wrap">
       <img src="../../../../../assets/images/brand-logo.png" class="logo-img" alt="Logo">
     </div>
 
-    <!-- Stepper -->
     <div class="stepper">
-      <div class="step completed">
+      <div class="step" [ngClass]="{'active': currentStep === 1}" (click)="goToStep(1)">
         <div class="step-num">1</div>
         <span>Mess Details</span>
       </div>
-      <div class="step-line completed"></div>
-      <div class="step completed">
+      <div class="step-line" [ngClass]="{'active': currentStep === 1}"></div>
+
+      <div class="step" [ngClass]="{'active': currentStep === 2}" (click)="goToStep(2)">
         <div class="step-num">2</div>
         <span>Menu</span>
       </div>
-      <div class="step-line completed"></div>
-      <div class="step completed">
+      <div class="step-line" [ngClass]="{'active': currentStep === 2}"></div>
+
+      <div class="step" [ngClass]="{'active': currentStep === 3}" (click)="goToStep(3)">
         <div class="step-num">3</div>
         <span>Price</span>
       </div>
-      <div class="step-line active"></div>
-      <div class="step active">
+      <div class="step-line" [ngClass]="{'active': currentStep === 3}"></div>
+
+      <div class="step" [ngClass]="{'active': currentStep === 4}" (click)="goToStep(4)">
         <div class="step-num">4</div>
         <span>Time</span>
       </div>
     </div>
 
-    <!-- Morning Time -->
     <label class="form-label">Morning time</label>
     <div class="time-row section-gap">
       <span class="time-prefix">From</span>
@@ -48,7 +46,6 @@
       </mat-form-field>
     </div>
 
-    <!-- Evening Time -->
     <label class="form-label">Evening time</label>
     <div class="time-row section-gap">
       <span class="time-prefix">From</span>
@@ -61,7 +58,6 @@
       </mat-form-field>
     </div>
 
-    <!-- Holiday -->
     <label class="form-label">Holiday</label>
     <mat-form-field appearance="outline" class="full-width section-gap">
       <mat-select placeholder="Select day">
@@ -76,7 +72,6 @@
       </mat-select>
     </mat-form-field>
 
-    <!-- Actions -->
     <div class="actions">
       <button mat-stroked-button class="btn-back" (click)="back()">Back</button>
       <button mat-raised-button class="btn-done" (click)="done()">Done</button>
