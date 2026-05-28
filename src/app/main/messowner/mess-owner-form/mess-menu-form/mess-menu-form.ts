@@ -56,12 +56,12 @@ export class MessMenuForm implements OnInit{
 
   // ── Default items per tab ────────────────────
   private getDefaultItems(tab: 'morning' | 'evening'): MenuItem[] {
-    const morningItems = ['Idli', 'Poha', 'Upma', 'Chapati', 'Dal', 'Tea'];
-    const eveningItems = ['Chapati', 'Dal', 'Rice', 'Sabji', 'Roti', 'Curry'];
+    const morningItems = ['Idli', 'Poha', 'Upma', 'Chapati',];
+    const eveningItems = ['Chapati', 'Dal', 'Rice', 'Sabji'];
     const list = tab === 'morning' ? morningItems : eveningItems;
     return list.map((name, i) => ({
       name,
-      checked: i < 3   // first 3 checked by default
+      checked: i < 0  // first 3 checked by default
     }));
   }
 
@@ -94,8 +94,6 @@ export class MessMenuForm implements OnInit{
       day.newItem = '';
       return;
     }
-    day.items.push({ name: val, checked: true });
-    day.newItem = '';
   }
 
   // ── Navigation ───────────────────────────────
