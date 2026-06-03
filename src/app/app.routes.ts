@@ -14,5 +14,13 @@ export const routes: Routes = [
     {
         path: 'mess-owner-form',
         loadChildren: () => import('./main/messowner/mess-owner-form/messform.route').then(m => m.routes)
+    },
+    {
+        path: 'mess-owner-dashboard',
+        loadChildren: () => import('./main/messowner/mess-owner-dashboard/messownerdashboards.routes').then(m => m.routes)
+    },
+    {
+        path:'customer-home',
+        loadComponent: () => import('./main/customer/customer-home/customer-home').then(m => m.CustomerHome)
     }
 ];
