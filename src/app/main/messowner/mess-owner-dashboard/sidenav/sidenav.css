@@ -1,0 +1,41 @@
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  background: #f2eceb;
+  padding: 30px 15px;
+  border-right: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 14px 16px;
+  margin-bottom: 12px;
+
+  border-radius: 12px;
+
+  text-decoration: none;
+  color: #111;
+  font-size: 18px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.icon {
+  width: 20px;
+  text-align: center;
+}
+
+.menu-item:hover {
+ background: #cf6242;
+}
+
+.menu-item.active {
+  background: #cf6242;
+  
+}

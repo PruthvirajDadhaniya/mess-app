@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { Navbar } from './navbar/navbar';
+import { Sidenav } from './sidenav/sidenav';
 
 @Component({
+  standalone: true,
   selector: 'app-mess-owner-dashboard',
-  imports: [],
+  imports: [RouterOutlet, Navbar, Sidenav],
   templateUrl: './mess-owner-dashboard.html',
-  styleUrl: './mess-owner-dashboard.css',
+  styleUrls: ['./mess-owner-dashboard.css'],
 })
 export class MessOwnerDashboard {
 
