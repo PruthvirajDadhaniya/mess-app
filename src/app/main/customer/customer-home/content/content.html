@@ -1,1 +1,89 @@
-<p>content works!</p>
+<section class="featured-section">
+
+    <div class="section-header">
+        <h2>Featured Home Chefs</h2>
+        <p>
+            Discover talented home chefs cooking authentic meals in your neighborhood
+        </p>
+    </div>
+
+    <div class="cards-grid">
+
+        <mat-card class="chef-card" *ngFor="let chef of displayedChefs">
+
+            <div class="card-image">
+                <img [src]="chef.image" [alt]="chef.name" (error)="onImageError($event)">
+
+            </div>
+
+            <div class="card-content">
+
+                <div class="title-row">
+                    <h3>{{ chef.name }}</h3>
+
+                    <button mat-icon-button>
+                        <mat-icon>favorite_border</mat-icon>
+                    </button>
+                </div>
+
+                <div class="rating-row">
+                    <span class="stars">★★★★☆</span>
+                    <span class="rating-badge">
+                        {{ chef.rating }} | {{ chef.reviews }}
+                    </span>
+
+                    <span class="veg">
+                        <span class="veg-icon"></span>
+                        <span class="nonveg-icon"></span>
+                    </span>
+                </div>
+
+                <p class="address">
+                    {{ chef.address }}
+                </p>
+
+                <div class="distance">
+                    <mat-icon>location_on</mat-icon>
+                    {{ chef.distance }}
+                </div>
+
+                <div class="timing">
+                    <mat-icon>schedule</mat-icon>
+                    {{ chef.timing }}
+                </div>
+
+                <div class="timing">
+                    <mat-icon>schedule</mat-icon>
+                    {{ chef.evening }}
+                </div>
+
+                <div class="phone">
+                    <mat-icon>call</mat-icon>
+                    {{ chef.phone }}
+                </div>
+
+                <div class="card-footer">
+                    <button mat-flat-button class="menu-btn">
+                        Menu
+                        <mat-icon>arrow_forward</mat-icon>
+                    </button>
+                </div>
+
+            </div>
+
+        </mat-card>
+
+    </div>
+
+    <div class="show-more-wrapper" *ngIf="visibleCount < chefs.length">
+
+        <button mat-flat-button class="show-more-btn" (click)="showMore()">
+
+            Show more
+            <mat-icon>keyboard_arrow_down</mat-icon>
+
+        </button>
+
+    </div>
+
+</section>
