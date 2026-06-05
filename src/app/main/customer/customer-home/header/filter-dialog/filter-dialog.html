@@ -1,0 +1,44 @@
+<div class="dialog-container">
+
+  <!-- Close Button -->
+  <button mat-icon-button class="close-btn" (click)="closeDialog()">
+    <mat-icon>close</mat-icon>
+  </button>
+
+  <!-- Ratings -->
+  <h3 class="section-label">Ratings</h3>
+  <mat-divider class="divider"></mat-divider>
+
+  <div class="chip-group">
+    <button class="chip"
+            *ngFor="let r of ratingOptions"
+            [class.active]="selectedRating === r"
+            (click)="selectedRating = r">
+      {{ r }}
+    </button>
+  </div>
+
+  <!-- Food Type -->
+  <h3 class="section-text">Food Type</h3>
+  <mat-divider class="divider"></mat-divider>
+
+  <div class="chip-group">
+    <button class="chip"
+            *ngFor="let f of foodOptions"
+            [class.active]="selectedFood === f"
+            (click)="selectedFood = f">
+      {{ f }}
+    </button>
+  </div>
+
+  <!-- Footer Buttons -->
+  <div class="dialog-footer">
+    <button mat-stroked-button class="btn-reset" (click)="resetFilters()">
+      Rest Filter
+    </button>
+    <button mat-stroked-button class="btn-apply" (click)="applyFilters()">
+      Apply Filter
+    </button>
+  </div>
+
+</div>

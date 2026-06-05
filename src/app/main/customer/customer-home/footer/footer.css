@@ -1,0 +1,101 @@
+/* ── FOOTER WRAPPER ── */
+.footer {
+  position: relative;
+  background-color: #F5EAE3;
+  overflow: hidden;
+  padding: 97px 130px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ── BACKGROUND IMAGE ── */
+.footer-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.22;
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: multiply;
+}
+
+/* ── CONTENT LAYER (above background) ── */
+.footer-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+}
+
+/* ── BRAND COLUMN ── */
+.brand-col {
+  flex: 0 0 378px;
+  margin-right: 60px;
+}
+
+.logo {
+  margin-bottom: 12px;
+}
+
+.logo-img {
+  width: 110px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.brand-desc {
+  font-size: 15px;
+  line-height: 1.65;
+  font-weight: 400;
+}
+
+/* ── NAV COLUMNS WRAPPER ── */
+.nav-cols {
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+  padding-top: 2px;
+}
+
+/* ── EACH NAV COLUMN ── */
+.nav-col h4 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.nav-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── NAV LINKS — override Angular Material mat-button styles ── */
+.nav-col ul li a {
+  font-size: 15px;
+  text-decoration: none;
+  font-weight: 400;
+  font-family: 'Poppins', sans-serif;
+  display: inline-block;
+  padding: 0 !important;
+  min-width: unset !important;
+  height: unset !important;
+  line-height: unset !important;
+  letter-spacing: unset !important;
+  background: transparent !important;
+  transition: color 0.18s;
+}
+
+.nav-col ul li a:hover {
+  color: #C84B2F;
+  background: transparent !important;
+}
+

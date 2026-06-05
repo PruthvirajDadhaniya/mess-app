@@ -1,1 +1,112 @@
-<p>header works!</p>
+<mat-toolbar class="navbar">
+
+    <div class="logo">
+        <img src="../../../../../assets/images/brand-logo.png" alt="Find Food Logo" class="logo-img" />
+    </div>
+
+    <div class="nav-links">
+        <a>Home</a>
+        <a>Service</a>
+        <a>Support</a>
+        <a>About</a>
+    </div>
+
+    <div class="nav-actions">
+        <button mat-icon-button>
+            <mat-icon>favorite_border</mat-icon>
+        </button>
+
+        <button mat-raised-button color="primary" class="signin-btn">
+            <mat-icon>person_outline</mat-icon>
+            Sign In
+        </button>
+    </div>
+
+</mat-toolbar>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <!-- Left Food Image -->
+    <img src="../../../../../assets/images/right-thali.png" class="left-food" alt="Thali" />
+
+    <!-- Right Food Image -->
+    <img src="../../../../../assets/images/left-thali.png" class="right-food" alt="Rice Bowl" />
+
+    <div class="hero-content">
+
+
+        <h1>
+            Taste of Home, Delivered
+            <br />
+            Discover authentic home-cooked meals
+        </h1>
+
+        <div class="search-container">
+
+            <mat-form-field appearance="outline" class="location-field">
+                <mat-icon matPrefix>location_on</mat-icon>
+                <input matInput placeholder="Wadgaon Sheri, Pune" />
+            </mat-form-field>
+
+            <div class="search-box">
+
+                <mat-form-field appearance="outline" class="search-field">
+                    <mat-icon matPrefix>search</mat-icon>
+                    <input matInput placeholder="Search for mess" />
+                </mat-form-field>
+
+                <button mat-raised-button class="filter-btn" (click)="openFilterDialog()">
+                    <mat-icon>tune</mat-icon> Filter
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Features -->
+<section class="features-section">
+
+    <div class="feature-card">
+
+        <div class="icon-box">
+            <mat-icon>home</mat-icon>
+        </div>
+
+        <div>
+            <h3>Home-Tested & Verified</h3>
+            <p>All chefs are verified for quality</p>
+        </div>
+
+    </div>
+
+    <div class="feature-card">
+
+        <div class="icon-box">
+            <mat-icon>shield</mat-icon>
+        </div>
+
+        <div>
+            <h3>Hygiene Certified</h3>
+            <p>Regular hygiene inspections</p>
+        </div>
+
+    </div>
+
+    <div class="feature-card">
+
+        <div class="icon-box">
+            <mat-icon>shopping_basket</mat-icon>
+        </div>
+
+        <div>
+            <h3>Fresh & Authentic</h3>
+            <p>Made with love, just like home</p>
+        </div>
+
+    </div>
+
+</section>
