@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+.shell {
+  display: flex;
+  min-height: 100vh;
+  background: white;
+}
+
+.main-content {
+  flex: 1;
+  padding: 32px 36px;
+  overflow-y: auto;
+}
+
+.greeting-title {
+  font-size: 35px;
+  font-weight: 400;
+  color: #2c2c2c;
+}
+
+.greeting-sub {
+  font-size: 14px;
+  color: #000000;
+  margin-top: 4px;
+  margin-left: 10px;
+  margin-bottom: 24px;
+}
+
+.menu-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  padding: 20px 24px 24px;
+  border: 1.5px solid black;
+}
+
+.card-controls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.ctrl-btn {
+  padding: 7px 20px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1.5px solid #C85A3E;
+  background: #fff;
+  color: #C85A3E;
+  font-family: inherit;
+  transition: background 0.18s, color 0.18s;
+}
+
+.ctrl-btn:hover {
+  background: #C85A3E;
+  color: #fff;
+}
+
+.days-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.day-block {
+  border: 1.5px solid #e8e0df;
+  border-radius: 10px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.day-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  cursor: pointer;
+  background: #fafafa;
+  transition: background 0.15s;
+  user-select: none;
+  border-bottom: 1.5px solid #e8e0df;
+  border: 1.5px solid #c85a3e;
+  /* overflow: visible;  */
+}
+
+.day-header:hover {
+  background: #f5e6e4;
+}
+
+.day-header.is-open {
+  background: #fff;
+}
+
+.day-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #2c2c2c;
+}
+
+.arrow-icon {
+  color: #888;
+  font-size: 12px;
+}
+
+.day-body {
+  padding: 14px 16px 16px;
+  border-top: 1px solid #e8e0df;
+  animation: slideDown 0.18s ease;
+  border: 1px solid #c85a3e;
+  /* overflow: visible;  */
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.cb-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 28px;
+  margin-bottom: 14px;
+}
+
+.cb-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.cb-box {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #e8e0df;
+  border-radius: 4px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, border-color 0.15s;
+  flex-shrink: 0;
+}
+
+.cb-box.checked {
+  background: #C85A3E;
+  border-color: #C85A3E;
+}
+
+.cb-tick {
+  font-size: 11px;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.cb-text {
+  font-size: 13px;
+  color: #2c2c2c;
+}
+
+.add-menu-label {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 6px;
+}
+
+.add-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.add-input {
+  flex: 0 0 200px;
+  height: 34px;
+  border: 1.5px solid #e8e0df;
+  border-radius: 6px;
+  padding: 0 10px;
+  font-size: 13px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.add-input:focus {
+  border-color: #C85A3E;
+}
+
+.btn-add {
+  height: 34px;
+  padding: 0 20px;
+  background: #C85A3E;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+
+.btn-add:hover {
+  background: #a93226;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #e8e0df;
+}
+
+.btn-edit {
+  padding: 9px 28px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  background: #e53935;
+  color: #fff;
+  border: none;
+  font-family: inherit;
+  transition: background 0.18s;
+}
+
+.btn-edit:hover {
+  background: #c62828;
+}
+
+.btn-save {
+  padding: 9px 28px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  background: #4caf50;
+  color: #fff;
+  border: none;
+  font-family: inherit;
+  transition: background 0.18s;
+}
+
+.btn-save:hover {
+  background: #388e3c;
+}
+
+@media (max-width: 768px) {
+  .shell {
+    flex-direction: column;
+  }
+
+  .main-content {
+    padding: 20px 16px;
+  }
+}
