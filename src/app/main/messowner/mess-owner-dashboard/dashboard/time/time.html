@@ -1,1 +1,50 @@
-<p>time works!</p>
+<div class="time-container">
+  <h1 class="welcome-text">Good Morning, Joe!</h1>
+  <p class="sub-welcome">It's time to track your finance and services.</p>
+
+  <div class="card-panel">
+    <div class="form-container">
+      
+      <div class="time-row-group">
+        <label class="row-label">Morning time</label>
+        <div class="time-inputs">
+          <span class="label-text">From</span>
+          <input type="text" [(ngModel)]="timeData.morningFrom" class="time-box">
+          <span class="label-text">To</span>
+          <input type="text" [(ngModel)]="timeData.morningTo" class="time-box">
+        </div>
+      </div>
+
+      <div class="time-row-group">
+        <label class="row-label">Evening time</label>
+        <div class="time-inputs">
+          <span class="label-text">From</span>
+          <input type="text" [(ngModel)]="timeData.eveningFrom" class="time-box">
+          <span class="label-text">To</span>
+          <input type="text" [(ngModel)]="timeData.eveningTo" class="time-box">
+        </div>
+      </div>
+
+      <div class="time-row-group">
+        <label class="row-label">Holiday</label>
+        <div class="select-wrapper">
+          <select [(ngModel)]="timeData.holiday" class="dropdown-box">
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
+          </select>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="action-buttons">
+      <button class="btn-edit" (click)="onEdit()">Edit</button>
+      <button class="btn-save" (click)="onSave()">Save</button>
+    </div>
+  </div>
+</div>
