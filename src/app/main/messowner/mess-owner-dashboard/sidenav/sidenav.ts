@@ -7,7 +7,6 @@ import {  RouterOutlet } from '@angular/router';
   selector: 'app-sidenav',
   standalone: true,
   imports: [
-    RouterOutlet,
    
   ],
   templateUrl: './sidenav.html',
