@@ -1,0 +1,135 @@
+:host {
+  --btn-orange: #C85A32;
+  --btn-green: #1DB954;
+  --border-color: #B3B3B3;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  display: block;
+  background-color: #FFFFFF;
+}
+
+.time-container {
+  max-width: 780px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.welcome-text {
+  font-size: 3rem;
+  margin: 0 0 10px 0;
+  color: #111111;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+}
+
+.sub-welcome {
+  color: #444444;
+  margin-bottom: 35px;
+  font-size: 1.1rem;
+}
+
+.card-panel {
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  padding: 40px;
+  background-color: #FFFFFF;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.time-row-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.row-label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #000000;
+}
+
+.time-inputs {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.label-text {
+  font-size: 1rem;
+  color: #111111;
+}
+
+.time-box {
+  padding: 12px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  width: 115px;
+  text-align: center;
+  font-size: 1rem;
+  outline: none;
+  background-color: #FFFFFF;
+}
+
+.select-wrapper {
+  position: relative;
+  width: 270px;
+}
+
+.dropdown-box {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  font-size: 1rem;
+  outline: none;
+  background-color: #FFFFFF;
+  appearance: none;
+  cursor: pointer;
+}
+
+/* Dropdown triangle arrow element */
+.select-wrapper::after {
+  content: '▼';
+  font-size: 0.75rem;
+  color: #555555;
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.btn-edit, .btn-save {
+  padding: 12px 36px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  color: white;
+  transition: opacity 0.2s ease;
+}
+
+.btn-edit {
+  background-color: var(--btn-orange);
+}
+
+.btn-save {
+  background-color: var(--btn-green);
+}
+
+.btn-edit:hover, .btn-save:hover {
+  opacity: 0.9;
+}

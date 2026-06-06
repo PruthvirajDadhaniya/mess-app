@@ -1,1 +1,30 @@
-<p>price works!</p>
+<div class="dashboard-wrapper">
+  <h1 class="welcome-text">Good Morning, Joe!</h1>
+  <p class="sub-welcome">It's time to track your finance and services.</p>
+
+  <div class="card-panel">
+    <div class="form-container">
+      <div class="form-group">
+        <label>Monthly membership charges</label>
+        <input type="text" [(ngModel)]="priceData.monthlyMembership">
+      </div>
+      <div class="form-group">
+        <label>Single time meal charges</label>
+        <input type="text" [(ngModel)]="priceData.singleMeal">
+      </div>
+      <div class="form-group">
+        <label>Special day veg charges</label>
+        <input type="text" [(ngModel)]="priceData.specialVeg">
+      </div>
+      <div class="form-group">
+        <label>Special day non-veg charges</label>
+        <input type="text" [(ngModel)]="priceData.specialNonVeg">
+      </div>
+    </div>
+
+    <div class="action-buttons">
+      <button class="btn-edit" (click)="onEdit()">Edit</button>
+      <button class="btn-save" (click)="onSave()">Save</button>
+    </div>
+  </div>
+</div>

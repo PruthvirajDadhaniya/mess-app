@@ -123,10 +123,11 @@
 
 .hero-content h1 {
   color: #ffffff;
-  font-size: 40px;
+  font-size: 35px;
   font-weight: 600;
   line-height: 1.15;
   margin-bottom: 40px;
+  font-family: "Poppins", sans-serif;
 }
 
 /* =========================
@@ -139,6 +140,14 @@
   justify-content: center;
   gap: 16px;
 }
+
+.search-container mat-form-field mat-icon {
+  color:#C85A3E;
+}
+
+.search-box mat-form-field mat-icon {
+  color: #7D7D7D;
+} 
 
 /* Location */
 .location-field {
@@ -160,7 +169,7 @@
 /* Search Box */
 
 .search-box {
-  width: 520px;
+  width: 418px;
   background: white;
   border-radius: 14px;
   display: flex;
@@ -257,14 +266,14 @@
 
 .feature-card h3 {
   margin: 0;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 500;
   color: #111;
 }
 
 .feature-card p {
   margin: 4px 0 0;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 400;
   color: #666;
 }
@@ -272,7 +281,7 @@
 /* Left Thali */
 .left-food {
   position: absolute;
-  left: -180px;
+  left: -265px;
   top: 50%;
   transform: translateY(-50%);
   width: 560px;
@@ -282,7 +291,7 @@
 /* Right Bowl */
 .right-food {
   position: absolute;
-  right: -205px;
+  right: -285px;
   top: 50%;
   transform: translateY(-50%);
   width: 600px;
