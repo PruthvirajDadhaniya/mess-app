@@ -1,7 +1,9 @@
 <div class="sidebar">
 
-  <a class="menu-item active
-  " routerLink="./dashboard">
+  <a class="menu-item"
+     routerLink="/mess-owner-dashboard"
+     routerLinkActive="active"
+     [routerLinkActiveOptions]="{ exact: true }">
     <span class="icon">
       <i class="fa-solid fa-table-cells-large"></i>
     </span>
@@ -9,40 +11,48 @@
   </a>
 
 
-  <a class="menu-item"  routerLink="/mess-owner-dashboard/details">
-    <span class="icon"> 
+  <a class="menu-item"
+     routerLink="/mess-owner-dashboard/details"
+     routerLinkActive="active">
+    <span class="icon">
       <i class="fa-regular fa-user"></i>
     </span>
     <span>Details</span>
   </a>
 
-
-  <a class="menu-item"  routerLink="/mess-owner-dashboard/menu">
+  <a class="menu-item"
+     routerLink="/mess-owner-dashboard/menu"
+     routerLinkActive="active">
     <span class="icon">
       <i class="fa-solid fa-utensils"></i>
     </span>
     <span>Menu</span>
   </a>
 
-
-  <a class="menu-item" routerLink="/mess-owner-dashboard/price">
+  <a class="menu-item"
+     routerLink="/mess-owner-dashboard/price"
+     routerLinkActive="active">
     <span class="icon">
       <i class="fa-solid fa-wallet"></i>
     </span>
     <span>Price</span>
   </a>
 
-
-  <a class="menu-item" routerLink="/mess-owner-dashboard/time">
+  <a class="menu-item"
+     routerLink="/mess-owner-dashboard/time"
+     routerLinkActive="active">
     <span class="icon">
-      <i class="fa-regular fa-clock"></i></span>
+      <i class="fa-regular fa-clock"></i>
+    </span>
     <span>Time</span>
   </a>
 
-
-  <a class="menu-item" routerLink="/mess-owner-dashboard/feedback">
+  <a class="menu-item"
+     routerLink="/mess-owner-dashboard/feedback"
+     routerLinkActive="active">
     <span class="icon">
-      <i class="fa-regular fa-comment-dots"></i></span>
+      <i class="fa-regular fa-comment-dots"></i>
+    </span>
     <span>Feedback</span>
   </a>
 

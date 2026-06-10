@@ -1,0 +1,152 @@
+<div class="dashboard">
+
+  <h1>Good Morning, Joe!</h1>
+  <p>It's time to track your finance and services.</p>
+
+  <mat-card class="dashboard-card">
+
+   <div class="stats-container">
+
+  <!-- Customer Review Card -->
+  <mat-card class="dashboard-card">
+
+    <div class="card-header">
+      <h3>Customer Review</h3>
+    </div>
+
+    <mat-card-content>
+
+      <div class="rating-summary">
+
+        <div class="rating-score">
+          <h2>4.5</h2>
+        </div>
+
+        <div class="rating-details">
+          <div class="stars">
+            ★ ★ ★ ★ ☆
+          </div>
+
+          <div class="review-count">
+            5.2k Ratings 26 reviews
+          </div>
+        </div>
+
+      </div>
+
+      <div class="rating-bars">
+
+        <div class="rating-row">
+          <div class="progress-bar">
+            <div class="fill blue" style="width:90%"></div>
+          </div>
+          <span>5.0 ★</span>
+        </div>
+
+        <div class="rating-row">
+          <div class="progress-bar">
+            <div class="fill green" style="width:75%"></div>
+          </div>
+          <span>4.0 ★</span>
+        </div>
+
+        <div class="rating-row">
+          <div class="progress-bar">
+            <div class="fill lime" style="width:68%"></div>
+          </div>
+          <span>3.0 ★</span>
+        </div>
+
+        <div class="rating-row">
+          <div class="progress-bar">
+            <div class="fill orange" style="width:42%"></div>
+          </div>
+          <span>2.0 ★</span>
+        </div>
+
+        <div class="rating-row">
+          <div class="progress-bar">
+            <div class="fill red" style="width:25%"></div>
+          </div>
+          <span>1.0 ★</span>
+        </div>
+
+      </div>
+
+    </mat-card-content>
+
+  </mat-card>
+
+  <!-- Food Preference Card -->
+  <mat-card class="dashboard-card">
+
+    <div class="card-header">
+      <h3>Food Preference</h3>
+    </div>
+
+    <mat-card-content>
+
+      <div class="food-chart-container">
+
+        <!-- <div class="food-label left">
+          <span>Non-Veg</span>
+          <strong>80%</strong>
+        </div> -->
+
+        <div class="chart-wrapper">
+          <canvas id="foodChart"></canvas>
+        </div>
+
+        <!-- <div class="food-label right">
+          <span>Veg</span>
+          <strong>20%</strong>
+        </div> -->
+
+      </div>
+
+    </mat-card-content>
+
+  </mat-card>
+
+  <!-- Total Views Card -->
+  <mat-card class="dashboard-card">
+
+    <div class="card-header">
+      <h3>Total Views</h3>
+    </div>
+
+    <mat-card-content>
+
+      <div class="views-content">
+        <span>580</span>
+        <i class="fa-regular fa-eye"></i>
+      </div>
+
+    </mat-card-content>
+
+  </mat-card>
+
+</div>
+
+    <div class="chart-header">
+
+      <h2>Customer Visit</h2>
+
+      <div class="filters">
+        <button class="filter-btn">Daily</button>
+        <button class="filter-btn">Weekly</button>
+        <button class="filter-btn active">Monthly</button>
+        <button class="filter-btn">Yearly</button>
+      </div>
+
+    </div>
+
+    <mat-card class="chart-card">
+
+      <canvas id="visitChart"></canvas>
+
+    </mat-card>
+
+  </mat-card>
+
+</div>

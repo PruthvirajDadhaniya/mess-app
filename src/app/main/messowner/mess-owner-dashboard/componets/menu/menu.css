@@ -1,45 +1,46 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-*,
+/* *,
 *::before,
 *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
-}
-.shell {
+} */
+/* .shell {
   display: flex;
   min-height: 100vh;
   background: white;
-}
+} */
 
 .main-content {
-  flex: 1;
-  padding: 32px 36px;
+  flex: 1;    
+  padding: 60px;
+  margin-top: 50px;
   overflow-y: auto;
+    font-family: 'Poppins', sans-serif;
 }
 
 .greeting-title {
-  font-size: 35px;
+  font-size: 55px;
   font-weight: 400;
-  color: #2c2c2c;
+  letter-spacing: -0.5px;
 }
 
 .greeting-sub {
-  font-size: 14px;
-  color: #000000;
-  margin-top: 4px;
+  font-size: 17px;
+  font-weight: 400;
+  margin-bottom: 30px;
   margin-left: 10px;
-  margin-bottom: 24px;
 }
 
 .menu-card {
-  background: #fff;
   border-radius: 15px;
+  border: 1px solid #c7c7c7;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   padding: 20px 24px 24px;
-  border: 1.5px solid black;
+  background: #FEFBFA;
 }
 
 .card-controls {
@@ -73,7 +74,7 @@
 }
 
 .day-block {
-  border: 1.5px solid #e8e0df;
+  border: 1px solid #c7c7c7;
   border-radius: 10px;
   overflow: hidden;
   isolation: isolate;
@@ -89,7 +90,6 @@
   transition: background 0.15s;
   user-select: none;
   border-bottom: 1.5px solid #e8e0df;
-  border: 1.5px solid #c85a3e;
   /* overflow: visible;  */
 }
 
@@ -116,7 +116,7 @@
   padding: 14px 16px 16px;
   border-top: 1px solid #e8e0df;
   animation: slideDown 0.18s ease;
-  border: 1px solid #c85a3e;
+  /* border: 1px solid #c85a3e; */
   /* overflow: visible;  */
 }
 

@@ -1,0 +1,147 @@
+<div class="page-wrapper">
+
+    <!-- PAGE HEADER -->
+    <!-- <div class="page-header">
+    <h1>Good Morning, Joe!</h1>
+    <p>It's time to track your finance and services.</p>
+  </div> -->
+    <h1>Good Morning, Joe!</h1>
+    <p>It's time to track your finance and services.</p>
+
+    <!-- MAIN CARD -->
+    <mat-card class="main-card">
+
+        <!-- ── MENU IMAGES ── -->
+        <div class="menu-section">
+            <h2 class="title">Menu Images</h2>
+
+            <div class="image-container">
+
+                <!-- Left Arrow -->
+                <button mat-mini-fab class="nav-btn left-btn" (click)="previousImage()">
+                    <mat-icon>arrow_back</mat-icon>
+                </button>
+
+                <!-- Image -->
+                <img [src]="images[currentImageIndex]" alt="Menu Image" class="food-image">
+
+                <!-- Overlay -->
+                <div class="overlay">
+
+                    <button mat-raised-button class="browse-btn">
+                        <mat-icon>folder</mat-icon>
+                        Browse File
+                    </button>
+
+                    <button mat-raised-button class="camera-btn">
+                        <mat-icon>photo_camera</mat-icon>
+                        Take Photo
+                    </button>
+
+                </div>
+
+                <!-- Right Arrow -->
+                <button mat-mini-fab class="nav-btn right-btn" (click)="nextImage()">
+                    <mat-icon>arrow_forward</mat-icon>
+                </button>
+
+                <!-- Dots -->
+                <div class="slider-dots">
+                    <span *ngFor="let image of images; let i = index" class="dot"
+                        [class.active]="i === currentImageIndex">
+                    </span>
+                </div>
+
+            </div>
+            <div class="c-edit-row">
+                <button mat-raised-button class="btn-orange" (click)="onEdit()">Edit</button>
+            </div>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <!-- ── MESS NAME ── -->
+        <div class="sec">
+            <h3 class="sec-title">Mess Name</h3>
+            <div class="f-group">
+                <input class="f-inp" type="text" [(ngModel)]="messName" placeholder="Mess name" />
+            </div>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <!-- ── ADDRESS ── -->
+        <div class="sec">
+            <h3 class="sec-title">Address</h3>
+            <div class="f-row">
+                <div class="f-group">
+                    <label class="f-label">Shop Number</label>
+                    <input class="f-inp" type="text" [(ngModel)]="shopNumber" />
+                </div>
+                <div class="f-group">
+                    <label class="f-label">Area/Locality</label>
+                    <input class="f-inp" type="text" [(ngModel)]="area" />
+                </div>
+            </div>
+            <div class="f-row">
+                <div class="f-group">
+                    <input class="f-inp" type="text" [(ngModel)]="city" placeholder="City" />
+                </div>
+                <div class="f-group">
+                    <input class="f-inp" type="text" [(ngModel)]="pincode" placeholder="PIN Code" />
+                </div>
+            </div>
+            <div class="f-group">
+                <input class="f-inp" type="text" [(ngModel)]="landmark" placeholder="Landmark" />
+            </div>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <!-- ── CONTACT ── -->
+        <div class="sec">
+            <h3 class="sec-title">Contact</h3>
+            <div class="f-row">
+                <div class="f-group">
+                    <label class="f-label">Mobile No.</label>
+                    <input class="f-inp" type="tel" [(ngModel)]="mobile" />
+                </div>
+                <div class="f-group">
+                    <label class="f-label">Email</label>
+                    <input class="f-inp" type="email" [(ngModel)]="email" />
+                </div>
+            </div>
+            <div class="f-group">
+                <label class="f-label">License</label>
+                <div class="lic-row">
+                    <input class="f-inp lic-inp" type="text" [(ngModel)]="license" />
+                    <button class="upload-btn">
+                        <mat-icon>upload</mat-icon> Upload license image
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <!-- ── FOOD ── -->
+        <div class="sec">
+            <h3 class="sec-title">Food</h3>
+            <label class="f-label">Food you serve</label>
+            <div class="food-wrap">
+                <button class="chip" *ngFor="let f of foodOptions" [class.chip-veg]="selectedFood === f && f === 'Veg'"
+                    [class.chip-nonveg]="selectedFood === f && f === 'Non-Veg'"
+                    [class.chip-both]="selectedFood === f && f === 'Both'" (click)="selectedFood = f">
+                    {{ f }}
+                </button>
+            </div>
+        </div>
+
+        <!-- ── FORM FOOTER ── -->
+        <div class="form-footer">
+            <button mat-raised-button class="btn-orange" (click)="onEdit()">Edit</button>
+            <button mat-raised-button class="btn-green" (click)="onSave()">Save</button>
+        </div>
+
+    </mat-card>
+</div>
