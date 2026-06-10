@@ -1,10 +1,14 @@
 .sidebar {
-  width: 220px;
-  height: 100vh;
-  background: #f2eceb;
-  padding: 30px 15px;
-  border-right: 1px solid #ddd;
-  box-sizing: border-box;
+  position: fixed;
+  top: 80px; /* Same height as navbar */
+  left: 0;
+  width: 260px;
+  height: calc(100vh - 80px);
+  background: #f6f6f6;
+  border-right: 1px solid #e5e5e5;
+  padding: 20px 0;
+  overflow-y: auto;
+  z-index: 999;
 }
 
 .menu-item {
@@ -12,30 +16,54 @@
   align-items: center;
   gap: 14px;
 
-  padding: 14px 16px;
-  margin-bottom: 12px;
-
-  border-radius: 12px;
+  padding: 14px 24px;
+  margin: 8px 16px;
 
   text-decoration: none;
-  color: #111;
-  font-size: 18px;
-  font-weight: 600;
+  color: #333;
 
+  border-radius: 10px;
+  transition: all 0.3s ease;
   cursor: pointer;
-  transition: 0.2s ease;
 }
 
-.icon {
-  width: 20px;
+.menu-item .icon {
+  width: 22px;
   text-align: center;
+  font-size: 18px;
+}
+
+.menu-item span:last-child {
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
 }
 
 .menu-item:hover {
- background: #cf6242;
+  background: #f0e1db;
+  color: #d66744;
 }
 
 .menu-item.active {
-  background: #cf6242;
-  
+  background: #d66744;
+  color: #fff;
+}
+
+.menu-item.active .icon {
+  color: #fff;
+}
+
+/* Scrollbar */
+
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #cfcfcf;
+  border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: transparent;
 }

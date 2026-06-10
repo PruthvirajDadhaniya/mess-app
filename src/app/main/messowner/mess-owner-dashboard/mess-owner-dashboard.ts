@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Navbar } from './navbar/navbar';
 import { Sidenav } from './sidenav/sidenav';
+import { MessownerFooter } from "./messowner-footer/messowner-footer";
 
 @Component({
   standalone: true,
   selector: 'app-mess-owner-dashboard',
-  imports: [RouterOutlet, Navbar, Sidenav],
+  imports: [RouterOutlet, Navbar, Sidenav, MessownerFooter],
   templateUrl: './mess-owner-dashboard.html',
   styleUrls: ['./mess-owner-dashboard.css'],
 })

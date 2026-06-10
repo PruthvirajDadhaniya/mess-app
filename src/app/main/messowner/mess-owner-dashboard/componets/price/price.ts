@@ -5,7 +5,9 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-price',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [
+    CommonModule, FormsModule
+  ],
   templateUrl: './price.html',
   styleUrls: ['./price.css']
 })
