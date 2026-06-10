@@ -1,17 +1,23 @@
-<p>mess-owner-dashboard works!</p>
+<div class="container-fluid p-0">
 
+    <!-- Navbar -->
+    <app-navbar></app-navbar>
 
-<!-- <router-outlet></router-outlet> -->
+    <div class="row g-0">
 
+        <!-- Sidebar -->
+        <div class="col-md-2 col-lg-2">
+            <app-sidenav></app-sidenav>
+        </div>
 
-<app-navbar></app-navbar>
+        <!-- Main Content -->
+        <div class="col-md-10 col-lg-10">
+            <router-outlet></router-outlet>
+        </div>
 
-<div class="main-layout">
-
-    <app-sidenav></app-sidenav>
-
-    <div class="content">
-        <router-outlet></router-outlet>
     </div>
+
+    <!-- Footer -->
+    <app-messowner-footer></app-messowner-footer>
 
 </div>

@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
-import {  RouterOutlet } from '@angular/router';
-
-
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-sidenav',
   standalone: true,
-  imports: [
-   
-  ],
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './sidenav.html',
-  styleUrl: './sidenav.css',
+  styleUrls: ['./sidenav.css'],
 })
 export class Sidenav {
+  constructor(private router: Router) { }
 
+  navigateToCharts() {
+    this.router.navigate(['/mess-owner-dashboard/charts']);
+  }
 }

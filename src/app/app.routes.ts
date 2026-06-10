@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { LoginRegister } from './main/login/login-register/login-register';
 
 export const routes: Routes = [
+
     {
         path: '',
         redirectTo: 'mess-owner-form',
@@ -17,7 +18,7 @@ export const routes: Routes = [
     },
     {
         path: 'mess-owner-dashboard',
-        loadChildren: () => import('./main/messowner/mess-owner-dashboard/messownerdashboards.routes').then(m => m.routes)
+        loadChildren: () => import('./main/messowner/mess-owner-dashboard/messownerdashboards.routes').then(m => m.dashboardRoutes)
     },
     {
       path: 'customer-home',

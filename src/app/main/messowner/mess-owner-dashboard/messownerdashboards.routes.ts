@@ -1,46 +1,46 @@
 import { Routes } from '@angular/router';
+import { Charts } from './componets/charts/charts';
+import { MessOwnerDashboard } from './mess-owner-dashboard';
 
-export const routes: Routes = [
-    
+export const dashboardRoutes: Routes = [
+    {
+        path: '',
+        component: MessOwnerDashboard,
+        children: [
             {
-                path: 'menu',
-                loadComponent: () =>
-                    import('./dashboard/menu/menu')
-                        .then(m => m.Menu)
+                path: '',
+                redirectTo: 'charts',
+                pathMatch: 'full'
             },
             {
                 path: 'charts',
-                loadComponent: () => import('./dashboard/charts/charts').then(m => m.Charts)
+                component: Charts,
             },
             {
                 path: 'details',
-                loadComponent: () => import('./dashboard/details/details').then(m => m.Details)
-            },
-            {
-                path: 'menu',
-                loadComponent: () => import('./dashboard/menu/menu').then(m => m.Menu)
-            },
-            {
-                path: 'price',
-                loadComponent: () => import('./dashboard/price/price').then(m => m.Price)
-            },
-            {
-                path: 'time',
-                loadComponent: () => import('./dashboard/time/time').then(m => m.Time)
+                loadComponent: () =>
+                    import('./componets/details/details').then(m => m.Details)
             },
             {
                 path: 'feedback',
-                loadComponent: () => import('./dashboard/feedback/feedback').then(m => m.Feedback)
+                loadComponent: () =>
+                    import('./componets/feedback/feedback').then(m => m.Feedback)
             },
-
-    {
-        path: 'navbar',
-        loadComponent: () => import('./navbar/navbar').then(m => m.Navbar)
-    },
-    {
-        path: 'sidenav',
-        loadComponent: () => import('./sidenav/sidenav').then(m => m.Sidenav)
-    },
-
-
+            {
+                path: 'menu',
+                loadComponent: () =>
+                    import('./componets/menu/menu').then(m => m.Menu)
+            },
+            {
+                path: 'price',
+                loadComponent: () =>
+                    import('./componets/price/price').then(m => m.Price)
+            },
+            {
+                path: 'time',
+                loadComponent: () =>
+                    import('./componets/time/time').then(m => m.Time)
+            }
+        ]
+    }
 ];
