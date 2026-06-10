@@ -63,17 +63,17 @@
                 </div>
 
                 <div class="card-footer">
-                    <button mat-flat-button class="menu-btn">
+                    <button mat-flat-button class="menu-btn" (click)="openDrawer(chef)" >
                         Menu
                         <mat-icon>arrow_forward</mat-icon>
                     </button>
                 </div>
 
             </div>
-
         </mat-card>
-
+        
     </div>
+    <app-menu-drawer #menuDrawer></app-menu-drawer>
 
     <div class="show-more-wrapper" *ngIf="visibleCount < chefs.length">
 

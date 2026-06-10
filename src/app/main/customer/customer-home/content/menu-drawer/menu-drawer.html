@@ -1,0 +1,72 @@
+<!-- BACKDROP with blur -->
+<div class="backdrop" *ngIf="isOpen" [@backdropAnim] (click)="close()">
+</div>
+
+<!-- CENTER MODAL DRAWER -->
+<div class="drawer" *ngIf="isOpen" [@drawerAnim]>
+
+  <!-- HERO IMAGE -->
+  <div class="hero">
+    <!-- <img [src]="chef.heroImg" [alt]="chef.name" class="hero-img"/> -->
+    <img [src]="chef.heroImg" [alt]="chef.name" class="hero-img" (error)="onImageError($event)" />
+    <div class="hero-overlay"></div>
+
+    <button class="close-btn" (click)="close()">
+      <mat-icon>close</mat-icon>
+    </button>
+
+    <div class="hero-info">
+      <div class="hero-name">
+        {{ chef.name }}
+        <span class="hero-heart">
+          <mat-icon>{{ chef.liked ? 'favorite' : 'favorite_border' }}</mat-icon>
+        </span>
+      </div>
+      <div class="hero-sub">{{ chef.subtitle }}</div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="drawer-body">
+
+    <!-- 4 INFO CARDS -->
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="i-label"><mat-icon>schedule</mat-icon> Timing</div>
+        <div class="i-value">{{ chef.timing }}</div>
+      </div>
+      <div class="info-card">
+        <div class="i-label"><mat-icon>near_me</mat-icon> Distance</div>
+        <div class="i-value">{{ chef.distance }}</div>
+      </div>
+      <div class="info-card">
+        <div class="i-label"><mat-icon>star</mat-icon> Rating</div>
+        <div class="i-value">{{ chef.rating }}</div>
+      </div>
+      <div class="info-card">
+        <div class="i-label"><mat-icon>eco</mat-icon> Veg/Non-Veg</div>
+        <div class="i-value">{{ chef.foodType }}</div>
+      </div>
+    </div>
+
+    <!-- ADDRESS + CONTACT -->
+    <div class="addr-grid">
+      <div class="addr-card">
+        <div class="a-label"><mat-icon>location_on</mat-icon> Address</div>
+        <div class="a-value">{{ chef.address }}</div>
+      </div>
+      <div class="addr-card">
+        <div class="a-label"><mat-icon>call</mat-icon> Contact</div>
+        <div class="a-value">{{ chef.contact }}</div>
+      </div>
+    </div>
+
+    <!-- TODAY'S MENU -->
+    <h3 class="menu-title">Today's Menu</h3>
+    <div class="menu-card">
+      <!-- <img [src]="chef.menuImg" alt="Today's Menu" class="menu-img"/> -->
+      <img [src]="chef.menuImg" alt="Today's Menu" class="menu-img" (error)="onImageError($event)" />
+    </div>
+
+  </div>
+</div>
