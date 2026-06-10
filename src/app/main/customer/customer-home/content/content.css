@@ -18,10 +18,10 @@
 }
 
 .section-header {
-    font-family: "Poppins", sans-serif;
-    font-size: 20px;
-    font-weight: 400;
-    margin-left:65px;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  margin-left: 65px;
 }
 
 .section-header h2 {
@@ -37,7 +37,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 17px;
   font-weight: 400;
-  margin-bottom:40px;
+  margin-bottom: 40px;
 }
 
 .cards-grid {
@@ -50,7 +50,7 @@
 .chef-card {
   border-radius: 16px !important;
   overflow: hidden;
-  box-shadow: 0 2px 12px rgba(0,0,0,.08) !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, .08) !important;
 }
 
 .card-image img {
@@ -75,7 +75,7 @@
   font-size: 20px;
   font-weight: 500;
   margin: 0;
-  color:#000000;
+  color: #000000;
 }
 
 .rating-row {
@@ -155,7 +155,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 15px;
   margin-bottom: 10px;
-  font-weight:400;
+  font-weight: 400;
 }
 
 .distance,

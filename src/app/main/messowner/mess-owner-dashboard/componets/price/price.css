@@ -10,7 +10,7 @@
   margin-top: 50px;
 }
 
- /* .dashboard-wrapper {
+/* .dashboard-wrapper {
  
 }  */
 
@@ -71,7 +71,8 @@
   margin-top: 35px;
 }
 
-.btn-edit, .btn-save {
+.btn-edit,
+.btn-save {
   padding: 10px 32px;
   border-radius: 8px;
   font-weight: 500;

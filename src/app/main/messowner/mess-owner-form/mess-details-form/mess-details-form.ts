@@ -8,10 +8,10 @@ import {
   Validators,
   AbstractControl
 } from '@angular/forms';
-import { MatInputModule }     from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatButtonModule }    from '@angular/material/button';
-import { MatIconModule }      from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-mess-details-form',
@@ -26,34 +26,34 @@ import { MatIconModule }      from '@angular/material/icon';
   templateUrl: './mess-details-form.html',
   styleUrl: './mess-details-form.css',
 })
-export class MessDetailsForm  implements OnInit {
-   messForm!: FormGroup;
-  foodOptions     = ['Veg', 'Non-Veg', 'Both'];
+export class MessDetailsForm implements OnInit {
+  messForm!: FormGroup;
+  foodOptions = ['Veg', 'Non-Veg', 'Both'];
   licenseFileName = '';
-  messImageCount  = 0;
-  isDragOver      = false;
+  messImageCount = 0;
+  isDragOver = false;
 
   constructor(
     private fb: FormBuilder,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.messForm = this.fb.group({
       name: [''],
       address: this.fb.group({
         shopNumber: [''],
-        area:       [''],
-        city:       [''],
-        pincode:    [''],
-        landmark:   ['']
+        area: [''],
+        city: [''],
+        pincode: [''],
+        landmark: ['']
       }),
-      mobile:        [''],
-      email:         [''],
+      mobile: [''],
+      email: [''],
       licenseNumber: [''],
-      licenseImage:  [null],
-      foodType:      ['Veg'],
-      messImages:    [null]
+      licenseImage: [null],
+      foodType: ['Veg'],
+      messImages: [null]
     });
   }
 
@@ -91,16 +91,16 @@ export class MessDetailsForm  implements OnInit {
     if (event.dataTransfer?.files.length) {
       this.messImageCount = event.dataTransfer.files.length;
       this.messForm.get('messImages')
-          ?.setValue(Array.from(event.dataTransfer.files));
+        ?.setValue(Array.from(event.dataTransfer.files));
     }
   }
 
   goToStep(step: number): void {
     switch (step) {
       case 1: this.router.navigate(['/register/mess-details']); break;
-      case 2: this.router.navigate(['/register/menu']);         break;
-      case 3: this.router.navigate(['/register/price']);        break;
-      case 4: this.router.navigate(['/register/time']);         break;
+      case 2: this.router.navigate(['/register/menu']); break;
+      case 3: this.router.navigate(['/register/price']); break;
+      case 4: this.router.navigate(['/register/time']); break;
     }
   }
 

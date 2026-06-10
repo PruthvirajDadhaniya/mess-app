@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Elms+Sans:ital,wght@0,100..900;1,100..900&family=Inconsolata:wght@200..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 :host {
   display: block;
   width: 100%;
@@ -31,7 +32,7 @@
   gap: 16px;
 }
 
- .logo {
+.logo {
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -142,12 +143,12 @@
 }
 
 .search-container mat-form-field mat-icon {
-  color:#C85A3E;
+  color: #C85A3E;
 }
 
 .search-box mat-form-field mat-icon {
   color: #7D7D7D;
-} 
+}
 
 /* Location */
 .location-field {

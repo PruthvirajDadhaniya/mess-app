@@ -13,7 +13,7 @@ import { Chart } from 'chart.js/auto';
 })
 export class Charts implements AfterViewInit {
 
-   ngAfterViewInit(): void {
+  ngAfterViewInit(): void {
 
     new Chart('foodChart', {
       type: 'doughnut',

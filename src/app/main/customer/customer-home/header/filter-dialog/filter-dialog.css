@@ -1,6 +1,6 @@
 .dialog-container {
   width: 385px;
-  padding:25px;
+  padding: 25px;
   position: relative;
   font-family: 'Poppins', sans-serif;
   background: #ffffff;
@@ -20,6 +20,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .close-btn mat-icon {
   color: #ffffff;
 }
@@ -69,9 +70,11 @@
   transition: background 0.18s, color 0.18s;
   outline: none;
 }
+
 .chip:hover {
   background: #f5f5f5;
 }
+
 .chip.active {
   background: #1a1a1a;
   color: #ffffff;
@@ -100,10 +103,12 @@
   background: #ffffff !important;
   transition: background 0.18s, color 0.18s !important;
 }
+
 .btn-apply:hover {
   background: #1a1a1a !important;
   color: #ffffff !important;
 }
+
 .btn-reset:hover {
   background: #f5f5f5 !important;
 }

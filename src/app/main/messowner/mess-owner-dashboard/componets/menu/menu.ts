@@ -101,7 +101,7 @@ export class Menu implements OnInit {
     },
   ];
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   toggleDay(index: number): void {
     this.days[index].isOpen = !this.days[index].isOpen;

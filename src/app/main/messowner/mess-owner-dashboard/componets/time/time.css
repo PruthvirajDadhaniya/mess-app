@@ -107,7 +107,8 @@
   margin-top: 40px;
 }
 
-.btn-edit, .btn-save {
+.btn-edit,
+.btn-save {
   padding: 12px 36px;
   border-radius: 10px;
   font-weight: 600;
@@ -126,6 +127,7 @@
   background-color: var(--btn-green);
 }
 
-.btn-edit:hover, .btn-save:hover {
+.btn-edit:hover,
+.btn-save:hover {
   opacity: 0.9;
 }

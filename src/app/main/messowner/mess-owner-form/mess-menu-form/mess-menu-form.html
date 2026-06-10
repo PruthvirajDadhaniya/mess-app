@@ -1,15 +1,13 @@
 <div class="page-wrapper">
   <div class="food-bg">
-    <img src="../../../../../assets/images/background.png"
-         alt="food-background" class="bg-img">
+    <img src="../../../../../assets/images/background.png" alt="food-background" class="bg-img">
   </div>
 
   <div class="form-card">
 
     <!-- Logo -->
     <div class="logo-wrap">
-      <img src="../../../../../assets/images/brand-logo.png"
-           alt="FindFood Logo" class="logo-img">
+      <img src="../../../../../assets/images/brand-logo.png" alt="FindFood Logo" class="logo-img">
     </div>
 
     <!-- Stepper -->
@@ -40,17 +38,11 @@
 
     <!-- Meal Type Toggle Tabs -->
     <div class="meal-tabs">
-      <button
-        type="button"
-        class="meal-tab"
-        [class.active]="activeMealTab === 'morning'"
+      <button type="button" class="meal-tab" [class.active]="activeMealTab === 'morning'"
         (click)="switchTab('morning')">
         Morning Meals
       </button>
-      <button
-        type="button"
-        class="meal-tab"
-        [class.active]="activeMealTab === 'evening'"
+      <button type="button" class="meal-tab" [class.active]="activeMealTab === 'evening'"
         (click)="switchTab('evening')">
         Evening Meal
       </button>
@@ -61,10 +53,7 @@
       <div class="day-block" *ngFor="let day of days; let i = index">
 
         <!-- Day Header Row -->
-        <div
-          class="day-header"
-          [class.is-open]="day.isOpen"
-          (click)="toggleDay(i)">
+        <div class="day-header" [class.is-open]="day.isOpen" (click)="toggleDay(i)">
           <span class="day-name">{{ day.name }}</span>
           <mat-icon class="arrow-icon">
             {{ day.isOpen ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}
@@ -76,10 +65,7 @@
 
           <!-- Checkbox Items Grid -->
           <div class="cb-grid">
-            <div
-              class="cb-item"
-              *ngFor="let item of day.items"
-              (click)="toggleItem(day, item)">
+            <div class="cb-item" *ngFor="let item of day.items" (click)="toggleItem(day, item)">
               <div class="cb-box" [class.checked]="item.checked">
                 <mat-icon class="cb-tick" *ngIf="item.checked">check</mat-icon>
               </div>
@@ -90,16 +76,9 @@
           <!-- Add Menu Item -->
           <p class="add-menu-label">Add your menu</p>
           <div class="add-row">
-            <input
-              class="add-input"
-              type="text"
-              [(ngModel)]="day.newItem"
-               (keydown.enter)="addItem(day)" 
+            <input class="add-input" type="text" [(ngModel)]="day.newItem" (keydown.enter)="addItem(day)"
               placeholder="">
-            <button
-              type="button"
-              class="btn-add"
-              (click)="addItem(day)">
+            <button type="button" class="btn-add" (click)="addItem(day)">
               Add
             </button>
           </div>
@@ -109,7 +88,7 @@
     </div>
 
     <!-- Back / Next -->
-     <div class="actions">
+    <div class="actions">
       <button mat-stroked-button class="btn-back" (click)="onBack()">Back</button>
       <button mat-raised-button class="btn-next" (click)="onNext()">Next</button>
     </div>
@@ -117,4 +96,3 @@
     <!--  -->
   </div>
 </div>
-

@@ -1,65 +1,55 @@
-
 <!-- <div class="shell"> -->
-  <!-- ── Main Content ─────────────────────────────────────────────────── -->
-  <main class="main-content">
+<!-- ── Main Content ─────────────────────────────────────────────────── -->
+<main class="main-content">
 
-    <h1 class="greeting-title">Good Morning, Joe!</h1>
-    <p class="greeting-sub">It's time to track your finance and services.</p>
+  <h1 class="greeting-title">Good Morning, Joe!</h1>
+  <p class="greeting-sub">It's time to track your finance and services.</p>
 
-    <div class="menu-card">
+  <div class="menu-card">
 
-      <div class="card-controls">
-        <button type="button" class="ctrl-btn" (click)="expandAll()">Expand All</button>
-        <button type="button" class="ctrl-btn" (click)="collapseAll()">Collapse All</button>
-      </div>
+    <div class="card-controls">
+      <button type="button" class="ctrl-btn" (click)="expandAll()">Expand All</button>
+      <button type="button" class="ctrl-btn" (click)="collapseAll()">Collapse All</button>
+    </div>
 
-      <div class="days-list">
-        <div class="day-block" *ngFor="let day of days; let i = index">
+    <div class="days-list">
+      <div class="day-block" *ngFor="let day of days; let i = index">
 
-          <div class="day-header"
-               [class.is-open]="day.isOpen"
-               (click)="toggleDay(i)">
-            <span class="day-name">{{ day.name }}</span>
-            <span class="arrow-icon">{{ day.isOpen ? '▲' : '▼' }}</span>
+        <div class="day-header" [class.is-open]="day.isOpen" (click)="toggleDay(i)">
+          <span class="day-name">{{ day.name }}</span>
+          <span class="arrow-icon">{{ day.isOpen ? '▲' : '▼' }}</span>
+        </div>
+
+        <div class="day-body" *ngIf="day.isOpen">
+
+          <div class="cb-grid">
+            <div class="cb-item" *ngFor="let item of day.items; let j = index" (click)="toggleItem(i, j)">
+              <div class="cb-box" [class.checked]="item.checked">
+                <span class="cb-tick" *ngIf="item.checked">✓</span>
+              </div>
+              <span class="cb-text">{{ item.name }}</span>
+            </div>
           </div>
 
-          <div class="day-body" *ngIf="day.isOpen">
-
-            <div class="cb-grid">
-              <div class="cb-item"
-                   *ngFor="let item of day.items; let j = index"
-                   (click)="toggleItem(i, j)">
-                <div class="cb-box" [class.checked]="item.checked">
-                  <span class="cb-tick" *ngIf="item.checked">✓</span>
-                </div>
-                <span class="cb-text">{{ item.name }}</span>
-              </div>
-            </div>
-
-            <p class="add-menu-label">Add your menu</p>
-            <div class="add-row">
-              <input
-                class="add-input"
-                type="text"
-                [(ngModel)]="day.newItem"
-                (keydown.enter)="addItem(day)"
-                placeholder="Enter item name">
-              <button type="button" class="btn-add" (click)="addItem(day)">Add</button>
-            </div>
-
+          <p class="add-menu-label">Add your menu</p>
+          <div class="add-row">
+            <input class="add-input" type="text" [(ngModel)]="day.newItem" (keydown.enter)="addItem(day)"
+              placeholder="Enter item name">
+            <button type="button" class="btn-add" (click)="addItem(day)">Add</button>
           </div>
 
         </div>
-      </div>
 
-      <div class="card-actions">
-        <button type="button" class="btn-edit" (click)="onEdit()">Edit</button>
-        <button type="button" class="btn-save" (click)="onSave()">Save</button>
       </div>
-
     </div>
 
-  </main>
+    <div class="card-actions">
+      <button type="button" class="btn-edit" (click)="onEdit()">Edit</button>
+      <button type="button" class="btn-save" (click)="onSave()">Save</button>
+    </div>
+
+  </div>
+
+</main>
 
 <!-- </div> -->
-

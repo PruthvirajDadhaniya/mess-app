@@ -10,10 +10,8 @@
   <mat-divider class="divider"></mat-divider>
 
   <div class="chip-group">
-    <button class="chip"
-            *ngFor="let r of ratingOptions"
-            [class.active]="selectedRating === r"
-            (click)="selectedRating = r">
+    <button class="chip" *ngFor="let r of ratingOptions" [class.active]="selectedRating === r"
+      (click)="selectedRating = r">
       {{ r }}
     </button>
   </div>
@@ -23,10 +21,7 @@
   <mat-divider class="divider"></mat-divider>
 
   <div class="chip-group">
-    <button class="chip"
-            *ngFor="let f of foodOptions"
-            [class.active]="selectedFood === f"
-            (click)="selectedFood = f">
+    <button class="chip" *ngFor="let f of foodOptions" [class.active]="selectedFood === f" (click)="selectedFood = f">
       {{ f }}
     </button>
   </div>
