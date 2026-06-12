@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 .dashboard {
-padding: 60px;
-margin-top: 50px;
+  box-sizing: border-box;
+  padding: 70px 0px 40px 0px;
   min-height: 100vh;
   font-family: "Poppins", sans-serif;
+  overflow: hidden;
 }
 
 h1 {
-    font-size: 55px;
+  font-size: 55px;
   font-weight: 400;
   letter-spacing: -0.5px;
 }
@@ -25,7 +26,8 @@ p {
   gap: 20px;
   margin-bottom: 40px;
 }
-.mat-mdc-card{
+
+.mat-mdc-card {
   background-color: #FEFBFA !important;
 }
 
@@ -232,34 +234,6 @@ canvas {
   background: #ef6464;
 }
 
-/* .food-chart-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  min-height: 150px;
-}
-
-.chart-wrapper {
-  width: 90px;
-  height: 90px;
-}
-
-.food-label {
-  display: flex;
-  flex-direction: column;
-  font-size: 14px;
-}
-
-.food-label.left {
-  color: #ef6464;
-}
-
-.food-label.right {
-  color: #7568ff;
-}
-*/
-
 .views-content {
   height: 200px;
   display: flex;
@@ -280,4 +254,4 @@ canvas {
 canvas {
   width: 100% !important;
   height: 100% !important;
-} 
+}

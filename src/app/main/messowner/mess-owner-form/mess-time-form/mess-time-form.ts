@@ -29,10 +29,10 @@ export class MessTimeForm {
   // Set to 4 so that ONLY the Time step gets the active highlight style
   currentStep: number = 4;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   goToStep(stepNum: number) {
-    if (stepNum === 1) this.router.navigate(['/mess-owner-form']); 
+    if (stepNum === 1) this.router.navigate(['/mess-owner-form']);
     if (stepNum === 2) this.router.navigate(['/mess-owner-form/mess-menu-form']);
     if (stepNum === 3) this.router.navigate(['/mess-owner-form/mess-price-form']);
     if (stepNum === 4) this.router.navigate(['/mess-owner-form/mess-time-form']);
@@ -43,6 +43,6 @@ export class MessTimeForm {
   }
 
   done() {
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/mess-owner-dashboard']);
   }
 }

@@ -20,7 +20,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './details.css',
 })
 export class Details {
-   images: string[] = [
+  images: string[] = [
     '../../../../../../assets/images/thali-1.jpg',
     '../../../../../../assets/images/thali-2.jpg',
     '../../../../../../assets/images/thali-3.jpg',
@@ -31,22 +31,22 @@ export class Details {
 
 
   // Form fields
-  messName   = 'Kolhapur Khanaval';
+  messName = 'Kolhapur Khanaval';
   shopNumber = '951235467823';
-  area       = 'Murgud';
-  city       = 'Kolhapur';
-  pincode    = '416212';
-  landmark   = 'Tukaram chawk';
-  mobile     = '+91-9874563210';
-  email      = 'joseph.j@gmail.com';
-  license    = 'UID-9786-221';
+  area = 'Murgud';
+  city = 'Kolhapur';
+  pincode = '416212';
+  landmark = 'Tukaram chawk';
+  mobile = '+91-9874563210';
+  email = 'joseph.j@gmail.com';
+  license = 'UID-9786-221';
 
   // Food
-  foodOptions  = ['Veg', 'Non-Veg', 'Both'];
+  foodOptions = ['Veg', 'Non-Veg', 'Both'];
   selectedFood = 'Veg';
 
-  onEdit(): void  { console.log('Edit clicked'); }
-  onSave(): void  { console.log('Save clicked'); }
+  onEdit(): void { console.log('Edit clicked'); }
+  onSave(): void { console.log('Save clicked'); }
 
 
   nextImage(): void {

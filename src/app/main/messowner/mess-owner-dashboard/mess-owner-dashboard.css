@@ -1,0 +1,59 @@
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.main-content-panel {
+    margin-left: 260px;
+    padding-top: 80px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+/* Inner padding container for your routed pages */
+.content-body {
+    flex: 1;
+    padding: 30px;
+}
+
+.sidebar-wrapper {
+    display: flex;
+    height: 70rem;
+}
+
+/* 4. Sidebar Container */
+.sideDiv {
+    width: 260px;
+    height: 65rem;
+    margin-top: 80px;
+    padding-top: 10px;
+    background-color: #F9EEEB;
+    border-right: 1px solid #e0e0e0;
+    overflow-y: auto;
+}
+
+/* 5. Dynamic Main Content Window */
+.Main-Content {
+    flex: 1;
+    height: 100%;
+    padding: 32px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+/* 6. Footer Styling */
+.footerDiv {
+    width: 100%;
+    background-color: #ffffff;
+    border-top: 1px solid #e0e0e0;
+    z-index: 1000;
+}

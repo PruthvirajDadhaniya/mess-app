@@ -47,7 +47,7 @@ body {
 }
 
 /* ── Card ───────────────────────────────────── */
-.login-card{
+.login-card {
   position: relative;
   z-index: 10;
   background: #fff;
@@ -55,7 +55,7 @@ body {
   width: 100%;
   max-width: 510px;
   padding: 0 30px 30px;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.10);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.10);
 }
 
 /* ── Logo ───────────────────────────────────── */
@@ -65,6 +65,7 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .logo-img {
   width: 168px;
   height: 111px;
@@ -188,6 +189,7 @@ mat-icon {
   color: #777;
   font-size: 22px;
 }
+
 /* ICON */
 
 .refresh-btn i {

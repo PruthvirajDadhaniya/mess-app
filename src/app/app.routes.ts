@@ -21,7 +21,7 @@ export const routes: Routes = [
         loadChildren: () => import('./main/messowner/mess-owner-dashboard/messownerdashboards.routes').then(m => m.dashboardRoutes)
     },
     {
-      path: 'customer-home',
-      loadChildren: () => import('./main/customer/customer-home/customerhome.route').then(m => m.routes)
+        path: 'customer-home',
+        loadChildren: () => import('./main/customer/customer-home/customerhome.route').then(m => m.routes)
     }
 ];

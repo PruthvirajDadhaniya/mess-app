@@ -19,10 +19,10 @@ export class Time { // Class cha naav 'Time' kela aahe jyamule lazy routing madh
   };
 
   onEdit() {
-    console.log('Time Edit Clicked');
+    console.log('Edit Time clicked');
   }
 
   onSave() {
-    console.log('Time Save Clicked. Data:', this.timeData);
+    console.log('Save Time clicked:', this.timeData);
   }
 }

@@ -6,7 +6,7 @@ export const routes: Routes = [
         path: 'header',
         loadComponent: () => import('./header/header').then(m => m.Header)
     },
-      {
+    {
         path: 'content',
         loadComponent: () => import('./content/content').then(m => m.Content)
     },

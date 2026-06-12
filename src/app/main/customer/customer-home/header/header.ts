@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -7,6 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialog } from '@angular/material/dialog';
 import { FilterDialog } from './filter-dialog/filter-dialog';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -16,18 +16,23 @@ import { FilterDialog } from './filter-dialog/filter-dialog';
     MatButtonModule,
     MatIconModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    RouterModule
   ],
   templateUrl: './header.html',
   styleUrls: ['./header.css'],
 })
 export class Header {
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, private router: Router) { }
 
   openFilterDialog(): void {
     this.dialog.open(FilterDialog, {
 
       // Optional for custom styling
     });
+  }
+
+  goToLogin(): void {
+    this.router.navigate(['/login-register']);
   }
 }

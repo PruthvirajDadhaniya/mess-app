@@ -16,7 +16,10 @@ export interface DayMenu {
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+  ],
   templateUrl: './menu.html',
   styleUrls: ['./menu.css'],
   encapsulation: ViewEncapsulation.None
@@ -101,7 +104,7 @@ export class Menu implements OnInit {
     },
   ];
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   toggleDay(index: number): void {
     this.days[index].isOpen = !this.days[index].isOpen;

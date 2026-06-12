@@ -1,23 +1,20 @@
-<div class="container-fluid p-0">
+<div class="dashboard-container">
 
-    <!-- Navbar -->
-    <app-navbar></app-navbar>
-
-    <div class="row g-0">
-
-        <!-- Sidebar -->
-        <div class="col-md-2 col-lg-2">
-            <app-sidenav></app-sidenav>
-        </div>
-
-        <!-- Main Content -->
-        <div class="col-md-10 col-lg-10">
-            <router-outlet></router-outlet>
-        </div>
-
+    <div class="navHead">
+        <app-navbar></app-navbar>
     </div>
 
-    <!-- Footer -->
-    <app-messowner-footer></app-messowner-footer>
+    <div class="sidebar-wrapper">
+        <div class="sideDiv">
+            <app-sidenav></app-sidenav>
+        </div>
+        <div class="Main-Content">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+
+    <div class="footerDiv">
+        <app-messowner-footer></app-messowner-footer>
+    </div>
 
 </div>

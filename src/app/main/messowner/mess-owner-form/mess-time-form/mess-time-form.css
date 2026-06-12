@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
 
 /* ── Reset ── */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -14,6 +16,7 @@
   z-index: 0;
   pointer-events: none;
 }
+
 .bg-img {
   width: 100%;
   height: 100%;
@@ -44,7 +47,7 @@
   width: 100% !important;
   max-width: 680px !important;
   padding: 0 30px 30px !important;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.10) !important;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.10) !important;
   display: flex !important;
   flex-direction: column !important;
 }
@@ -56,6 +59,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .logo-img {
   width: 168px;
   height: 111px;
@@ -72,6 +76,7 @@
   gap: 20px;
   font-size: 13px;
 }
+
 .step {
   display: flex;
   align-items: center;
@@ -83,8 +88,14 @@
   font-family: 'Poppins', sans-serif;
   transition: color 0.2s;
 }
-.step:hover { color: #e05a2b; }
-.step.active { color: #e05a2b; }
+
+.step:hover {
+  color: #e05a2b;
+}
+
+.step.active {
+  color: #e05a2b;
+}
 
 .step-num {
   width: 22px;
@@ -101,6 +112,7 @@
   font-family: 'Poppins', sans-serif;
   transition: background 0.2s, color 0.2s;
 }
+
 .step.active .step-num,
 .step:hover .step-num {
   background: #e05a2b;
@@ -115,7 +127,10 @@
   max-width: 48px;
   margin: 0 4px;
 }
-.step-line.active { background: #e05a2b; }
+
+.step-line.active {
+  background: #e05a2b;
+}
 
 /* ── Labels ── */
 .form-label {
@@ -128,7 +143,9 @@
 }
 
 /* ── Section spacing ── */
-.section-gap { margin-bottom: 18px; }
+.section-gap {
+  margin-bottom: 18px;
+}
 
 /* ── Time Row ── */
 .time-row {
@@ -136,6 +153,7 @@
   align-items: center;
   gap: 10px;
 }
+
 .time-prefix {
   font-size: 13px;
   font-weight: 500;
@@ -197,6 +215,7 @@
   font-family: 'Poppins', sans-serif !important;
   color: #333 !important;
 }
+
 ::ng-deep .full-width .mat-mdc-select-placeholder {
   font-size: 13px !important;
   font-family: 'Poppins', sans-serif !important;
@@ -232,7 +251,10 @@
   font-family: 'Poppins', sans-serif !important;
   background: transparent !important;
 }
-.btn-back:hover { border-color: #888 !important; }
+
+.btn-back:hover {
+  border-color: #888 !important;
+}
 
 .btn-done {
   background: #22c55e !important;
@@ -244,4 +266,7 @@
   font-family: 'Poppins', sans-serif !important;
   box-shadow: none !important;
 }
-.btn-done:hover { background: #16a34a !important; }
+
+.btn-done:hover {
+  background: #16a34a !important;
+}
