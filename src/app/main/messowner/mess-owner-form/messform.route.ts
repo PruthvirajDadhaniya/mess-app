@@ -21,6 +21,6 @@ export const routes: Routes = [
         path: 'mess-time-form',
         loadComponent: () => import('./mess-time-form/mess-time-form').then(m => m.MessTimeForm)
     },
-    
+
 
 ];

@@ -1,25 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/* *,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-} */
-/* .shell {
-  display: flex;
-  min-height: 100vh;
-  background: white;
-} */
 
 .main-content {
-  flex: 1;    
-  padding: 60px;
-  margin-top: 50px;
-  overflow-y: auto;
-    font-family: 'Poppins', sans-serif;
+  padding: 70px 0px 40px 0px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .greeting-title {
@@ -55,7 +39,7 @@
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
-  border: 1.5px solid #C85A3E;
+  border: 1px solid #1a1b1f;
   background: #fff;
   color: #C85A3E;
   font-family: inherit;
@@ -90,7 +74,6 @@
   transition: background 0.15s;
   user-select: none;
   border-bottom: 1.5px solid #e8e0df;
-  /* overflow: visible;  */
 }
 
 .day-header:hover {
@@ -102,8 +85,8 @@
 }
 
 .day-name {
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 15px;
+  font-weight: 600;
   color: #2c2c2c;
 }
 
@@ -116,13 +99,18 @@
   padding: 14px 16px 16px;
   border-top: 1px solid #e8e0df;
   animation: slideDown 0.18s ease;
-  /* border: 1px solid #c85a3e; */
-  /* overflow: visible;  */
 }
 
 @keyframes slideDown {
-  from { opacity: 0; transform: translateY(-6px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .cb-grid {
@@ -231,7 +219,7 @@
   font-size: 14px;
   font-weight: 700;
   cursor: pointer;
-  background: #e53935;
+  background: #C85A3E;
   color: #fff;
   border: none;
   font-family: inherit;
@@ -259,12 +247,3 @@
   background: #388e3c;
 }
 
-@media (max-width: 768px) {
-  .shell {
-    flex-direction: column;
-  }
-
-  .main-content {
-    padding: 20px 16px;
-  }
-}

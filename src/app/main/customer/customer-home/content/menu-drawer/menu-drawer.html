@@ -7,7 +7,6 @@
 
   <!-- HERO IMAGE -->
   <div class="hero">
-    <!-- <img [src]="chef.heroImg" [alt]="chef.name" class="hero-img"/> -->
     <img [src]="chef.heroImg" [alt]="chef.name" class="hero-img" (error)="onImageError($event)" />
     <div class="hero-overlay"></div>
 
@@ -63,9 +62,45 @@
 
     <!-- TODAY'S MENU -->
     <h3 class="menu-title">Today's Menu</h3>
-    <div class="menu-card">
-      <!-- <img [src]="chef.menuImg" alt="Today's Menu" class="menu-img"/> -->
-      <img [src]="chef.menuImg" alt="Today's Menu" class="menu-img" (error)="onImageError($event)" />
+
+    <div class="today-menu-wrapper">
+      <h5>Today's Menu</h5>
+      <mat-card class="meal-card">
+        <div class="meal-left">
+          <img [src]="chef.menuImg" alt="Morning Meal" class="meal-image" (error)="onImageError($event)" />
+          <div class="meal-content">
+            <h4 class="meal-name">Morning Meal</h4>
+            <div class="meal-items">
+              <span class="food-chip">Chapati</span>
+              <span class="food-chip">Dal</span>
+              <span class="food-chip">Rice</span>
+              <span class="food-chip">Bhedi</span>
+            </div>
+          </div>
+          <div class="meal-price">
+            ₹60
+          </div>
+        </div>
+      </mat-card>
+
+      <mat-card class="meal-card">
+        <div class="meal-left">
+          <img [src]="chef.menuImg" alt="Evening Meal" class="meal-image" (error)="onImageError($event)" />
+          <div class="meal-content">
+            <h4 class="meal-name">Evening Meal</h4>
+            <div class="meal-items">
+              <span class="food-chip">Chapati</span>
+              <span class="food-chip">Dal</span>
+              <span class="food-chip">Rice</span>
+              <span class="food-chip">Bhedi</span>
+            </div>
+          </div>
+          <div class="meal-price">
+            ₹60
+          </div>
+        </div>
+      </mat-card>
+
     </div>
 
   </div>

@@ -3,12 +3,11 @@
 /* ── FOOTER WRAPPER ── */
 .messowner-footer {
   position: relative;
-  background-color: #F5EAE3;
-  overflow: hidden;
+  background-color: #F9EEEB;
   padding: 97px 130px;
-  margin-top: 50px;
   font-family: 'Poppins', sans-serif;
-  z-index: 998;
+  z-index: 1000;
+  box-sizing: border-box;
 }
 
 /* ── BACKGROUND IMAGE ── */
@@ -102,4 +101,3 @@
   color: #C84B2F;
   background: transparent !important;
 }
-

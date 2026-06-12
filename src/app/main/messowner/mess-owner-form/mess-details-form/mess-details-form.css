@@ -19,6 +19,7 @@
   z-index: 0;
   pointer-events: none;
 }
+
 .bg-img {
   width: 100%;
   height: 100%;
@@ -36,7 +37,7 @@
   width: 100%;
   max-width: 680px;
   padding: 0 30px 30px;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.10);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.10);
 }
 
 /* ── Logo ───────────────────────────────────── */
@@ -46,6 +47,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .logo-img {
   width: 168px;
   height: 111px;
@@ -62,6 +64,7 @@
   gap: 20px;
   font-size: 13px;
 }
+
 .step {
   display: flex;
   align-items: center;
@@ -72,10 +75,18 @@
   cursor: pointer;
   transition: color 0.2s;
 }
-.step:hover        { color: #e05a2b; }
-.step.active       { color: #e05a2b; }
+
+.step:hover {
+  color: #e05a2b;
+}
+
+.step.active {
+  color: #e05a2b;
+}
+
 .step-num {
-  width: 22px; height: 22px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
   background: #ddd;
   color: #888;
@@ -87,8 +98,17 @@
   flex-shrink: 0;
   transition: background 0.2s, color 0.2s;
 }
-.step.active .step-num { background: #e05a2b; color: #fff; }
-.step:hover .step-num  { background: #e05a2b; color: #fff; }
+
+.step.active .step-num {
+  background: #e05a2b;
+  color: #fff;
+}
+
+.step:hover .step-num {
+  background: #e05a2b;
+  color: #fff;
+}
+
 .step-line {
   flex: 1;
   height: 2px;
@@ -109,7 +129,9 @@
 }
 
 /* ── Section spacing ────────────────────────── */
-.section-gap { margin-bottom: 14px; }
+.section-gap {
+  margin-bottom: 14px;
+}
 
 /* ── Two col grid ───────────────────────────── */
 .row-2 {
@@ -128,18 +150,12 @@
 /* Main Input Container */
 ::ng-deep .full-field .mat-mdc-text-field-wrapper {
   height: 45px !important;
-
   padding: 0 14px !important;
-
   border: 1.5px solid #dcdcdc !important;
-
   border-radius: 10px !important;
-
   background-color: #fff !important;
-
   display: flex;
   align-items: center;
-
   transition: all 0.3s ease;
 }
 
@@ -151,38 +167,29 @@
 /* Input Field */
 ::ng-deep .full-field .mat-mdc-input-element {
   font-size: 13px !important;
-
   font-family: 'Poppins', sans-serif !important;
-
   color: #333 !important;
-
   padding: 0 !important;
-
   height: 100% !important;
 }
 
 /* Placeholder */
 ::ng-deep .full-field .mat-mdc-input-element::placeholder {
   color: #bdbdbd !important;
-
   font-size: 13px !important;
-
   font-family: 'Poppins', sans-serif !important;
 }
 
 /* Label */
 ::ng-deep .full-field .mat-mdc-floating-label {
   font-size: 13px !important;
-
   font-family: 'Poppins', sans-serif !important;
-
   color: #777 !important;
 }
 
 /* Focus Border */
 ::ng-deep .full-field.mat-focused .mat-mdc-text-field-wrapper {
   border-color: #e05a2b !important;
-
   box-shadow: 0 0 0 2px rgba(224, 90, 43, 0.12);
 }
 
@@ -199,9 +206,7 @@
 /* Error Text */
 ::ng-deep .full-field .mat-mdc-form-field-error {
   font-size: 11px !important;
-
   font-family: 'Poppins', sans-serif !important;
-
   margin-top: 4px;
 }
 
@@ -216,6 +221,7 @@
   flex-direction: column;
   gap: 4px;
 }
+
 .btn-upload {
   background: #c0392b;
   color: #fff;
@@ -234,8 +240,16 @@
   gap: 8px;
   transition: background 0.2s;
 }
-.btn-upload:hover { background: #a93226; }
-.btn-upload mat-icon { font-size: 18px; width: 18px; height: 18px; }
+
+.btn-upload:hover {
+  background: #a93226;
+}
+
+.btn-upload mat-icon {
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+}
 
 .file-success {
   display: flex;
@@ -245,11 +259,13 @@
   color: #2e7d32;
   font-family: 'Poppins', sans-serif;
 }
+
 .small-icon {
   font-size: 13px !important;
   width: 13px !important;
   height: 13px !important;
 }
+
 .custom-err {
   font-size: 11px;
   color: #d32f2f;
@@ -258,7 +274,12 @@
 }
 
 /* ── Food pills ─────────────────────────────── */
-.food-type-group { display: flex; gap: 8px; flex-wrap: wrap; }
+.food-type-group {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
 .food-pill {
   padding: 7px 20px;
   border-radius: 20px;
@@ -271,8 +292,17 @@
   font-family: 'Poppins', sans-serif;
   transition: all 0.2s;
 }
-.food-pill.active             { background: #e05a2b; border-color: #e05a2b; color: #fff; }
-.food-pill:hover:not(.active) { border-color: #e05a2b; color: #e05a2b; }
+
+.food-pill.active {
+  background: #e05a2b;
+  border-color: #e05a2b;
+  color: #fff;
+}
+
+.food-pill:hover:not(.active) {
+  border-color: #e05a2b;
+  color: #e05a2b;
+}
 
 /* ── Drop zone ──────────────────────────────── */
 .drop-zone {
@@ -287,12 +317,32 @@
   transition: border-color 0.2s, background 0.2s;
   font-family: 'Poppins', sans-serif;
 }
+
 .drop-zone:hover,
-.drop-zone.drag-active { border-color: #e05a2b; background: #fff5f2; }
-.upload-icon           { color: #e05a2b; margin-bottom: 6px; }
-.upload-icon mat-icon  { font-size: 28px !important; width: 28px !important; height: 28px !important; }
-.drop-zone a           { color: #e05a2b; text-decoration: none; font-weight: 500; cursor: pointer; }
-.success-text          {
+.drop-zone.drag-active {
+  border-color: #e05a2b;
+  background: #fff5f2;
+}
+
+.upload-icon {
+  color: #e05a2b;
+  margin-bottom: 6px;
+}
+
+.upload-icon mat-icon {
+  font-size: 28px !important;
+  width: 28px !important;
+  height: 28px !important;
+}
+
+.drop-zone a {
+  color: #e05a2b;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.success-text {
   color: #2e7d32;
   display: flex;
   align-items: center;
@@ -302,7 +352,9 @@
 }
 
 /* ── Hidden file input ──────────────────────── */
-.hidden-file { display: none !important; }
+.hidden-file {
+  display: none !important;
+}
 
 /* ── Action buttons ─────────────────────────── */
 .btn-row {
@@ -311,6 +363,7 @@
   align-items: center;
   margin-top: 20px;
 }
+
 .btn-back {
   border: 1.5px solid #ccc !important;
   border-radius: 8px !important;
@@ -321,7 +374,11 @@
   font-family: 'Poppins', sans-serif !important;
   background: transparent !important;
 }
-.btn-back:hover { border-color: #888 !important; }
+
+.btn-back:hover {
+  border-color: #888 !important;
+}
+
 .btn-next {
   background: #2563eb !important;
   border-radius: 8px !important;
@@ -331,7 +388,10 @@
   color: #fff !important;
   font-family: 'Poppins', sans-serif !important;
 }
-.btn-next:hover { background: #1d4ed8 !important; }
+
+.btn-next:hover {
+  background: #1d4ed8 !important;
+}
 
 .actions {
   display: flex;

@@ -13,12 +13,12 @@ import { MenuDrawer } from "./menu-drawer/menu-drawer";
     MatButtonModule,
     MatIconModule,
     MenuDrawer
-],
+  ],
   templateUrl: './content.html',
   styleUrl: './content.css',
 })
 export class Content {
-   @ViewChild('menuDrawer') menuDrawer!: MenuDrawer;
+  @ViewChild('menuDrawer') menuDrawer!: MenuDrawer;
 
   visibleCount = 6;
 
@@ -59,7 +59,7 @@ export class Content {
   }
 
   openDrawer(chef: any): void {
-     console.log('Menu Clicked', chef);
+    console.log('Menu Clicked', chef);
     this.menuDrawer.loadChef(chef);
     this.menuDrawer.open();
   }

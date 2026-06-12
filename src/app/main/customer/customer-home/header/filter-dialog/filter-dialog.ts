@@ -10,7 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 @Component({
   selector: 'app-filter-dialog',
   imports: [
-     CommonModule,
+    CommonModule,
     MatDialogModule,
     MatButtonModule,
     MatIconModule,
@@ -22,23 +22,23 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './filter-dialog.css',
 })
 export class FilterDialog {
- ratingOptions = ['Any', '3.5+', '4.5+', '5.0'];
-  foodOptions   = ['Veg Only', 'Non-veg'];
+  ratingOptions = ['Any', '3.5+', '4.5+', '5.0'];
+  foodOptions = ['Veg Only', 'Non-veg'];
 
   selectedRating = 'Any';
-  selectedFood   = '';
+  selectedFood = '';
 
-  constructor(private dialogRef: MatDialogRef<FilterDialog>) {}
+  constructor(private dialogRef: MatDialogRef<FilterDialog>) { }
 
   resetFilters(): void {
     this.selectedRating = 'Any';
-    this.selectedFood   = '';
+    this.selectedFood = '';
   }
 
   applyFilters(): void {
     this.dialogRef.close({
       rating: this.selectedRating,
-      food:   this.selectedFood
+      food: this.selectedFood
     });
   }
 
