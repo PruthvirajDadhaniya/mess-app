@@ -16,7 +16,10 @@ export interface DayMenu {
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+  ],
   templateUrl: './menu.html',
   styleUrls: ['./menu.css'],
   encapsulation: ViewEncapsulation.None

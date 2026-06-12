@@ -109,7 +109,7 @@
 /* BODY */
 .drawer-body {
   padding: 35px;
-  background: #f7f7f7;
+  background: #ffffff;
 }
 
 /* INFO GRID */
@@ -183,37 +183,114 @@
 
 /* MENU TITLE */
 .menu-title {
+  text-align: left;
   font-size: 30px;
-  font-weight: 700;
-  color: #222;
-  margin-bottom: 12px;
+  font-weight: 500;
+  margin: 3% 0 30px;
 }
 
-/* MENU IMAGE */
-.menu-card {
-  overflow: hidden;
-  border-radius: 8px;
-  background: #fff;
-  border: 1px solid #e5e5e5;
+.today-menu-wrapper h5 {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
 }
 
-.menu-img {
+/* Container padding and centering */
+.today-menu-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  max-width: 750px;
   width: 100%;
-  height: 180px;
-  object-fit: cover;
-  display: block;
+  margin: 0 auto;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  box-sizing: border-box;
 }
 
+/* Meal Card Styling - ABSOLUTE SINGLE LINE FORCED */
+.meal-card.mat-card {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  background-color: #fbf6f3;
+  border: 1px solid #f3eae4;
+  border-radius: 16px;
+  padding: 24px 30px;
+  box-shadow: none !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+}
 
-/* MOBILE */
-@media (max-width: 768px) {
+/* Left components row wrapper */
+.meal-left {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  gap: 25px;
+  flex: 1;
+  min-width: 0;
+  padding: 15px;
+  background-color: #F3E6E266;
+}
 
-  .info-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+/* Round Meal Image */
+.meal-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0 !important;
+}
 
-  .addr-grid {
-    grid-template-columns: 1fr;
-  }
+/* Text and chips parent stack */
+.meal-content {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px;
+  flex: 1;
+}
 
+/* Heading Typography */
+.meal-name {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+  color: #000000;
+}
+
+/* Chips Container */
+.meal-items {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  gap: 8px;
+  overflow: visible;
+}
+
+/* Tag/Chip Element Design */
+.food-chip {
+  background-color: #f2e4dc;
+  color: #1a1a1a;
+  padding: 5px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+/* Large Price Tag on the Right */
+.meal-price {
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  margin-left: 20px;
 }

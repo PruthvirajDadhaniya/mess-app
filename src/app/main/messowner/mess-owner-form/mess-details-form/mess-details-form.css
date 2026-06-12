@@ -150,18 +150,12 @@
 /* Main Input Container */
 ::ng-deep .full-field .mat-mdc-text-field-wrapper {
   height: 45px !important;
-
   padding: 0 14px !important;
-
   border: 1.5px solid #dcdcdc !important;
-
   border-radius: 10px !important;
-
   background-color: #fff !important;
-
   display: flex;
   align-items: center;
-
   transition: all 0.3s ease;
 }
 
@@ -173,38 +167,29 @@
 /* Input Field */
 ::ng-deep .full-field .mat-mdc-input-element {
   font-size: 13px !important;
-
   font-family: 'Poppins', sans-serif !important;
-
   color: #333 !important;
-
   padding: 0 !important;
-
   height: 100% !important;
 }
 
 /* Placeholder */
 ::ng-deep .full-field .mat-mdc-input-element::placeholder {
   color: #bdbdbd !important;
-
   font-size: 13px !important;
-
   font-family: 'Poppins', sans-serif !important;
 }
 
 /* Label */
 ::ng-deep .full-field .mat-mdc-floating-label {
   font-size: 13px !important;
-
   font-family: 'Poppins', sans-serif !important;
-
   color: #777 !important;
 }
 
 /* Focus Border */
 ::ng-deep .full-field.mat-focused .mat-mdc-text-field-wrapper {
   border-color: #e05a2b !important;
-
   box-shadow: 0 0 0 2px rgba(224, 90, 43, 0.12);
 }
 
@@ -221,9 +206,7 @@
 /* Error Text */
 ::ng-deep .full-field .mat-mdc-form-field-error {
   font-size: 11px !important;
-
   font-family: 'Poppins', sans-serif !important;
-
   margin-top: 4px;
 }
 

@@ -4,7 +4,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -19,4 +19,9 @@ import { RouterLink } from '@angular/router';
 })
 export class Navbar {
 
+  constructor(private router: Router){}
+
+  onClick(){
+    this.router.navigate(['/login-register']);
+  }
 }

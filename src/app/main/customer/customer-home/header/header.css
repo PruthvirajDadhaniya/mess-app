@@ -6,9 +6,7 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* =========================
-   NAVBAR
-========================= */
+/* NAVBAR */
 .navbar {
   height: 80px;
   background: #ffffff;
@@ -102,13 +100,11 @@
   box-shadow: none !important;
 }
 
-/* =========================
-   HERO SECTION
-========================= */
+/*  HERO SECTION */
 
 .hero-section {
   position: relative;
-  height: 520px;
+  height: 530px;
   background: #df5226;
   overflow: hidden;
   display: flex;
@@ -131,9 +127,7 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* =========================
-   SEARCH SECTION
-========================= */
+/* SEARCH SECTION */
 
 .search-container {
   display: flex;
@@ -168,7 +162,6 @@
 }
 
 /* Search Box */
-
 .search-box {
   width: 418px;
   background: white;
@@ -196,7 +189,6 @@
 }
 
 /* Filter Button */
-
 .filter-btn {
   background: #d66744 !important;
   color: #fff !important;
@@ -207,39 +199,15 @@
   font-weight: 500;
 }
 
-/* =========================
-   FOOD IMAGES
-========================= */
-/* 
-.left-food {
-    position: absolute;
-    left: -370px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 520px;
-    z-index: 1;
-}
-
-.right-food {
-  position: absolute;
-  right: -398px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 520px;
-  z-index: 1;
-} */
-
-/* =========================
-   FEATURES SECTION
-========================= */
+/* FEATURES SECTION */
 
 .features-section {
   background: #f3e9e5;
   min-height: 130px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  padding: 30px 80px;
+  justify-content: space-between;
+  padding: 30px 105px;
 }
 
 .feature-card {
@@ -283,7 +251,7 @@
 .left-food {
   position: absolute;
   left: -265px;
-  top: 50%;
+  top: 51%;
   transform: translateY(-50%);
   width: 560px;
   z-index: 1;
@@ -293,7 +261,7 @@
 .right-food {
   position: absolute;
   right: -285px;
-  top: 50%;
+  top: 52%;
   transform: translateY(-50%);
   width: 600px;
   z-index: 1;

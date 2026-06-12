@@ -3,11 +3,12 @@ import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { trigger, transition, style, animate } from '@angular/animations';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-menu-drawer',
   imports: [
-    CommonModule, MatButtonModule, MatIconModule
+    CommonModule, MatButtonModule, MatIconModule, MatCardModule
   ],
   templateUrl: './menu-drawer.html',
   styleUrls: ['./menu-drawer.css'],

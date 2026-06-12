@@ -43,6 +43,6 @@ export class MessTimeForm {
   }
 
   done() {
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/mess-owner-dashboard']);
   }
 }

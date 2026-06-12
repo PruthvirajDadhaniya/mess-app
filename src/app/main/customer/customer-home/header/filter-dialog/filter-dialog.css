@@ -86,7 +86,7 @@
   display: flex;
   justify-content: space-between;
   gap: 12px;
-  margin-top: 55px;
+  margin-top: 65px;
 }
 
 .btn-reset,
@@ -99,7 +99,6 @@
   font-weight: 600 !important;
   color: #1a1a1a !important;
   padding: 12px 0 !important;
-  height: 48px !important;
   background: #ffffff !important;
   transition: background 0.18s, color 0.18s !important;
 }

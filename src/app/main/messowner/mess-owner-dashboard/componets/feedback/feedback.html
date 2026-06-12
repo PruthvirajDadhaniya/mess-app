@@ -1,41 +1,39 @@
 <div class="container">
 
-
   <h1>Good Morning, Joe!</h1>
-  <p>It's time to track your finance and services.</p>
-
+  <p class="main-subtitle">It's time to track your finance and services.</p>
 
   <div class="review-section">
-
     <h2>Customer review</h2>
     <p class="subtitle">based on 397 ratings by customers</p>
 
-    <div class="review-card" *ngFor="let item of reviews">
+    <div class="reviews-grid">
+      <div class="review-card" *ngFor="let item of reviews">
 
-      <div class="profile">
-        <div class="avatar">
-          <i class="fa fa-user-circle" aria-hidden="true"></i>
+        <div class="profile">
+          <div class="avatar">
+            <mat-icon>person_outline</mat-icon>
+          </div>
+
+          <div class="name">
+            {{item.name}}
+          </div>
         </div>
 
-        <div class="name">
-          {{item.name}}
+        <div class="stars">
+          ★ ★ ★ ★ ★
         </div>
+
+        <h4>{{item.title}}</h4>
+
+        <p class="desc">
+          {{item.description}}
+        </p>
+
       </div>
-
-      <div class="stars">
-        ★ ★ ★ ★ ★
-      </div>
-
-      <h4>{{item.title}}</h4>
-
-      <p class="desc">
-        {{item.description}}
-      </p>
-
     </div>
 
     <div class="pagination">
-
       <button>&laquo;</button>
       <button>&lsaquo;</button>
 
@@ -49,7 +47,6 @@
 
       <button>&rsaquo;</button>
       <button>&raquo;</button>
-
     </div>
 
   </div>

@@ -6,13 +6,8 @@
   --border-color: #B3B3B3;
   font-family: 'Poppins', sans-serif;
   display: block;
-  padding: 60px;
-  margin-top: 50px;
+  padding: 70px 0px 40px 0px;
 }
-
-/* .dashboard-wrapper {
- 
-}  */
 
 .welcome-text {
   font-size: 55px;
