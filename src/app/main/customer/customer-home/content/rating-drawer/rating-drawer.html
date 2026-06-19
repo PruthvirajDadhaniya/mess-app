@@ -1,0 +1,102 @@
+<div class="dialog-scrollable">
+  <div class="dialog-container">
+
+    <!-- Close Button -->
+    <button class="close-btn" mat-icon-button (click)="close()">
+      <mat-icon>close</mat-icon>
+    </button>
+
+    <!-- Title -->
+    <h2 class="dialog-title">Ratings</h2>
+
+    <!-- Average Rating Row -->
+    <div class="avg-row">
+      <span class="avg-score">{{ averageRating }}</span>
+      <div class="stars-row">
+        <mat-icon *ngFor="let s of getFilledStars(averageRating)" class="star filled">star</mat-icon>
+        <mat-icon *ngFor="let s of getEmptyStars(averageRating)" class="star empty">star_border</mat-icon>
+      </div>
+      <span class="badge-excellent">Excellent</span>
+    </div>
+    <p class="based-on">based on {{ totalReviews }} ratings by customers</p>
+
+    <!-- Review Cards -->
+    <div class="reviews-list">
+      <div class="review-card" *ngFor="let review of paginatedReviews">
+        <div class="reviewer-row">
+          <mat-icon class="avatar-icon">account_circle</mat-icon>
+          <span class="reviewer-name">{{ review.name }}</span>
+        </div>
+        <div class="review-stars">
+          <mat-icon *ngFor="let s of getFilledStars(review.rating)" class="star-sm filled">star</mat-icon>
+          <mat-icon *ngFor="let s of getEmptyStars(review.rating)" class="star-sm empty">star_border</mat-icon>
+        </div>
+        <p class="review-text">{{ review.comment }}</p>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination">
+      <button class="pg-btn" mat-icon-button (click)="goToPage(1)" [disabled]="currentPage === 1">
+        <mat-icon>first_page</mat-icon>
+      </button>
+      <button class="pg-btn" mat-icon-button (click)="prevPage()" [disabled]="currentPage === 1">
+        <mat-icon>chevron_left</mat-icon>
+      </button>
+
+      <ng-container *ngIf="showEllipsisBefore()">
+        <span class="pg-ellipsis">…</span>
+      </ng-container>
+
+      <button
+        class="pg-btn"
+        *ngFor="let page of getPageNumbers()"
+        [class.active-page]="page === currentPage"
+        (click)="goToPage(page)">
+        {{ page }}
+      </button>
+
+      <ng-container *ngIf="showEllipsisAfter()">
+        <span class="pg-ellipsis">…</span>
+      </ng-container>
+
+      <button class="pg-btn" mat-icon-button (click)="nextPage()" [disabled]="currentPage === totalPages">
+        <mat-icon>chevron_right</mat-icon>
+      </button>
+      <button class="pg-btn" mat-icon-button (click)="goToPage(totalPages)" [disabled]="currentPage === totalPages">
+        <mat-icon>last_page</mat-icon>
+      </button>
+    </div>
+
+    <mat-divider class="divider"></mat-divider>
+
+    <!-- Submit Section -->
+    <div class="submit-section">
+      <p class="submit-label">Your rating</p>
+      <div class="star-input">
+        <mat-icon
+          *ngFor="let i of [1,2,3,4,5]"
+          class="star-interactive"
+          [class.star-active]="i <= (hoveredStar || userRating)"
+          (mouseenter)="hoveredStar = i"
+          (mouseleave)="hoveredStar = 0"
+          (click)="userRating = i">
+          {{ i <= (hoveredStar || userRating) ? 'star' : 'star_border' }}
+        </mat-icon>
+      </div>
+
+      <p class="submit-label">Your Message</p>
+      <mat-form-field appearance="outline" class="msg-form-field">
+        <textarea
+          matInput
+          [(ngModel)]="userMessage"
+          rows="4"
+          placeholder="Write your message...">
+        </textarea>
+      </mat-form-field>
+
+      <button class="send-btn" (click)="submitFeedback()">Send Feedback</button>
+    </div>
+
+  </div>
+</div>

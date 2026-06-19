@@ -1,0 +1,372 @@
+/* ──────────────────────────────────────────────────── */
+/* SLIDE IN FROM RIGHT ANIMATION */
+/* ──────────────────────────────────────────────────── */
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutToRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+/* ── Host ── */
+:host {
+  display: block;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+/* ── Scrollable Dialog Container ── */
+.dialog-scrollable {
+  max-height: 85vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 4px;
+  animation: slideInFromRight 0.4s ease-out;
+}
+
+.dialog-scrollable.slide-out {
+  animation: slideOutToRight 0.3s ease-in forwards;
+}
+
+/* Custom scrollbar styling */
+.dialog-scrollable::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dialog-scrollable::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dialog-scrollable::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 3px;
+}
+
+.dialog-scrollable::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* ── Dialog Container ── */
+.dialog-container {
+    position: relative;
+    padding: 28px 32px 24px;
+    max-width: 420px;
+    width: 100%;
+    background: #fff;
+    border-radius: 0px;
+    margin-left: 20px;
+}
+
+/* ── Close Button ── */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  left: -5px;
+  background: black !important;
+  border-radius: 50% !important;
+  width: 32px !important;
+  height: 32px !important;
+  line-height: 32px !important;
+  color: white !important;
+  transition: background 0.15s;
+}
+
+.close-btn:hover {
+  background: #e5e7eb !important;
+}
+
+.close-btn mat-icon {
+  font-size: 18px;
+  width: 18px;
+  height: 20px;
+  line-height: 10px;
+  margin-left: -1px;
+}
+
+/* ── Title ── */
+.dialog-title {
+  font-size: 22px;
+  font-weight: 500;
+  color: #1a1a2e;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ── Average Rating Row ── */
+.avg-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.avg-score {
+  font-size: 15px;
+  font-weight: 300;
+  color: hsl(240, 19%, 18%);
+  font-family: 'Poppins', sans-serif;
+}
+
+.stars-row {
+  display: flex;
+  align-items: center;
+}
+
+.star.filled {
+  color: #ffc107;
+  font-size: 15px;
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+}
+
+.star.empty {
+  color: #d1d5db;
+  font-size: 15px;
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+}
+
+.badge-excellent {
+  font-size: 12px;
+  font-weight: 600;
+  color: #188d08;
+  background: #fff8e1;
+  border-radius: 20px;
+  padding: 2px 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.based-on {
+  font-size: 12px;
+  color: #6b7280;
+  margin-bottom: 16px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ── Review List ── */
+.reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 14px;
+  min-height: 160px;
+}
+
+/* ── Review Card ── */
+.review-card {
+  background: #fafafa;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+.reviewer-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.avatar-icon {
+  color: #6b7280;
+  font-size: 22px;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+}
+
+.reviewer-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a1a2e;
+  font-family: 'Poppins', sans-serif;
+}
+
+.review-stars {
+  display: flex;
+  gap: 1px;
+  margin-bottom: 5px;
+}
+
+.star-sm.filled {
+  color: #ffc107;
+  font-size: 15px;
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+}
+
+.star-sm.empty {
+  color: #d1d5db;
+  font-size: 15px;
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+}
+
+.review-text {
+  font-size: 12px;
+  color: #6b7280;
+  line-height: 1.5;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+}
+
+/* ── Pagination ── */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.pg-btn {
+  min-width: 30px !important;
+  height: 30px !important;
+  line-height: 30px !important;
+  border: 1px solid #e5e7eb !important;
+  background: #f3e6e2 !important;
+  border-radius: 6px !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  color: #1a1a2e !important;
+  cursor: pointer;
+  padding: 0 6px !important;
+  font-family: 'Poppins', sans-serif !important;
+  transition: background 0.15s, color 0.15s;
+}
+
+.pg-btn:hover:not(.active-page):not([disabled]) {
+  background: #f3f4f6 !important;
+}
+
+.pg-btn.active-page {
+  background: #e85d04 !important;
+  color: #fff !important;
+  border-color: #e85d04 !important;
+}
+
+.pg-btn[disabled] {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.pg-btn mat-icon {
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+}
+
+.pg-ellipsis {
+  font-size: 13px;
+  color: #6b7280;
+  padding: 0 2px;
+  line-height: 30px;
+}
+
+/* ── Divider ── */
+.divider {
+  margin: 12px 0 16px !important;
+}
+
+/* ── Submit Section ── */
+.submit-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.submit-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin-bottom: 8px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.star-input {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 14px;
+}
+
+.star-interactive {
+  font-size: 28px !important;
+  width: 28px !important;
+  height: 28px !important;
+  line-height: 28px !important;
+  cursor: pointer;
+  color: #d1d5db;
+  transition: color 0.15s, transform 0.1s;
+  user-select: none;
+}
+
+.star-interactive.star-active {
+  color: #ffc107;
+}
+
+.star-interactive:hover {
+  transform: scale(1.15);
+}
+
+/* ── Message Field ── */
+.msg-form-field {
+  width: 100%;
+  margin-bottom: 14px;
+}
+
+.msg-form-field textarea {
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  color: #1a1a2e;
+  resize: none;
+  min-height: 80px;
+}
+
+/* Override Material outline color on focus */
+.msg-form-field.mat-focused .mat-form-field-outline {
+  color: #e85d04 !important;
+}
+
+/* ── Send Button ── */
+.send-btn {
+  display: block;
+  width: 100%;
+  height: 44px;
+  background: #c85a3e;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(232, 93, 4, 0.3);
+  transition: background 0.15s, box-shadow 0.15s;
+}
+
+.send-btn:hover {
+  background: #c94e03;
+  box-shadow: 0 4px 14px rgba(232, 93, 4, 0.45);
+}
