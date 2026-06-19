@@ -3,7 +3,9 @@ import { Component, ViewChild } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MenuDrawer } from "./menu-drawer/menu-drawer";
+import { RatingDrawer } from './rating-drawer/rating-drawer';
 
 @Component({
   selector: 'app-content',
@@ -12,8 +14,9 @@ import { MenuDrawer } from "./menu-drawer/menu-drawer";
     MatCardModule,
     MatButtonModule,
     MatIconModule,
+    MatDialogModule, // ✅ ADDED
     MenuDrawer
-  ],
+],
   templateUrl: './content.html',
   styleUrl: './content.css',
 })
@@ -45,6 +48,8 @@ export class Content {
     contact: '+91 987456123',
   }));
 
+  constructor(private dialog: MatDialog) {}  // ✅ INJECT MatDialog
+
   get displayedChefs() {
     return this.chefs.slice(0, this.visibleCount);
   }
@@ -62,5 +67,16 @@ export class Content {
     console.log('Menu Clicked', chef);
     this.menuDrawer.loadChef(chef);
     this.menuDrawer.open();
+  }
+
+  openRatings(): void {
+    console.log('Opening ratings...');  // Debug log
+    this.dialog.open(RatingDrawer, {   // ✅ Use this.dialog
+      width: '460px',
+      panelClass: 'ratings-dialog-panel',
+      backdropClass: 'ratings-backdrop',
+      hasBackdrop: true,
+      disableClose: false
+    });
   }
 }

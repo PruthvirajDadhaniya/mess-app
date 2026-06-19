@@ -1,5 +1,62 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/* ──────────────────────────────────────────────────── */
+/* ENTIRE DRAWER - SLIDE FROM RIGHT & BLUR BACKGROUND */
+/* ──────────────────────────────────────────────────── */
+
+@keyframes slideInFromRight {
+  from {
+    right: -500px !important;
+    opacity: 0;
+  }
+  to {
+    right: 0 !important;
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutToRight {
+  from {
+    right: 0 !important;
+    opacity: 1;
+  }
+  to {
+    right: -500px !important;
+    opacity: 0;
+  }
+}
+
+/* Position and animate the entire drawer overlay pane */
+::ng-deep .cdk-overlay-pane.ratings-dialog-panel {
+  position: fixed !important;
+  right: 0 !important;
+  left: auto !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  max-height: none !important;
+  width: 480px !important;
+  animation: slideInFromRight 0.4s ease-out !important;
+}
+
+::ng-deep .cdk-overlay-pane.ratings-dialog-panel.slide-out {
+  animation: slideOutToRight 0.3s ease-in forwards !important;
+}
+
+/* Blurred backdrop */
+::ng-deep .cdk-overlay-backdrop.ratings-backdrop {
+  position: fixed !important;
+  backdrop-filter: blur(5px) !important;
+  -webkit-backdrop-filter: blur(5px) !important;
+  background-color: rgba(0, 0, 0, 0.4) !important;
+}
+::ng-deep .mat-mdc-dialog-surface {
+  border-radius: 0 !important;
+}
+
+/* ──────────────────────────────────────────────────── */
+/* YOUR EXISTING STYLES - NO CHANGES */
+/* ──────────────────────────────────────────────────── */
+
 .featured-section {
   padding: 0px 35px;
 }
@@ -96,6 +153,12 @@
   border-radius: 4px;
   font-size: 15px;
   font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.rating-badge:hover {
+  background: #ddd;
 }
 
 .veg {
