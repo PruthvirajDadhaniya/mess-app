@@ -27,7 +27,8 @@
 
                 <div class="rating-row">
                     <span class="stars">★★★★☆</span>
-                    <span class="rating-badge">
+                    <!-- Rating Badge - Click to open dialog -->
+                    <span class="rating-badge" (click)="openRatings()" style="cursor:pointer;">
                         {{ chef.rating }} | {{ chef.reviews }}
                     </span>
 
