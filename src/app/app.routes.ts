@@ -5,7 +5,7 @@ export const routes: Routes = [
 
     {
         path: '',
-        redirectTo: 'mess-owner-form',
+        redirectTo: 'customer-home',
         pathMatch: 'full'
     },
     {
