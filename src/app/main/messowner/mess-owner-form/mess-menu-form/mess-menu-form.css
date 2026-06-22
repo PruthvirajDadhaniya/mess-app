@@ -1,4 +1,3 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap'); */
 
 /* ── Page ── */
 .page-wrapper {
@@ -363,4 +362,196 @@
 
 .btn-next:hover {
   background: #1d4ed8 !important;
+}
+
+/* ─────────────────────────────── */
+/* TABLET VIEW (<= 1024px)
+/* ─────────────────────────────── */
+@media (max-width: 1024px) {
+
+  .form-card {
+    max-width: 95%;
+    padding: 0 20px 24px;
+  }
+
+  /* STEP WRAPPER → horizontal scroll */
+  .stepper {
+    justify-content: flex-start;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 14px;
+    padding: 10px 4px;
+    scrollbar-width: none;
+  }
+
+  .stepper::-webkit-scrollbar {
+    display: none;
+  }
+
+  .step {
+    flex: 0 0 auto;
+  }
+
+  .step-line {
+    width: 30px;
+  }
+
+  /* MEAL TABS */
+  .meal-tabs {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* ── CHECKBOX GRID → 3 IN ONE ROW ── */
+  .cb-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  /* ADD ROW → keep in one line */
+  .add-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .add-input {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .btn-add {
+    flex-shrink: 0;
+    padding: 0 16px;
+    white-space: nowrap;
+  }
+
+  /* ACTION BUTTONS */
+  .actions {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .btn-back,
+  .btn-next {
+    flex: 1;
+    white-space: nowrap;
+  }
+}
+
+
+/* ─────────────────────────────── */
+/* MOBILE VIEW (<= 600px)
+/* ─────────────────────────────── */
+@media (max-width: 600px) {
+
+  .page-wrapper {
+    padding: 15px 10px;
+  }
+
+  .form-card {
+    max-width: 100%;
+    padding: 0 14px 20px;
+    border-radius: 14px;
+  }
+
+  /* STEP SCROLL */
+  .stepper {
+    justify-content: flex-start;
+    overflow-x: auto;
+    gap: 0px;
+    padding: 8px 2px;
+  }
+
+  .step {
+    font-size: 11px;
+  }
+
+  .step-num {
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
+  }
+
+  .step-line {
+    width: 22px;
+  }
+
+  /* MEAL TABS */
+  .meal-tabs {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .meal-tab {
+    font-size: 12px;
+    padding: 6px 14px;
+  }
+
+  /* ── CHECKBOX GRID → STILL 3 PER ROW (SMALL CARDS) ── */
+  .cb-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .cb-item {
+    font-size: 12px;
+    gap: 5px;
+  }
+
+  .cb-box {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* ── ADD ROW → still one line but compact ── */
+  .add-row {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+  }
+
+  .add-input {
+    flex: 1;
+    font-size: 12px;
+    height: 36px;
+  }
+
+  .btn-add {
+    height: 36px;
+    padding: 0 12px;
+    font-size: 12px;
+    width: 30%;
+  }
+
+/* ACTION BUTTONS (MOBILE FIXED LAYOUT) */
+.actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+/* BACK BUTTON → LEFT SIDE */
+.btn-back {
+  width: 30%;
+  flex: 0 0 30%;
+  font-size: 13px !important;
+  padding: 8px 10px !important;
+  white-space: nowrap;
+}
+
+/* NEXT BUTTON → RIGHT SIDE */
+.btn-next {
+  width: 30%;
+  flex: 0 0 30%;
+  font-size: 13px !important;
+  padding: 8px 10px !important;
+  white-space: nowrap;
+  margin-left: auto; /* pushes it to right */
+}
 }

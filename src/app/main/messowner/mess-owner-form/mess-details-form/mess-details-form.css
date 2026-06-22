@@ -1,4 +1,3 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap'); */
 
 /* ── Page ───────────────────────────────────── */
 .page-wrapper {
@@ -398,4 +397,180 @@
   justify-content: space-between;
   align-items: center;
   margin-top: 20px;
+}
+
+
+
+/* ───────────────────────────────────────────── */
+/* TABLET VIEW (<= 1024px)
+/* ───────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+
+  .form-card {
+    max-width: 95%;
+    padding: 0 20px 25px;
+  }
+
+  /* Stepper → horizontal scroll */
+  .stepper {
+    justify-content: flex-start;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 12px;
+    padding: 10px 5px;
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .stepper::-webkit-scrollbar {
+    display: none;
+  }
+
+  .step {
+    flex: 0 0 auto;
+    font-size: 12px;
+  }
+
+  .step-line {
+    min-width: 20px;
+    max-width: 30px;
+  }
+
+  /* Row grid reduce gap */
+  .row-2 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Buttons stay one line */
+  .btn-row,
+  .actions {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .btn-back,
+  .btn-next {
+    flex: 1;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  /* Upload & pills spacing */
+  .food-pill {
+    font-size: 12px;
+    padding: 6px 14px;
+  }
+
+  .drop-zone {
+    font-size: 12px;
+  }
+}
+
+
+/* ───────────────────────────────────────────── */
+/* MOBILE VIEW (<= 600px)
+/* ───────────────────────────────────────────── */
+
+@media (max-width: 600px) {
+
+  .page-wrapper {
+    padding: 15px 10px;
+  }
+
+  .form-card {
+    max-width: 100%;
+    padding: 0 15px 20px;
+    border-radius: 14px;
+  }
+
+  .logo-img {
+    width: 140px;
+    height: auto;
+    padding: 10px;
+  }
+
+  /* STEP SCROLL */
+  .stepper {
+    justify-content: flex-start;
+    overflow-x: auto;
+    gap: 0px;
+    padding: 8px 2px;
+  }
+
+  .step {
+    font-size: 11px;
+  }
+
+  .step-num {
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
+  }
+
+  .step-line {
+    width: 22px;
+  }
+
+  /* FORM GRID */
+  .row-2 {
+    grid-template-columns: 1fr;
+  }
+
+  /* LABELS */
+  .form-label {
+    font-size: 12px;
+  }
+
+  /* INPUT HEIGHT */
+  ::ng-deep .full-field .mat-mdc-text-field-wrapper {
+    height: 42px !important;
+  }
+
+  /* BUTTON ROW → ALWAYS ONE LINE */
+  .btn-row,
+  .actions {
+    flex-direction: row;
+    gap: 8px;
+  }
+
+/* ACTION BUTTONS (MOBILE FIXED LAYOUT) */
+.actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+/* BACK BUTTON → LEFT SIDE */
+.btn-back {
+  width: 30%;
+  flex: 0 0 30%;
+  font-size: 13px !important;
+  padding: 8px 10px !important;
+  white-space: nowrap;
+}
+
+/* NEXT BUTTON → RIGHT SIDE */
+.btn-next {
+  width: 30%;
+  flex: 0 0 30%;
+  font-size: 13px !important;
+  padding: 8px 10px !important;
+  white-space: nowrap;
+  margin-left: auto; /* pushes it to right */
+}
+
+  /* FOOD PILLS */
+  .food-pill {
+    font-size: 11px;
+    padding: 6px 12px;
+  }
+
+  /* DROP ZONE */
+  .drop-zone {
+    padding: 16px 10px;
+    font-size: 12px;
+  }
 }
