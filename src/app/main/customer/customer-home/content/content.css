@@ -277,3 +277,132 @@
   padding: 15px;
   border-radius: 30px;
 }
+
+
+/* =========================
+   Mobile View
+========================= */
+@media screen and (max-width: 767px) {
+
+  .featured-section {
+    padding: 0 15px;
+  }
+
+  .section-header {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .section-header h2 {
+    font-size: 28px;
+    margin-top: 30px;
+  }
+
+  .section-header p {
+    font-size: 14px;
+    margin-bottom: 25px;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+    margin: 0;
+    gap: 20px;
+  }
+
+  .chef-card {
+    width: 100%;
+  }
+
+  .card-image {
+    height: 200px;
+  }
+
+  .card-image img {
+    padding: 10px;
+    border-radius: 20px;
+  }
+
+  .title-row h3 {
+    font-size: 18px;
+  }
+
+  .rating-row {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .stars {
+    font-size: 18px;
+  }
+
+  .rating-badge {
+    font-size: 13px;
+  }
+
+  .address,
+  .distance,
+  .timing,
+  .phone {
+    font-size: 14px;
+  }
+
+  .menu-btn {
+    width: 35%;
+  }
+  .show-more-btn{
+    width: 50%;
+  }
+
+  ::ng-deep .cdk-overlay-pane.ratings-dialog-panel {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* =========================
+   Tablet View
+========================= */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+  .featured-section {
+    padding: 0 20px;
+  }
+
+  .section-header {
+    margin-left: 20px;
+  }
+
+  .section-header h2 {
+    font-size: 36px;
+    margin-top: 40px;
+  }
+
+  .section-header p {
+    font-size: 16px;
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 20px;
+    gap: 20px;
+  }
+
+  .card-image {
+    height: 220px;
+  }
+
+  .title-row h3 {
+    font-size: 18px;
+  }
+
+  .address,
+  .distance,
+  .timing,
+  .phone {
+    font-size: 14px;
+  }
+
+  ::ng-deep .cdk-overlay-pane.ratings-dialog-panel {
+    width: 400px !important;
+  }
+}

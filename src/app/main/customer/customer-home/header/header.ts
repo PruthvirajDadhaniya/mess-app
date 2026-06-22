@@ -25,6 +25,22 @@ import { Router, RouterModule } from '@angular/router';
 export class Header {
   constructor(public dialog: MatDialog, private router: Router) { }
 
+  // isMenuOpen = false;
+
+  // toggleMenu(): void {
+  //   this.isMenuOpen = !this.isMenuOpen;
+  // }
+
+    isMenuOpen = false;
+
+  toggleMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  closeMenu(): void {
+    this.isMenuOpen = false;
+  }
+
   openFilterDialog(): void {
     this.dialog.open(FilterDialog, {
 
