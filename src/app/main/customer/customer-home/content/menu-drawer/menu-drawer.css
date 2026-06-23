@@ -380,74 +380,99 @@
     font-size: 18px;
   }
 
-  /* Meal Card */
-  .meal-card.mat-card {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    gap: 12px;
-    padding: 12px !important;
-  }
+/* MEAL CARD */
+/* ============================= */
+.meal-card.mat-card {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 12px !important;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
 
-  /* Left Section */
-  .meal-left {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    gap: 12px;
-    width: calc(100% - 90px);
-    padding: 10px;
-    background-color: #F3E6E266;
-    border-radius: 10px;
-  }
+/* ============================= */
+/* LEFT SECTION */
+/* ============================= */
+.meal-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+  background: #F3E6E266;
+  padding: 10px;
+  border-radius: 10px;
+}
 
-  /* Image */
-  .meal-image {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    object-fit: cover;
-    flex-shrink: 0;
-  }
+/* ============================= */
+/* IMAGE */
+/* ============================= */
+.meal-image {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
 
-  /* Content */
-  .meal-content {
-    flex: 1;
-    min-width: 0;
-  }
+/* ============================= */
+/* CONTENT */
+/* ============================= */
+.meal-content {
+  flex: 1;
+  min-width: 0;
+}
 
-  /* Meal Name */
-  .meal-name {
-    font-size: 15px;
-    font-weight: 600;
-    margin-bottom: 6px;
-  }
+/* Meal Name + Price Row */
+.meal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
 
-  /* Chips */
-  .meal-items {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
+/* Meal Name */
+.meal-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #222;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
-  .food-chip {
-    font-size: 11px;
-    padding: 4px 8px;
-    border-radius: 5px;
-    white-space: nowrap;
-  }
+/* Price Top Right Corner */
+.meal-price {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #000;
+  white-space: nowrap;
+  line-height: 1;
+}
 
-  /* Price */
-  .meal-price {
-    font-size: 20px;
-    font-weight: 600;
-    white-space: nowrap;
-    margin-left: 10px;
-    flex-shrink: 0;
-    margin-left: 140px;
-    margin-top: -50px;
-  }
+/* ============================= */
+/* MENU CHIPS */
+/* ============================= */
+.meal-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.food-chip {
+  padding: 4px 8px;
+  font-size: 11px;
+  border-radius: 5px;
+  background: #fff;
+  border: 1px solid #ddd;
+  white-space: nowrap;
+}
 
   /* .close-btn {
     width: 34px;

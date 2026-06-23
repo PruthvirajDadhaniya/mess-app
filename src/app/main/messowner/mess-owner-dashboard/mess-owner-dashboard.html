@@ -5,8 +5,22 @@
     </div>
 
     <div class="sidebar-wrapper">
-        <div class="sideDiv">
-            <app-sidenav></app-sidenav>
+        <!-- Toggle Button -->
+        <button class="menu-toggle" [class.hidden]="hideToggle || isSidebarOpen" (click)="toggleSidebar()">
+            ☰
+        </button>
+
+        @if (isSidebarOpen) {
+        <div class="sidebar-overlay" (click)="closeSidebar()"></div>
+        }
+
+        <div class="sideDiv" [class.mobile-open]="isSidebarOpen">
+            <img src="../../../../assets/images/brand-logo.png" alt="Brand Logo" class="mobile-logo">
+            <!-- Close Button -->
+            <button class="close-sidebar" (click)="closeSidebar()">
+                ✕
+            </button>
+            <app-sidenav (menuClick)="closeSidebar()"></app-sidenav>
         </div>
         <div class="Main-Content">
             <router-outlet></router-outlet>

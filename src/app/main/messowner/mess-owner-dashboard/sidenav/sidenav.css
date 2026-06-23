@@ -1,6 +1,4 @@
 
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
-
 .menu-item {
   display: flex;
   align-items: center;
@@ -51,4 +49,38 @@
 
 .sidebar::-webkit-scrollbar-track {
   background: transparent;
+}
+
+
+
+
+.sidebar-menu a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  height: 58px;
+  padding: 0 22px;
+
+  text-decoration: none;
+  color: #222;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  border-bottom: 1px solid #f3f3f3;
+
+  transition: all 0.3s ease;
+}
+
+.sidebar-menu a:hover {
+  background: #fff2ed;
+  color: #d66744;
+  padding-left: 28px;
+}
+
+.sidebar-menu a.active {
+  background: #fff2ed;
+  color: #d66744;
+  border-left: 4px solid #d66744;
 }

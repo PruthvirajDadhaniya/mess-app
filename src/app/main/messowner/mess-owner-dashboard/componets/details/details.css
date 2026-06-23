@@ -1,4 +1,3 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
 
 /* PAGE HEADER */
 .page-wrapper {
@@ -365,4 +364,185 @@ mat-divider {
   padding: 0 22px !important;
   height: 36px;
   box-shadow: none !important;
+}
+
+/* ===================================
+   MOBILE VIEW
+=================================== */
+
+@media screen and (max-width: 767px) {
+
+  /* .page-wrapper {
+    padding: 60px 15px 20px;
+  } */
+
+  h1 {
+    font-size: 32px;
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  p {
+    font-size: 14px;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .main-card {
+    padding: 15px !important;
+  }
+
+  .sec-title,
+  .title {
+    font-size: 26px;
+    line-height: 1.3;
+  }
+
+  /* Image Section */
+
+  .image-container {
+    width: 100%;
+    height: 220px;
+  }
+
+  .browse-btn,
+  .camera-btn {
+    width: 140px !important;
+    font-size: 12px !important;
+  }
+
+  .nav-btn {
+    width: 35px !important;
+    height: 35px !important;
+    min-width: 35px !important;
+  }
+
+  /* Forms */
+
+  .f-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .f-group {
+    width: 100%;
+  }
+
+  .f-label {
+    font-size: 12px;
+  }
+
+  .f-inp {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  /* License */
+
+  .lic-row {
+    flex-direction: column;
+  }
+
+  .upload-btn {
+    width: 100%;
+    min-height: 42px;
+  }
+
+  /* Food Chips */
+
+  .food-wrap {
+    flex-wrap: wrap;
+  }
+
+  .chip {
+    font-size: 11px;
+    padding: 6px 12px;
+  }
+
+  /* Footer Buttons */
+
+   .form-footer {
+    display: flex;
+    flex-direction: row; /* Same line */
+    justify-content: right;
+    align-items: center;
+    gap: 12px; /* Space between buttons */
+  }
+
+  .btn-orange,
+  .btn-green {
+    width: 25%;
+    /* min-width: 120px; */
+  }
+}
+
+/* ===================================
+   TABLET VIEW
+=================================== */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+  .page-wrapper {
+    padding: 70px 20px 30px;
+  }
+
+  h1 {
+    font-size: 42px;
+  }
+
+  p {
+    margin-left: 0;
+    font-size: 15px;
+  }
+
+  .main-card {
+    padding: 25px !important;
+  }
+
+  .sec-title,
+  .title {
+    font-size: 32px;
+  }
+
+  /* Image */
+
+  .image-container {
+    width: 100%;
+    max-width: 527px;
+    height: 300px;
+  }
+
+  /* Forms */
+
+  .f-row {
+    gap: 15px;
+  }
+
+  .lic-row {
+    gap: 15px;
+  }
+
+  .food-wrap {
+    flex-wrap: wrap;
+  }
+
+  /* Footer */
+
+  /* .form-footer {
+    gap: 12px;
+  } */
+
+   .form-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .btn-orange,
+  .btn-green {
+    width: 25%;
+    min-width: 140px;
+  }
 }
