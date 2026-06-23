@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, Input } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Navbar } from './navbar/navbar';
 import { Sidenav } from './sidenav/sidenav';
@@ -15,6 +15,7 @@ export class MessOwnerDashboard {
   isSidebarOpen = false;
   hideToggle = false;
 
+  @Input() navbarMenuOpen = false;
   @HostListener('window:scroll', [])
   onScroll() {
 
@@ -34,6 +35,10 @@ export class MessOwnerDashboard {
     } else {
       document.body.style.overflow = 'auto';
     }
+  }
+
+  onNavbarMenuChange(status: boolean) {
+    this.navbarMenuOpen = status;
   }
 
   closeSidebar() {

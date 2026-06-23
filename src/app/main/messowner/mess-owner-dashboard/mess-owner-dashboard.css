@@ -238,10 +238,10 @@
 @media screen and (max-width: 767px) {
 
   .menu-toggle {
-    top: 70px;
-    left: 0px;
+    top: 85px;
+    left: 15px;
 
-    width: 40px;
+    width: 30px;
     height: 35px;
 
     font-size: 20px;

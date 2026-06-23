@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
@@ -21,15 +21,19 @@ export class Navbar {
 
   constructor(private router: Router){}
 
-      isMenuOpen = false;
+  @Output() menuStatus = new EventEmitter<boolean>();
 
-  toggleMenu(): void {
-    this.isMenuOpen = !this.isMenuOpen;
-  }
+isMenuOpen = false;
 
-  closeMenu(): void {
-    this.isMenuOpen = false;
-  }
+toggleMenu(): void {
+  this.isMenuOpen = !this.isMenuOpen;
+  this.menuStatus.emit(this.isMenuOpen);
+}
+
+closeMenu(): void {
+  this.isMenuOpen = false;
+  this.menuStatus.emit(false);
+}
 
   onClick(){
     this.router.navigate(['/login-register']);

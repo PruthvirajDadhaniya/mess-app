@@ -153,16 +153,22 @@
   }
 
   .dialog-footer {
-    flex-direction: column;
-    gap: 12px;
-    margin-top: 40px;
+    display: flex;
+    flex-direction: row;      /* Same line */
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;                /* Space between buttons */
+    margin-top: 50px;
   }
 
   .btn-reset,
   .btn-apply {
-    width: 100%;
+    width: 48%;               /* Equal width */
+    max-width: 180px;
+    height: 42px;
     font-size: 14px !important;
-    padding: 12px !important;
+    padding: 10px 16px !important;
+    text-align: center;
   }
 }
 
