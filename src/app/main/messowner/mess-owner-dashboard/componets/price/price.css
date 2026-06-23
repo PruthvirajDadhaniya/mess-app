@@ -1,4 +1,3 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
 
 :host {
   --primary-color: #C85A32;
@@ -83,4 +82,130 @@
 
 .btn-save {
   background-color: var(--secondary-color);
+}
+
+
+/* ===================================
+   MOBILE VIEW (0px - 767px)
+=================================== */
+
+@media screen and (max-width: 767px) {
+
+  .welcome-text {
+    font-size: 32px;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .sub-welcome {
+    font-size: 14px;
+    text-align: center;
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+
+  .card-panel {
+    padding: 18px;
+    border-radius: 12px;
+  }
+
+  .form-container {
+    gap: 16px;
+  }
+
+  .form-group {
+    gap: 6px;
+  }
+
+  .form-group label {
+    font-size: 14px;
+  }
+
+  .form-group input {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+
+  /* Action Buttons */
+
+  .card-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .btn-edit,
+  .btn-save {
+    width: 110px;
+    padding: 10px;
+  }
+}
+
+/* ===================================
+   TABLET VIEW (768px - 1024px)
+=================================== */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+  .welcome-text {
+    font-size: 42px;
+    line-height: 1.3;
+  }
+
+  .sub-welcome {
+    font-size: 15px;
+    margin-left: 0;
+  }
+
+  .card-panel {
+    padding: 25px;
+  }
+
+  .form-group label {
+    font-size: 15px;
+  }
+
+  .form-group input {
+    padding: 13px 16px;
+  }
+
+  /* Action Buttons */
+
+  .action-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+  }
+
+  .btn-edit,
+  .btn-save {
+    width: 25%;
+    min-width: 140px;
+    text-align: center;
+  }
+}
+
+/* ===================================
+   COMMON RESPONSIVE FIXES
+=================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+.card-panel {
+  overflow: hidden;
+}
+
+.form-group input {
+  max-width: 100%;
+}
+
+.btn-edit,
+.btn-save {
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

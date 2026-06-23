@@ -1,4 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
+
 .container {
   padding: 70px 0px 40px 0px;
   margin: 0 auto;
@@ -150,4 +150,174 @@ h1 {
 
 .pagination span {
   font-size: 18px;
+}
+
+
+/* ===================================
+   MOBILE VIEW (0px - 767px)
+=================================== */
+
+@media screen and (max-width: 767px) {
+
+  h1 {
+    font-size: 32px;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .main-subtitle {
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .review-section {
+    padding: 20px;
+    border-radius: 15px;
+  }
+
+  .review-section h2 {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  /* Review Cards */
+
+  .reviews-grid {
+    gap: 15px;
+  }
+
+  .review-card {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .profile {
+    gap: 10px;
+  }
+
+  .avatar {
+    width: 38px;
+    height: 38px;
+  }
+
+  .avatar mat-icon {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .name {
+    font-size: 16px;
+  }
+
+  .stars {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+
+  .review-card h4 {
+    font-size: 14px;
+  }
+
+  .desc {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  /* Pagination */
+
+  .pagination {
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .pagination button {
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
+  }
+
+  .pagination span {
+    font-size: 16px;
+  }
+}
+
+/* ===================================
+   TABLET VIEW (768px - 1024px)
+=================================== */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+  h1 {
+    font-size: 42px;
+  }
+
+  .main-subtitle {
+    font-size: 15px;
+  }
+
+  .review-section {
+    padding: 25px;
+  }
+
+  .review-section h2 {
+    font-size: 34px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+  }
+
+  /* Review Cards */
+
+  .review-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .name {
+    font-size: 17px;
+  }
+
+  .desc {
+    font-size: 13px;
+  }
+
+  /* Pagination */
+
+  .pagination {
+    gap: 8px;
+  }
+}
+
+/* ===================================
+   COMMON RESPONSIVE FIXES
+=================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+.review-section,
+.review-card {
+  overflow: hidden;
+}
+
+.review-card {
+  max-width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.pagination button {
+  flex-shrink: 0;
 }

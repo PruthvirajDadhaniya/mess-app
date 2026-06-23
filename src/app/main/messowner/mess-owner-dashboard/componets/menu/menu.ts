@@ -33,73 +33,77 @@ export class Menu implements OnInit {
       name: 'Monday', isOpen: true, newItem: '',
       items: [
         { name: 'Chapati', checked: true },
-        { name: 'Chapati', checked: true },
-        { name: 'Chapati', checked: true },
-        { name: 'Chapati', checked: false },
-        { name: 'Chapati', checked: true },
-        { name: 'Chapati', checked: true },
+        { name: 'Dal', checked: true },
+        { name: 'Rice', checked: true },
+        { name: 'Bhendi', checked: false },
+        { name: 'Dahi', checked: true },
+        { name: 'Papad', checked: true },
       ]
     },
     {
       name: 'Tuesday', isOpen: true, newItem: '',
       items: [
         { name: 'Chapati', checked: true },
-        { name: 'Chapati', checked: true },
-        { name: 'Chapati', checked: true },
-        { name: 'Chapati', checked: false },
-        { name: 'Chapati', checked: true },
-        { name: 'Chapati', checked: true },
+        { name: 'Dal', checked: true },
+        { name: 'Rice', checked: true },
+        { name: 'Bhendi', checked: false },
+        { name: 'Dahi', checked: true },
+        { name: 'Papad', checked: true },
       ]
     },
     {
       name: 'Wednesday', isOpen: true, newItem: '',
       items: [
         { name: 'Chapati', checked: true },
-        { name: 'Chapati', checked: true },
-        { name: 'Chapati', checked: true },
-        { name: 'Chapati', checked: false },
-        { name: 'Chapati', checked: true },
+        { name: 'Dal', checked: true },
+        { name: 'Rice', checked: true },
+        { name: 'Bhendi', checked: false },
+        { name: 'Dahi', checked: true },
+        { name: 'Papad', checked: true },
       ]
     },
     {
       name: 'Thursday', isOpen: true, newItem: '',
       items: [
         { name: 'Chapati', checked: true },
-        { name: 'Chapati', checked: true },
-        { name: 'Chapati', checked: true },
-        { name: 'Chapati', checked: false },
-        { name: 'Chapati', checked: true },
+        { name: 'Dal', checked: true },
+        { name: 'Rice', checked: true },
+        { name: 'Bhendi', checked: false },
+        { name: 'Dahi', checked: true },
+        { name: 'Papad', checked: true },
       ]
     },
     {
       name: 'Friday', isOpen: true, newItem: '',
       items: [
         { name: 'Chapati', checked: true },
-        { name: 'Chapati', checked: true },
-        { name: 'Chapati', checked: true },
-        { name: 'Chapati', checked: false },
-        { name: 'Chapati', checked: true },
-        { name: 'Chapati', checked: true },
+        { name: 'Dal', checked: true },
+        { name: 'Rice', checked: true },
+        { name: 'Bhendi', checked: false },
+        { name: 'Dahi', checked: true },
+        { name: 'Papad', checked: true },
       ]
     },
     {
       name: 'Saturday', isOpen: true, newItem: '',
       items: [
         { name: 'Chapati', checked: true },
-        { name: 'Chapati', checked: true },
-        { name: 'Chapati', checked: true },
-        { name: 'Chapati', checked: false },
-        { name: 'Chapati', checked: true },
+        { name: 'Dal', checked: true },
+        { name: 'Rice', checked: true },
+        { name: 'Bhendi', checked: false },
+        { name: 'Dahi', checked: true },
+        { name: 'Papad', checked: true },
       ]
     },
     {
       name: 'Sunday', isOpen: true, newItem: '',
       items: [
         { name: 'Chapati', checked: true },
-        { name: 'Chapati', checked: true },
-        { name: 'Chapati', checked: true },
-        { name: 'Chapati', checked: false },
-        { name: 'Chapati', checked: true },
+        { name: 'Dal', checked: true },
+        { name: 'Rice', checked: true },
+        { name: 'Bhendi', checked: false },
+        { name: 'Dahi', checked: true },
+        { name: 'Papad', checked: true },
       ]
     },
   ];

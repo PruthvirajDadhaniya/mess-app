@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
@@ -13,5 +13,11 @@ export class Sidenav {
 
   navigateToCharts() {
     this.router.navigate(['/mess-owner-dashboard/charts']);
+  }
+
+  @Output() menuClick = new EventEmitter<void>();
+
+  onMenuClick() {
+    this.menuClick.emit();
   }
 }

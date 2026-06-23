@@ -41,7 +41,7 @@
 .Main-Content {
     flex: 1;
     height: 100%;
-    padding: 32px;
+    padding: 15px;
     box-sizing: border-box;
     overflow-y: auto;
     overflow-x: hidden;
@@ -57,3 +57,299 @@
     border-top: 1px solid #e0e0e0;
     z-index: 1000;
 }
+
+
+
+
+/* ===================================
+   DESKTOP
+=================================== */
+
+.sidebar-wrapper {
+  display: flex;
+  position: relative;
+}
+
+.menu-toggle,
+.close-sidebar,
+.sidebar-overlay {
+  display: none;
+}
+
+/* ===================================
+   MOBILE & TABLET VIEW
+=================================== */
+
+@media screen and (max-width: 1024px) {
+
+  /* Hamburger Button */
+
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: fixed;
+    top: 90px;
+    left: 15px;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #d66744;
+    color: #fff;
+
+    font-size: 22px;
+    cursor: pointer;
+
+    z-index: 3000;
+
+    transition: all 0.3s ease;
+  }
+
+  .menu-toggle.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-15px);
+  }
+
+  /* Overlay */
+
+  .sidebar-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(4px);
+
+    z-index: 2500;
+  }
+
+  /* Sidebar */
+
+  .sideDiv {
+    position: fixed;
+    top: 0;
+    left: -320px;
+
+    width: 300px;
+    height: 100vh;
+
+    background: #ffffff;
+
+    z-index: 2600;
+
+    display: flex;
+    flex-direction: column;
+
+    transition: left 0.35s ease;
+
+    box-shadow: 5px 0 25px rgba(0, 0, 0, 0.15);
+
+    overflow: hidden;
+  }
+
+  .sideDiv.mobile-open {
+    left: 0;
+  }
+
+   /* Header */
+
+  .mobile-sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 70px;
+    min-height: 70px;
+
+    padding: 0 15px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #eeeeee;
+  }
+
+   /* Logo */
+
+  .mobile-logo {
+    width: 120px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin-left: 25px;
+  }
+
+  
+
+  /* Close Button */
+
+  .close-sidebar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    top: 15px;
+    right: 15px;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #f5f5f5;
+    color: #444;
+
+    font-size: 20px;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+  }
+
+  .close-sidebar:hover {
+    background: #ececec;
+  }
+
+  /* App Sidenav Content */
+
+  .sideDiv app-sidenav {
+    display: block;
+    padding: 0;
+  }
+
+  /* Main Content */
+
+  .Main-Content {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+/* ===================================
+   MOBILE
+=================================== */
+
+@media screen and (max-width: 767px) {
+
+  .menu-toggle {
+    top: 70px;
+    left: 0px;
+
+    width: 40px;
+    height: 35px;
+
+    font-size: 20px;
+  }
+
+  .sideDiv {
+    width: 280px;
+    left: -280px;
+  }
+
+  .sideDiv.mobile-open {
+    left: 0;
+  }
+}
+
+/* ===================================
+   TABLET
+=================================== */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+  .sideDiv {
+    width: 320px;
+    left: -320px;
+  }
+
+  .sideDiv.mobile-open {
+    left: 0;
+  }
+}
+
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+img,
+canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+.stats-container,
+.chart-header,
+.filters {
+  width: 100%;
+}
+
+.dashboard-card {
+  min-width: 0;
+}
+
+
+/* Common Responsive Fixes */
+* {
+  box-sizing: border-box;
+}
+
+.footer-inner,
+.nav-cols,
+.nav-col {
+  min-width: 0;
+}
+
+.logo-img,
+.footer-bg-img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+
+
+/* ===================================
+   COMMON RESPONSIVE FIXES
+=================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+img,
+.food-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.image-container {
+  max-width: 100%;
+}
+
+.f-row,
+.lic-row,
+.food-wrap {
+  width: 100%;
+}
+
+.main-card {
+  overflow: hidden;
+}
+
+.btn-orange,
+.btn-green,
+.upload-btn {
+  white-space: nowrap;
+}
+
+
+

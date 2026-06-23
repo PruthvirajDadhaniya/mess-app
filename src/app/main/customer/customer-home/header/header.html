@@ -32,56 +32,36 @@
 
 <!-- Mobile Sidenav -->
 <div class="mobile-nav" [class.open]="isMenuOpen">
+    <div class="mobile-nav-header">
+        <img src="assets/images/brand-logo.png" alt="Logo" class="mobile-logo">
+        <button mat-icon-button class="close-btn" (click)="closeMenu()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
 
-  <div class="mobile-nav-header">
-
-    <img
-      src="assets/images/brand-logo.png"
-      alt="Logo"
-      class="mobile-logo">
-
-    <button
-      mat-icon-button
-      class="close-btn"
-      (click)="closeMenu()">
-
-      <mat-icon>close</mat-icon>
-
-    </button>
-
-  </div>
-
-  <div class="mobile-nav-links">
-
-    <a (click)="closeMenu()">
-      <mat-icon>home</mat-icon>
-      <span>Home</span>
-    </a>
-
-    <a (click)="closeMenu()">
-      <mat-icon>room_service</mat-icon>
-      <span>Service</span>
-    </a>
-
-    <a (click)="closeMenu()">
-      <mat-icon>support_agent</mat-icon>
-      <span>Support</span>
-    </a>
-
-    <a (click)="closeMenu()">
-      <mat-icon>info</mat-icon>
-      <span>About</span>
-    </a>
-
-  </div>
-
+    <div class="mobile-nav-links">
+        <a (click)="closeMenu()">
+            <mat-icon>home</mat-icon>
+            <span>Home</span>
+        </a>
+        <a (click)="closeMenu()">
+            <mat-icon>room_service</mat-icon>
+            <span>Service</span>
+        </a>
+        <a (click)="closeMenu()">
+            <mat-icon>support_agent</mat-icon>
+            <span>Support</span>
+        </a>
+        <a (click)="closeMenu()">
+            <mat-icon>info</mat-icon>
+            <span>About</span>
+        </a>
+    </div>
 </div>
 
 @if (isMenuOpen) {
-  <div
-    class="mobile-overlay"
-    (click)="closeMenu()">
-  </div>
+<div class="mobile-overlay" (click)="closeMenu()">
+</div>
 }
 
 <!-- Hero Section -->

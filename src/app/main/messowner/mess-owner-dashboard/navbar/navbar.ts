@@ -21,6 +21,16 @@ export class Navbar {
 
   constructor(private router: Router){}
 
+      isMenuOpen = false;
+
+  toggleMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  closeMenu(): void {
+    this.isMenuOpen = false;
+  }
+
   onClick(){
     this.router.navigate(['/login-register']);
   }
