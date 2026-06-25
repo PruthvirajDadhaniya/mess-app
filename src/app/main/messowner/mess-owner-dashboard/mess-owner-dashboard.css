@@ -60,6 +60,10 @@
 
 
 
+/* Hide logo by default (Desktop) */
+.mobile-logo {
+  display: none;
+}
 
 /* ===================================
    DESKTOP
@@ -126,7 +130,7 @@
     background: rgba(0, 0, 0, 0.45);
     backdrop-filter: blur(4px);
 
-    z-index: 2500;
+    z-index: 3000; 
   }
 
   /* Sidebar */
@@ -141,7 +145,7 @@
 
     background: #ffffff;
 
-    z-index: 2600;
+    z-index:  3001; /* higher than navbar */
 
     display: flex;
     flex-direction: column;
@@ -238,12 +242,10 @@
 @media screen and (max-width: 767px) {
 
   .menu-toggle {
-    top: 85px;
-    left: 15px;
-
-    width: 30px;
-    height: 35px;
-
+    top: 70px;
+    left: 3px;
+    width: 27px;
+    height: 30px;
     font-size: 20px;
   }
 

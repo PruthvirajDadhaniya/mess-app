@@ -26,7 +26,23 @@ export class MessOwnerDashboard {
     this.hideToggle = window.scrollY > 100;
   }
 
+  // toggleSidebar() {
+  //   this.isSidebarOpen = !this.isSidebarOpen;
+
+  //   if (this.isSidebarOpen) {
+  //     this.hideToggle = true;
+  //     document.body.style.overflow = 'hidden';
+  //   } else {
+  //     document.body.style.overflow = 'auto';
+  //   }
+  // }
+
   toggleSidebar() {
+
+    if (this.navbarMenuOpen) {
+      return;
+    }
+
     this.isSidebarOpen = !this.isSidebarOpen;
 
     if (this.isSidebarOpen) {
@@ -39,6 +55,11 @@ export class MessOwnerDashboard {
 
   onNavbarMenuChange(status: boolean) {
     this.navbarMenuOpen = status;
+
+    // Close dashboard sidebar if navbar menu opens
+    if (status) {
+      this.closeSidebar();
+    }
   }
 
   closeSidebar() {
