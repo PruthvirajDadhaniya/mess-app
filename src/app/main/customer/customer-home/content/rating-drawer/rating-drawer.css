@@ -1,126 +1,151 @@
-/* ──────────────────────────────────────────────────── */
-/* SLIDE IN FROM RIGHT ANIMATION */
-/* ──────────────────────────────────────────────────── */
+::ng-deep .mat-mdc-dialog-container,
+::ng-deep .mdc-dialog__surface {
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  overflow: hidden !important;
+}
 
-@keyframes slideInFromRight {
+/* ===== BACKDROP ===== */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+  animation: backdropOpen 0.3s ease forwards;
+}
+
+.backdrop.closing {
+  animation: backdropClose 0.45s ease forwards;
+}
+
+@keyframes backdropOpen {
   from {
-    transform: translateX(100%);
     opacity: 0;
   }
+
   to {
-    transform: translateX(0);
     opacity: 1;
   }
 }
 
-@keyframes slideOutToRight {
+@keyframes backdropClose {
   from {
-    transform: translateX(0);
     opacity: 1;
   }
+
   to {
-    transform: translateX(100%);
     opacity: 0;
   }
 }
 
-/* ── Host ── */
-:host {
-  display: block;
-  font-family: 'Poppins', 'Segoe UI', sans-serif;
-}
+/* ==================================
+   DRAWER ANIMATION
+================================== */
 
-/* ── Scrollable Dialog Container ── */
 .dialog-scrollable {
-  max-height: 85vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 480px;
+  height: 100vh;
+  background: #fff;
+  z-index: 1001;
   overflow-y: auto;
   overflow-x: hidden;
-  padding-right: 4px;
-  animation: slideInFromRight 0.4s ease-out;
+  box-shadow: -6px 0 28px rgba(0, 0, 0, 0.18);
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  animation: drawerOpen 0.45s ease forwards;
 }
 
-.dialog-scrollable.slide-out {
-  animation: slideOutToRight 0.3s ease-in forwards;
+@keyframes drawerOpen {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
-/* Custom scrollbar styling */
-.dialog-scrollable::-webkit-scrollbar {
-  width: 6px;
+/* Closing State */
+.dialog-scrollable.closing {
+  animation: drawerClose 0.45s ease forwards;
 }
 
-.dialog-scrollable::-webkit-scrollbar-track {
-  background: transparent;
+@keyframes drawerClose {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
 }
 
-.dialog-scrollable::-webkit-scrollbar-thumb {
-  background: #d1d5db;
-  border-radius: 3px;
-}
-
-.dialog-scrollable::-webkit-scrollbar-thumb:hover {
-  background: #9ca3af;
-}
-
-/* ── Dialog Container ── */
 .dialog-container {
-    position: relative;
-    padding: 28px 32px 24px;
-    max-width: 420px;
-    width: 100%;
-    background: #fff;
-    border-radius: 0px;
-    margin-left: 20px;
+  position: relative;
+  padding: 50px 45px 45px;
+  box-sizing: border-box;
 }
 
-/* ── Close Button ── */
+/* ===== CLOSE BTN ===== */
 .close-btn {
   position: absolute;
-  top: 10px;
-  left: -5px;
-  background: black !important;
-  border-radius: 50% !important;
-  width: 32px !important;
-  height: 32px !important;
-  line-height: 32px !important;
-  color: white !important;
-  transition: background 0.15s;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+  background: #1a1a1a;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  transition: background 0.18s;
 }
 
 .close-btn:hover {
-  background: #e5e7eb !important;
+  background: #000000;
 }
 
 .close-btn mat-icon {
-  font-size: 18px;
-  width: 18px;
-  height: 20px;
-  line-height: 10px;
-  margin-left: -1px;
+  font-size: 17px;
+  width: 17px;
+  height: 17px;
+  color: #ffffff;
 }
 
-/* ── Title ── */
+/* ===== TITLE ===== */
 .dialog-title {
-  font-size: 22px;
+  text-align: left;
+  font-size: 35px;
   font-weight: 500;
-  color: #1a1a2e;
-  margin-bottom: 10px;
-  margin-top: 20px;
-  font-family: 'Poppins', sans-serif;
+  color: #1a1a1a;
+  margin: 0 0 16px;
 }
 
-/* ── Average Rating Row ── */
+/* ===== AVERAGE RATING ROW ===== */
 .avg-row {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   margin-bottom: 4px;
 }
 
 .avg-score {
-  font-size: 15px;
-  font-weight: 300;
-  color: hsl(240, 19%, 18%);
-  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #1a1a1a;
 }
 
 .stars-row {
@@ -129,246 +154,495 @@
 }
 
 .star.filled {
-  color: #ffc107;
-  font-size: 15px;
-  width: 15px;
-  height: 15px;
-  line-height: 15px;
+  color: #FFC107;
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
 }
 
 .star.empty {
-  color: #d1d5db;
-  font-size: 15px;
-  width: 15px;
-  height: 15px;
-  line-height: 15px;
+  color: #E0E0E0;
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
 }
 
 .badge-excellent {
-  font-size: 12px;
+  color: #2E7D32;
   font-weight: 600;
-  color: #188d08;
-  background: #fff8e1;
-  border-radius: 20px;
-  padding: 2px 10px;
-  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  margin-left: 4px;
 }
 
 .based-on {
-  font-size: 12px;
-  color: #6b7280;
-  margin-bottom: 16px;
-  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #6b6b6b;
+  margin: 0 0 24px;
 }
 
-/* ── Review List ── */
+/* ===== REVIEW CARDS ===== */
 .reviews-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-bottom: 14px;
-  min-height: 160px;
+  gap: 16px;
+  margin-bottom: 20px;
 }
 
-/* ── Review Card ── */
 .review-card {
-  background: #fafafa;
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
-  padding: 12px 14px;
+  background: #F7F7F7;
+  border-radius: 12px;
+  padding: 14px 18px;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  transition: box-shadow 0.18s ease;
+}
+
+.review-card:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
 }
 
 .reviewer-row {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 
 .avatar-icon {
-  color: #6b7280;
-  font-size: 22px;
-  width: 22px;
-  height: 22px;
-  line-height: 22px;
+  font-size: 28px;
+  width: 28px;
+  height: 28px;
+  color: #9e9e9e;
 }
 
 .reviewer-name {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
-  color: #1a1a2e;
-  font-family: 'Poppins', sans-serif;
+  color: #1a1a1a;
 }
 
 .review-stars {
   display: flex;
-  gap: 1px;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 
 .star-sm.filled {
-  color: #ffc107;
-  font-size: 15px;
-  width: 15px;
-  height: 15px;
-  line-height: 15px;
+  color: #FFC107;
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
 }
 
 .star-sm.empty {
-  color: #d1d5db;
-  font-size: 15px;
-  width: 15px;
-  height: 15px;
-  line-height: 15px;
+  color: #E0E0E0;
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
+}
+
+.review-title {
+  font-weight: 600;
+  font-size: 14px;
+  color: #1a1a1a;
+  margin: 0 0 4px;
 }
 
 .review-text {
-  font-size: 12px;
-  color: #6b7280;
+  font-size: 13px;
+  color: #6b6b6b;
   line-height: 1.5;
-  font-family: 'Poppins', sans-serif;
   margin: 0;
 }
 
-/* ── Pagination ── */
+/* ===== PAGINATION ===== */
 .pagination {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2px;
-  margin: 10px 0;
+  gap: 6px;
+  margin-bottom: 24px;
   flex-wrap: wrap;
 }
 
 .pg-btn {
-  min-width: 30px !important;
-  height: 30px !important;
-  line-height: 30px !important;
-  border: 1px solid #e5e7eb !important;
-  background: #f3e6e2 !important;
-  border-radius: 6px !important;
-  font-size: 13px !important;
-  font-weight: 500 !important;
-  color: #1a1a2e !important;
+  min-width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: none;
+  background: #F2F2F2;
+  color: #1a1a1a;
+  font-size: 13px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  padding: 0 6px !important;
-  font-family: 'Poppins', sans-serif !important;
-  transition: background 0.15s, color 0.15s;
+  transition: background 0.18s ease, color 0.18s ease;
 }
 
-.pg-btn:hover:not(.active-page):not([disabled]) {
-  background: #f3f4f6 !important;
+.pg-btn mat-icon {
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
 }
 
-.pg-btn.active-page {
-  background: #e85d04 !important;
-  color: #fff !important;
-  border-color: #e85d04 !important;
+.pg-btn:hover:not([disabled]) {
+  background: #E8E8E8;
 }
 
 .pg-btn[disabled] {
   opacity: 0.4;
-  cursor: default;
+  cursor: not-allowed;
 }
 
-.pg-btn mat-icon {
-  font-size: 16px;
-  width: 16px;
-  height: 16px;
-  line-height: 16px;
+.pg-btn.active-page {
+  background: #D2502F;
+  color: #ffffff;
+}
+
+.pg-btn.active-page mat-icon {
+  color: #ffffff;
 }
 
 .pg-ellipsis {
-  font-size: 13px;
-  color: #6b7280;
-  padding: 0 2px;
-  line-height: 30px;
+  font-size: 14px;
+  color: #6b6b6b;
+  padding: 0 4px;
 }
 
-/* ── Divider ── */
+/* ===== DIVIDER ===== */
 .divider {
-  margin: 12px 0 16px !important;
+  margin: 0 0 20px;
+  border-color: #ECECEC;
 }
 
-/* ── Submit Section ── */
-.submit-section {
-  display: flex;
-  flex-direction: column;
-}
-
+/* ===== SUBMIT SECTION ===== */
 .submit-label {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
-  color: #1a1a2e;
-  margin-bottom: 8px;
-  font-family: 'Poppins', sans-serif;
+  color: #1a1a1a;
+  margin: 0 0 10px;
 }
 
 .star-input {
   display: flex;
-  gap: 4px;
-  margin-bottom: 14px;
+  gap: 8px;
+  margin-bottom: 20px;
 }
 
 .star-interactive {
-  font-size: 28px !important;
-  width: 28px !important;
-  height: 28px !important;
-  line-height: 28px !important;
+  font-size: 26px;
+  width: 26px;
+  height: 26px;
+  color: #D9D9D9;
   cursor: pointer;
-  color: #d1d5db;
-  transition: color 0.15s, transform 0.1s;
-  user-select: none;
-}
-
-.star-interactive.star-active {
-  color: #ffc107;
+  transition: color 0.18s ease, transform 0.15s ease;
 }
 
 .star-interactive:hover {
-  transform: scale(1.15);
+  transform: scale(1.12);
 }
 
-/* ── Message Field ── */
+.star-interactive.star-active {
+  color: #FFC107;
+}
+
 .msg-form-field {
   width: 100%;
-  margin-bottom: 14px;
+  margin-bottom: 24px;
 }
 
 .msg-form-field textarea {
-  font-family: 'Poppins', sans-serif;
-  font-size: 13px;
-  color: #1a1a2e;
   resize: none;
-  min-height: 80px;
-}
-
-/* Override Material outline color on focus */
-.msg-form-field.mat-focused .mat-form-field-outline {
-  color: #e85d04 !important;
-}
-
-/* ── Send Button ── */
-.send-btn {
-  display: block;
-  width: 100%;
-  height: 44px;
-  background: #c85a3e;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
+  color: #1a1a1a;
+}
+
+::ng-deep .msg-form-field .mat-mdc-text-field-wrapper {
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+::ng-deep .msg-form-field .mdc-notched-outline__leading,
+::ng-deep .msg-form-field .mdc-notched-outline__trailing,
+::ng-deep .msg-form-field .mdc-notched-outline__notch {
+  border-color: #E0E0E0 !important;
+  border-radius: 12px;
+}
+
+/* ===== SEND BUTTON ===== */
+.send-btn {
+  width: 100%;
+  background: #D2502F;
+  color: #ffffff;
+  font-size: 15px;
   font-weight: 600;
-  letter-spacing: 0.3px;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 0;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(232, 93, 4, 0.3);
-  transition: background 0.15s, box-shadow 0.15s;
+  transition: background 0.18s ease, transform 0.1s ease;
 }
 
 .send-btn:hover {
-  background: #c94e03;
-  box-shadow: 0 4px 14px rgba(232, 93, 4, 0.45);
+  background: #b8431f;
 }
 
+.send-btn:active {
+  transform: scale(0.98);
+}
 
+/* ==========================================
+   TABLET VIEW (768px - 1024px)
+========================================== */
+@media screen and (max-width: 1024px) {
+
+  .dialog-scrollable {
+    width: 75%;
+    max-width: 650px;
+  }
+
+  .dialog-container {
+    padding: 40px 30px 30px;
+  }
+
+  .dialog-title {
+    font-size: 30px;
+  }
+
+  .review-card {
+    padding: 14px;
+  }
+
+  .reviewer-name {
+    font-size: 13px;
+  }
+
+  .review-title {
+    font-size: 13px;
+  }
+
+  .review-text {
+    font-size: 12px;
+  }
+
+  .send-btn {
+    padding: 13px 0;
+    font-size: 14px;
+  }
+
+  .msg-form-field textarea {
+    font-size: 13px;
+  }
+}
+
+/* ==========================================
+   MOBILE VIEW (Below 768px)
+========================================== */
+@media screen and (max-width: 767px) {
+
+  .dialog-scrollable {
+    width: 85%;
+    max-width: 85%;
+    height: 100vh;
+    border-radius: 0;
+  }
+
+  .dialog-container {
+    padding: 55px 25px 25px;
+  }
+
+  .close-btn {
+    width: 32px;
+    height: 32px;
+    top: 10px;
+    left: 10px;
+  }
+
+  .close-btn mat-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+  }
+
+  .dialog-title {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+
+  .avg-row {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .avg-score {
+    font-size: 14px;
+  }
+
+  .badge-excellent {
+    font-size: 13px;
+  }
+
+  .based-on {
+    font-size: 12px;
+    margin-bottom: 18px;
+  }
+
+  /* Review Cards */
+  .reviews-list {
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+
+  .review-card {
+    padding: 12px;
+    border-radius: 10px;
+  }
+
+  .reviewer-row {
+    gap: 6px;
+    margin-bottom: 6px;
+  }
+
+  .avatar-icon {
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+  }
+
+  .reviewer-name {
+    font-size: 12px;
+  }
+
+  .review-title {
+    font-size: 13px;
+  }
+
+  .review-text {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .star-sm.filled,
+  .star-sm.empty {
+    font-size: 14px;
+    width: 14px;
+    height: 14px;
+  }
+
+  /* Pagination */
+ .pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 3px;
+    margin-bottom: 16px;
+    overflow-x: auto;
+    padding: 4px 0;
+  }
+
+  .pagination::-webkit-scrollbar {
+    display: none;
+  }
+
+  .pg-btn {
+    min-width: 24px;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    font-size: 10px;
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+
+  .pg-btn mat-icon {
+    font-size: 13px;
+    width: 13px;
+    height: 13px;
+  }
+
+  .pg-ellipsis {
+    font-size: 10px;
+    padding: 0 2px;
+    flex-shrink: 0;
+  }
+
+  /* Rating Stars */
+  .star-input {
+    gap: 4px;
+    margin-bottom: 16px;
+  }
+
+  .star-interactive {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .submit-label {
+    font-size: 13px;
+  }
+
+  /* Textarea */
+  .msg-form-field {
+    margin-bottom: 18px;
+  }
+
+  .msg-form-field textarea {
+    font-size: 13px;
+  }
+
+  /* Button */
+  .send-btn {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 14px;
+    border-radius: 10px;
+  }
+}
+
+/* ==========================================
+   SMALL MOBILE (Below 480px)
+========================================== */
+@media screen and (max-width: 480px) {
+
+  .dialog-title {
+    font-size: 24px;
+  }
+
+  .avg-score {
+    font-size: 13px;
+  }
+
+  .badge-excellent {
+    font-size: 12px;
+  }
+
+  .based-on {
+    font-size: 11px;
+  }
+
+  .review-card {
+    padding: 10px;
+  }
+
+  .review-title {
+    font-size: 12px;
+  }
+
+  .review-text {
+    font-size: 11px;
+  }
+
+  .star-interactive {
+    font-size: 22px;
+    width: 22px;
+    height: 22px;
+  }
+
+  .send-btn {
+    font-size: 13px;
+    padding: 11px 0;
+  }
+}

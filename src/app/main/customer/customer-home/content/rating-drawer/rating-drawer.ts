@@ -33,6 +33,7 @@ export interface Review {
   styleUrls: ['./rating-drawer.css'],
 })
 export class RatingDrawer {
+
   // ── Summary ───────────────────────────────────────
   averageRating = 4.1;
   totalReviews = 397;
@@ -119,7 +120,7 @@ export class RatingDrawer {
   constructor(
     @Optional() public dialogRef: MatDialogRef<RatingDrawer>,
     private snackBar: MatSnackBar
-  ) {}
+  ) { }
 
   // ── Star Helpers ───────────────────────────────────
   getFilledStars(rating: number): number[] {
@@ -204,20 +205,26 @@ export class RatingDrawer {
   }
 
   // ── Close with animation ──────────────────────────
-  close(): void {
-    if (this.dialogRef) {
-      // Get the overlay pane
-      const overlayPane = document.querySelector('.cdk-overlay-pane.ratings-dialog-panel') as HTMLElement;
-      
-      if (overlayPane) {
-        overlayPane.classList.add('slide-out');
-        // Wait for animation to finish
-        setTimeout(() => {
-          this.dialogRef.close();
-        }, 300);
-      } else {
+ close(): void {
+
+  const drawer = document.querySelector('.dialog-scrollable') as HTMLElement;
+
+  if (drawer) {
+
+    drawer.classList.add('closing');
+
+    setTimeout(() => {
+
+      if (this.dialogRef) {
         this.dialogRef.close();
       }
-    }
+
+    }, 350);
+
+  } else {
+
+    this.dialogRef?.close();
+
   }
+}
 }
